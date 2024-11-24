@@ -53,7 +53,7 @@ const LandingPage = () => {
 
       {/* Features Section */}
       <section className="features-section">
-        <h2 className="features-title">Why Choose Jobrite?</h2>
+        <h2 className="features-title">Why Choose Jobrite??</h2>
         <div className="features-grid">
           <div className="feature">
             <img src={surveyImage1} alt="Easy Job Application" />
