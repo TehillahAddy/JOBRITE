@@ -38,7 +38,7 @@ const LandingPage = () => {
             </ul>
           </li>
 
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/contact">Contacts</Link></li>
         </ul>
       </nav>
 
