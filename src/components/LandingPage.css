@@ -121,8 +121,31 @@ body {
   }
 }
 
+/* Keyframes for Text Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Slide up */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Original position */
+  }
+}
 
-/* Hero Section */
+/* Keyframes for Background Zoom-In Animation */
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.2); /* Slightly zoomed in */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1); /* Original size */
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the landing header */
 .landing-header {
   background: url('../images/hero-background.jpg') no-repeat center center/cover;
   height: 100vh;
@@ -132,13 +155,16 @@ body {
   text-align: center;
   color: white;
   position: relative;
+  animation: zoomIn 1.5s ease-out forwards;
 }
 
-.landing-header .header-text {
+/* Animated Text */
+.header-text {
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 2s ease-out 0.5s forwards; /* Delayed fade-in */
   padding: 300px;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay to improve text visibility */
-  border-radius: 8px;
 }
+
 
 .landing-header .header-text h1 {
   font-size: 3.5rem;
@@ -166,6 +192,7 @@ body {
   background-color: #004d99;
 }
 
+
 /* Content Sections */
 .features-section {
   padding: 60px 20px;
@@ -174,9 +201,9 @@ body {
 }
 
 .features-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .features-grid {
