@@ -63,7 +63,7 @@ const LandingPage = () => {
 
       {/* Features Section */}
       <section className="features-section" data-aos="bounce" data-aos-delay="500">
-        <h2 className="features-title" data-aos="fade-down" data-aos-delay="1200">Why Choose Jobrite??</h2>
+        <h2 className="features-title" data-aos="fade-down" data-aos-delay="800">Why Choose Jobrite??</h2>
         <div className="features-grid" data-aos="fade-up" data-aos-duration="1200">
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
             <img src={surveyImage1} alt="Easy Job Application" />
@@ -104,27 +104,80 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      <div class="section" data-aos="fade-up" data-aos-duration="1500">
+        <h1>Welcome to Jobrite!</h1>
+      </div>
+
+      <div class="section" data-aos="zoom-in" data-aos-delay="1400">
+        <p>Find the job of your dreams.</p>
+      </div>
+
+      <div class="cta" id="cta-section" data-aos="flip-left" data-aos-offset="300" data-aos-easing="ease-out-cubic">
+        <a href="/signup" class="cta-button">Get Started</a>
+      </div>
+
+
       <footer className="landing-footer">
-        <p>Already have an account? <Link to="/login" className="sign-in-link">Sign In</Link></p>
-        {/* Footer */}
-        <footer className="landing-footer">
-          <div className="footer-links">
+        <div className="footer-container">
+          {/* Contact Section */}
+          <div className="footer-category contact">
+            <h3>Contact</h3>
             <ul>
-              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-service">Terms of Service</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              <li>
+                <i className="fas fa-envelope"></i>
+                <a href="mailto:support@jobrite.com">support@jobrite.com</a>
+              </li>
+              <li>
+                <i className="fas fa-phone"></i>
+                <a href="tel:+1234567890">+233 53 599 7153</a>
+              </li>
+              <li>
+                <i className="fas fa-map-marker-alt"></i>
+                <span>Oblogo Rd, 82</span>
+              </li>
             </ul>
           </div>
-          <div className="social-icons">
-            {/* Add social media links here */}
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+          {/* Follow Us Section */}
+          <div className="footer-category follow-us">
+            <h3>Follow Us</h3>
+            <div className="social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-tiktok"></i>
+              </a>
+            </div>
           </div>
-          <p>© 2024 Jobrite. All rights reserved.</p>
-        </footer>
+
+          {/* Subscribe Section */}
+          <div className="footer-category subscribe">
+            <h3>Subscribe</h3>
+            <p>Enter your email and we’ll send you the latest information and plans.</p>
+            <form className="subscribe-form">
+              <input
+                type="email"
+                placeholder="Your email ID"
+                required
+              />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+        </div>
+        <p className="footer-copyright">© 2024 Jobrite. All rights reserved.</p>
       </footer>
+
     </div>
   );
 };
