@@ -5,6 +5,11 @@ import surveyImage from '../images/surveyo.jpeg';
 import surveyImage1 from '../images/survey2.png';
 import surveyImage2 from '../images/survey3.png';
 import surveyImage3 from '../images/survey4.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
+import 'swiper/css'; // Core Swiper CSS
+import 'swiper/css/navigation'; // Navigation module CSS
+import 'swiper/css/autoplay'; // Autoplay module CSS
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -12,10 +17,36 @@ import 'aos/dist/aos.css';
 
 
 const LandingPage = () => {
-
+  const popularJobs = [
+    {
+      image: "https://via.placeholder.com/80",
+      title: "Software Developer",
+      description: "Create and maintain software solutions.",
+      link: "#",
+    },
+    {
+      image: "https://via.placeholder.com/80",
+      title: "Graphic Designer",
+      description: "Design compelling visuals for clients.",
+      link: "#",
+    },
+    {
+      image: "https://via.placeholder.com/80",
+      title: "Digital Marketer",
+      description: "Manage online campaigns effectively.",
+      link: "#",
+    },
+    {
+      image: "https://via.placeholder.com/80",
+      title: "Project Manager",
+      description: "Oversee and deliver projects on time.",
+      link: "#",
+    },
+  ];
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <div className="landing-page">
       {/* Navigation Bar */}
@@ -51,6 +82,7 @@ const LandingPage = () => {
         </ul>
       </nav>
 
+
       {/* Hero Section */}
       <header className="landing-header">
         <div className="header-text animated fade-in">
@@ -58,8 +90,16 @@ const LandingPage = () => {
           <p>Find your next job with Jobrite and start your career journey today!</p>
           <Link to="/signup" className="cta-button">Get Started</Link>
         </div>
-      </header>
 
+        {/* Job Search Section */}
+        <section className="job-search-section">
+          <div className="search-bar">
+            <input type="text" placeholder="Job Title, Keywords, or Company" />
+            <input type="text" placeholder="Location (City, State, Zip)" />
+            <button type="button">Search</button>
+          </div>
+        </section>
+      </header>
 
       {/* Features Section */}
       <section className="features-section" data-aos="bounce" data-aos-delay="500">
@@ -73,7 +113,7 @@ const LandingPage = () => {
 
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
             <img src={surveyImage1} alt="Customizable Surveys" />
-            <h3>Customizable Surveys for Employers</h3>
+            <h3>Customized service with clear expectations set.</h3>
             <p>For employers, Jobrite offers customizable survey templates to help you find the best candidates for your organization.</p>
           </div>
 
@@ -85,30 +125,104 @@ const LandingPage = () => {
 
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
             <img src={surveyImage3} alt="Multi-Channel Distribution" />
-            <h3>Multi-Channel Distribution</h3>
+            <h3>Your round-the-clock strategic business ally.</h3>
             <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <h2>What Our Users Say</h2>
-        <div className="testimonial">
-          <p>"Jobrite helped me land my dream job in no time! The platform is easy to use, and the job search is so simple!"</p>
-          <span>- Sarah, Job Seeker</span>
-        </div>
-        <div className="testimonial">
-          <p>"As an employer, Jobrite's customizable surveys have made hiring the right talent a breeze. Highly recommend!"</p>
-          <span>- John, Employer</span>
+      {/* Call-to-Action for Employers */}
+      <section className="employer-cta" data-aos="zoom-in" data-aos-delay="600">
+        <h2>Hire the Best Talent</h2>
+        <p>Looking for the right candidates? Post your job listings today and let us connect you with top talent.</p>
+        <Link to="/employer/post-job" className="cta-button">Post a Job</Link>
+      </section>
+
+      {/* Popular Jobs Section */}
+      <section className="popular-jobs-section">
+        <h2>Popular Jobs</h2>
+        <Swiper
+          spaceBetween={10} /* Minimal spacing between slides */
+          slidesPerView={3}
+          loop={true}
+          autoplay={{ delay: 7000, disableOnInteraction: false }}
+          navigation={true}
+          pagination={{ clickable: true }}
+          modules={[Navigation, Autoplay, Pagination]}
+          className="jobs-slider"
+        >
+
+          {popularJobs.map((job, index) => (
+            <SwiperSlide key={index}>
+              <div className="job-card">
+                <img src={surveyImage} alt={job.title} className="job-image" />
+                <h3>{job.title}</h3>
+                <p>{job.description}</p>
+                <a href={job.link} className="apply-btn">Apply Now</a>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* Blog Section */}
+      <section className="blog-section" data-aos="fade-down" data-aos-delay="1300">
+        <h2>Latest Articles</h2>
+        <div className="blog-grid">
+          <div className="blog-card">
+            <div className="blog-image">
+              <img src={surveyImage1} alt="Resume Tips" />
+            </div>
+            <div className="blog-content">
+              <h3>Top 10 Resume Tips</h3>
+              <p>Learn how to craft a resume that stands out to employers.</p>
+              <Link to="/blog/resume-tips" className="read-more">Read More</Link>
+            </div>
+          </div>
+          <div className="blog-card">
+            <div className="blog-image">
+              <img src={surveyImage2} alt="Interview Questions" />
+            </div>
+            <div className="blog-content">
+              <h3>Common Interview Questions</h3>
+              <p>Prepare for your next interview with these top questions.</p>
+              <Link to="/blog/interview-questions" className="read-more">Read More</Link>
+            </div>
+          </div>
+          <div className="blog-card">
+            <div className="blog-image">
+              <img src={surveyImage3} alt="Career Growth" />
+            </div>
+            <div className="blog-content">
+              <h3>Career Growth Strategies</h3>
+              <p>Discover tips to take your career to the next level.</p>
+              <Link to="/blog/career-growth" className="read-more">Read More</Link>
+            </div>
+          </div>
         </div>
       </section>
 
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <h2 data-aos="fade-up" data-aos-duration="1000">What Our Users Say</h2>
+        <div className="testimonial" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1200">
+          <p>"They were professional, responsive, and found the perfect job match for me. Thank you ☺️"</p>
+          <span>- Sweetness Lyrical, Job Seeker</span>
+        </div>
+        <div className="testimonial" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1200">
+          <p>"The Best Customer Experience, they promised and delivered… thank you soo much for the opportunity jobrite💯"</p>
+          <span>- Abena Adomaa, Job Seeker</span>
+        </div>
+      </section>
+
+
       <div class="section" data-aos="fade-up" data-aos-duration="1500">
-        <h1>Welcome to Jobrite!</h1>
+        <h1>Advance your career
+          with  Jobrite!</h1>
       </div>
 
-      <div class="section" data-aos="zoom-in" data-aos-delay="1400">
+      <div class="section" data-aos="zoom-in" data-aos-delay="1000">
         <p>Find the job of your dreams.</p>
       </div>
 
