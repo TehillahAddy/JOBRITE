@@ -289,7 +289,19 @@ body {
 }
 
 /* Enhanced Hover Effect */
+.feature:hover {
+ 
+  color: #0056b3; /* Darker color on hover */
+  transform: scale(1); /* Slight enlargement on hover */
+}
 
+/* Optional: Add a filter effect for brightness and contrast */
+.feature:hover {
+  filter: brightness(1.1) contrast(1.2);
+  color: #0056b3; /* Darker color on hover */
+  transform: scale(1.2); /* Slight enlargement on hover */
+   /* Makes the card a bit brighter and more vivid */
+}
 
 .feature:hover {
   transform: translateY(-9px);
@@ -892,7 +904,7 @@ body {
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 18px;
+  border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
@@ -938,5 +950,141 @@ body {
 
 .blog-content .read-more:hover {
   text-decoration: underline;
+}/* Partner Wheel Section */
+.partner-wheel-section {
+  text-align: left;
+  padding: 20px 10px; /* Reduced padding to save space */
+  background: white;
 }
 
+
+/* Section Styling */
+.section {
+  text-align: right; /* Align content to the right */
+  padding: 10px; /* Keep padding to avoid content being too close to edges */
+  margin: 20px 0;
+  position: relative; /* To position content inside the section */
+  width: 100%; /* Ensure it takes full width of the container */
+}
+
+/* Heading Styling */
+.section h1 {
+  font-size: 1.5rem; /* Smaller heading */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px; /* Reduced margin for better space utilization */
+  text-transform: uppercase;
+  position: absolute; /* Position it relative to the section */
+  top: 3px; /* Position at the top of the section */
+  right: 20px; /* Align it to the top-right */
+}
+
+/* Paragraph Styling */
+.section p {
+  font-size: 1rem; /* Smaller paragraph text */
+  color: #555;
+  margin-top: 10px;
+  position: absolute;
+  top: 15px; /* Position below the heading */
+  right: 20px; /* Align it to the right */
+}
+
+/* CTA Section Styling */
+#cta-section {
+  margin-top: 10px;
+  position: absolute; /* Absolute positioning */
+  top: 80px; /* Position the CTA button slightly lower */
+  right: 20px; /* Align it to the top-right corner */
+}
+
+.partner-wheel-section h2 {
+  font-size: 1.5rem; /* Slightly smaller heading */
+  font-weight: bold;
+  margin-bottom: 15px; /* Reduced margin */
+  color: #333;
+}
+
+.partner-wheel-section p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Partner Wheel Container */
+.partner-wheel {
+  position: relative;
+  width: 350px; /* Wheel size */
+  height: 350px; /* Wheel size */
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 12s linear infinite; /* Optional automatic rotation */
+  overflow: hidden; /* Ensures content stays inside */
+  background: radial-gradient(circle, white, white); /* Subtle gradient */
+  padding: 20px 15px; /* Reduced padding */
+  margin-top: -220px; /* Moves the wheel up by 50px */
+}
+
+/* Wheel with evenly spaced segments */
+.wheel {
+  width: 80%;
+  height: 800%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+}
+
+.wheel-segment {
+  position: absolute;
+  width: 60px; /* Segment size */
+  height: 60px; /* Segment size */
+  transform-origin: center;
+  transform: rotate(calc(var(--angle) * 1deg)) translate(0, -120px); /* Adjust placement dynamically */
+}
+
+.wheel-segment img {
+  width: 80%; /* Logo size */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: white;
+  padding: 5px;
+}
+
+/* Hover Effect for Logos */
+.wheel-segment a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .partner-wheel {
+    width: 250px; /* Wheel size */
+    height: 250px; /* Wheel size */
+  }
+
+  .wheel-segment {
+    width: 50px; /* Smaller segments */
+    height: 50px;
+  }
+}
+
+
+.advance-section {
+  background: white;
+}

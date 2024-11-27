@@ -12,6 +12,7 @@ import wall2 from '../images/wall2.webp';
 import wall3 from '../images/wall3.webp';
 import wall4 from '../images/wall4.webp';
 import role from '../images/the-role.jpg';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
 import 'swiper/css'; // Core Swiper CSS
@@ -24,9 +25,21 @@ import 'aos/dist/aos.css';
 
 
 const LandingPage = () => {
+
+
+  const partners = [
+    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", },
+    { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg", },
+    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg", },
+    { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", },
+    { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg", },
+  ];
+
+
+  const angleIncrement = 360 / partners.length;
   const popularJobs = [
     {
-     image: "../images/feature1.avif",
+      image: "../images/feature1.avif",
       title: "Software Developer",
       description: "Create and maintain software solutions.",
       link: "#",
@@ -38,13 +51,13 @@ const LandingPage = () => {
       link: "#",
     },
     {
-      
+
       title: "Digital Marketer",
       description: "Manage online campaigns effectively.",
       link: "#",
     },
     {
-     
+
       title: "Project Manager",
       description: "Oversee and deliver projects on time.",
       link: "#",
@@ -143,7 +156,7 @@ const LandingPage = () => {
             </div>
             <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
           </div>
-          
+
 
         </div>
 
@@ -152,7 +165,7 @@ const LandingPage = () => {
 
       {/* Call-to-Action for Employers */}
       <section className="employer-cta">
-        <h2  data-aos="flip-down" data-aos-delay="200" data-aos-duration="1200">Hire the Best Talent</h2>
+        <h2 data-aos="flip-down" data-aos-delay="200" data-aos-duration="1200">Hire the Best Talent</h2>
         <p data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="1200">Looking for the right candidates? Post your job listings today and let us connect you with top talent.</p>
         <Link to="/employer/post-job" className="cta-button">Post a Job</Link>
       </section>
@@ -246,19 +259,43 @@ const LandingPage = () => {
         </div>
       </section>
 
+      <section className="advance-section">
 
-      <div class="section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-        <h1>Advance your career
-          with  Jobrite!</h1>
-      </div>
+      </section>
 
-      <div class="section" data-aos="zoom-in" data-aos-delay="1000" >
-        <p>Find the job of your dreams.</p>
-      </div>
 
-      <div class="cta" id="cta-section" data-aos="flip-left" data-aos-offset="300" data-aos-easing="ease-out-cubic">
-        <a href="/signup" class="cta-button">Get Started</a>
-      </div>
+      <section className="partner-wheel-section">
+        <h2 data-aos="fade-down" data-aos-duration="1500" data-aos-delay="200" >OUR TRUSTED PARTNERS</h2>
+        <p data-aos="zoom-in" data-aos-delay="1000">Discover the companies that trust us to connect them with top talent.</p>
+        <div class="section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+          <h1>Advance your career
+            with  Jobrite!</h1>
+        </div>
+
+        <div class="section" data-aos="zoom-in" data-aos-delay="1000" >
+          <p>Find the job of your dreams.</p>
+        </div>
+        <div class="section" id="cta-section" data-aos="flip-left" data-aos-offset="300" data-aos-easing="ease-out-cubic">
+          <a href="/signup" class="cta-button">Get Started</a>
+        </div>
+        <div className="partner-wheel-section">
+          <div className="partner-wheel">
+            <div className="wheel">
+              {partners.map((partner, index) => (
+                <div
+                  key={index}
+                  className="wheel-segment"
+                  style={{ "--angle": angleIncrement * index }}
+                >
+                  <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                    <img src={partner.logo} alt={partner.name} />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       <footer className="landing-footer">
