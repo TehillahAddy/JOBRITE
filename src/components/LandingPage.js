@@ -5,6 +5,11 @@ import surveyImage from '../images/surveyo.jpeg';
 import surveyImage1 from '../images/survey2.png';
 import surveyImage2 from '../images/survey3.png';
 import surveyImage3 from '../images/survey4.png';
+import feature1 from '../images/feature1.avif';
+import feature2 from '../images/feature2.webp';
+import feature3 from '../images/feature3.jpg';
+import feature4 from '../images/feature4.jpeg';
+import feature5 from '../images/feature5.jpeg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
 import 'swiper/css'; // Core Swiper CSS
@@ -19,25 +24,25 @@ import 'aos/dist/aos.css';
 const LandingPage = () => {
   const popularJobs = [
     {
-      image: "https://via.placeholder.com/80",
+     
       title: "Software Developer",
       description: "Create and maintain software solutions.",
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/80",
+      
       title: "Graphic Designer",
       description: "Design compelling visuals for clients.",
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/80",
+      
       title: "Digital Marketer",
       description: "Manage online campaigns effectively.",
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/80",
+     
       title: "Project Manager",
       description: "Oversee and deliver projects on time.",
       link: "#",
@@ -84,7 +89,7 @@ const LandingPage = () => {
 
 
       {/* Hero Section */}
-      <header className="landing-header">
+      <header className="landing-header" data-aos="bounce" data-aos-delay="200" data-aos-duration="1200">
         <div className="header-text animated fade-in">
           <h1>Your Dream Job is Just a Click Away</h1>
           <p>Find your next job with Jobrite and start your career journey today!</p>
@@ -106,33 +111,51 @@ const LandingPage = () => {
         <h2 className="features-title" data-aos="fade-down" data-aos-delay="800">Why Choose Jobrite??</h2>
         <div className="features-grid" data-aos="fade-up" data-aos-duration="1200">
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
-            <img src={surveyImage1} alt="Easy Job Application" />
             <h3>Effortless Job Application</h3>
+            <div className="feature-icon">
+              <i className="fas fa-paper-plane"></i> {/* Example icon for Effortless Job Application */}
+            </div>
             <p>Our intuitive platform allows you to search for and apply to jobs with ease. Get started with just a few clicks.</p>
           </div>
 
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
-            <img src={surveyImage1} alt="Customizable Surveys" />
             <h3>Customized service with clear expectations set.</h3>
+            <div className="feature-icon">
+              <i className="fas fa-user-cog"></i> {/* Example icon for Customized Service */}
+            </div>
             <p>For employers, Jobrite offers customizable survey templates to help you find the best candidates for your organization.</p>
           </div>
 
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
-            <img src={surveyImage2} alt="Real-Time Analytics" />
             <h3>Real-Time Job Analytics</h3>
+            <div className="feature-icon">
+              <i className="fas fa-chart-line"></i> {/* Example icon for Real-Time Analytics */}
+            </div>
             <p>Track job applications and candidate progress in real time. Make data-driven decisions with ease.</p>
           </div>
 
           <div className="feature" data-aos="fade-up" data-aos-duration="1200">
-            <img src={surveyImage3} alt="Multi-Channel Distribution" />
             <h3>Your round-the-clock strategic business ally.</h3>
+            <div className="feature-icon">
+              <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
+            </div>
             <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
           </div>
+          <div className="feature" data-aos="fade-up" data-aos-duration="1200">
+            <h3>Your round-the-clock strategic business ally.</h3>
+            <div className="feature-icon">
+              <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
+            </div>
+            <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
+          </div>
+
         </div>
+
+
       </section>
 
       {/* Call-to-Action for Employers */}
-      <section className="employer-cta" data-aos="zoom-in" data-aos-delay="600">
+      <section className="employer-cta" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200">
         <h2>Hire the Best Talent</h2>
         <p>Looking for the right candidates? Post your job listings today and let us connect you with top talent.</p>
         <Link to="/employer/post-job" className="cta-button">Post a Job</Link>
@@ -166,12 +189,12 @@ const LandingPage = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="blog-section" data-aos="fade-down" data-aos-delay="1300">
+      <section className="blog-section" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200">
         <h2>Latest Articles</h2>
         <div className="blog-grid">
           <div className="blog-card">
             <div className="blog-image">
-              <img src={surveyImage1} alt="Resume Tips" />
+              <img src={feature5} alt="Resume Tips" />
             </div>
             <div className="blog-content">
               <h3>Top 10 Resume Tips</h3>
@@ -181,7 +204,7 @@ const LandingPage = () => {
           </div>
           <div className="blog-card">
             <div className="blog-image">
-              <img src={surveyImage2} alt="Interview Questions" />
+              <img src={feature1} alt="Interview Questions" />
             </div>
             <div className="blog-content">
               <h3>Common Interview Questions</h3>
@@ -191,7 +214,7 @@ const LandingPage = () => {
           </div>
           <div className="blog-card">
             <div className="blog-image">
-              <img src={surveyImage3} alt="Career Growth" />
+              <img src={feature3} alt="Career Growth" />
             </div>
             <div className="blog-content">
               <h3>Career Growth Strategies</h3>
@@ -217,12 +240,12 @@ const LandingPage = () => {
       </section>
 
 
-      <div class="section" data-aos="fade-up" data-aos-duration="1500">
+      <div class="section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
         <h1>Advance your career
           with  Jobrite!</h1>
       </div>
 
-      <div class="section" data-aos="zoom-in" data-aos-delay="1000">
+      <div class="section" data-aos="zoom-in" data-aos-delay="1000" >
         <p>Find the job of your dreams.</p>
       </div>
 

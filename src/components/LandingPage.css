@@ -250,12 +250,15 @@ body {
 /* Features Section */
 .features-section {
   padding: 60px 20px;
-  background-color: #f9f9f9;
+  background-color: white;
   text-align: center;
 }
 
+
+
 .features-title {
   font-size: 2.5rem;
+  font-style: oblique;
   font-weight: 700;
   margin-bottom: 30px;
   color: #333;
@@ -264,84 +267,97 @@ body {
 /* Features Grid (Responsive Layout) */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 60px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive layout with dynamic number of columns */
+  gap: 50px; /* Space between grid items */
   margin-top: 20px;
+  justify-items: center; /* Center items horizontally */
 }
 
-/* Feature Card (Glassmorphism + Neumorphism) */
+/* Feature Card */
+
 .feature {
-  background: rgba(255, 255, 255, 0.2); /* Slight transparency for Glassmorphism */
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 6px 6px 20px rgba(200, 200, 200, 0.5), /* Soft neumorphic shadow */
-              -6px -6px 20px rgba(255, 255, 255, 0.7); /* Light inner shadow */
-  backdrop-filter: blur(8px); /* Frosted glass effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
+  position: relative;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for separation */
-}
-
-.feature:hover {
-  transform: translateY(-12px); /* Hover lift effect */
-  box-shadow: 20px 20px 40px rgba(200, 200, 200, 0.5),
-              -20px -20px 40px rgba(255, 255, 255, 0.7); /* Deeper shadow */
-}
-
-.feature img {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   width: 100%;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhanced Hover Effect */
+.feature:hover {
+ 
+  color: #0056b3; /* Darker color on hover */
+  transform: scale(1.2); /* Slight enlargement on hover */
+}
+
+/* Optional: Add a filter effect for brightness and contrast */
+.feature:hover {
+  filter: brightness(1.1) contrast(1.2);
+  color: #0056b3; /* Darker color on hover */
+  transform: scale(1.2); /* Slight enlargement on hover */
+   /* Makes the card a bit brighter and more vivid */
+}
+
+
+
+
+
+/* Feature Icon */
+.feature-icon {
+  font-size: 2.5rem;
+  color: #007bff; /* Primary color for icons */
   margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.feature:hover img {
-  transform: scale(1.05); /* Slight enlargement on hover */
+.feature:hover .feature-icon {
+  color: #0056b3; /* Darker color on hover */
+  transform: scale(1.2); /* Slight enlargement on hover */
 }
 
-/* Feature Title and Description */
-.feature h3 {
-  font-size: 1.2rem;
+/* Feature Content (Text overlay on image) */
+.feature-content {
+  position: relative; /* Ensure proper stacking context */
+  z-index: 2; /* Ensure content is above the image */
+  color: white; /* Text color for visibility */
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+  border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+  
+}
+
+/* Feature Title */
+.feature-content h3 {
+  font-size: 1rem;
   font-weight: 600;
-  margin-top: 10px;
-  color: #333;
-  transition: transform 0.3s ease;
+  margin: 10px 0;
 }
 
+/* Feature Description */
+.feature-content p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Feature Title and Description Styles */
+.feature h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Feature Description Text */
 .feature p {
   font-size: 1rem;
   color: #555;
   margin-top: 10px;
-  transition: transform 0.3s ease;
-}
-
-.feature:hover h3 {
-  transform: translateY(-5px); /* Title moves up */
-}
-
-.feature:hover p {
-  transform: translateY(5px); /* Description moves down */
-}
-
-/* Button */
-.feature a {
-  text-decoration: none;
-  background-color: #007bff;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 5px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.feature a:hover {
-  background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Dark Mode Support */
@@ -360,7 +376,7 @@ body {
   }
 
   .feature {
-    background-color: rgba(28, 28, 28, 0.8); /* Dark background for dark mode */
+    background-color: rgba(28, 28, 28, 0.8); /* Darker background for dark mode */
     box-shadow: 6px 6px 20px rgba(50, 50, 50, 0.8),
                 -6px -6px 20px rgba(200, 200, 200, 0.3);
   }
@@ -886,7 +902,7 @@ body {
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 10px;
   justify-items: center;
 }
 
@@ -903,7 +919,7 @@ body {
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-9px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -941,3 +957,4 @@ body {
 .blog-content .read-more:hover {
   text-decoration: underline;
 }
+
