@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import surveyImage from '../images/surveyo.jpeg';
-import surveyImage1 from '../images/survey2.png';
-import surveyImage2 from '../images/survey3.png';
-import surveyImage3 from '../images/survey4.png';
 import feature1 from '../images/feature1.avif';
 import feature2 from '../images/feature2.webp';
 import feature3 from '../images/feature3.jpg';
 import feature4 from '../images/feature4.jpeg';
 import feature5 from '../images/feature5.jpeg';
+import wall1 from '../images/wall1.jpg';
+import wall2 from '../images/wall2.webp';
+import wall3 from '../images/wall3.webp';
+import wall4 from '../images/wall4.webp';
+import role from '../images/the-role.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
 import 'swiper/css'; // Core Swiper CSS
@@ -24,13 +26,13 @@ import 'aos/dist/aos.css';
 const LandingPage = () => {
   const popularJobs = [
     {
-     
+     image: "../images/feature1.avif",
       title: "Software Developer",
       description: "Create and maintain software solutions.",
       link: "#",
     },
     {
-      
+      image: "../images/feature2.webpo",
       title: "Graphic Designer",
       description: "Design compelling visuals for clients.",
       link: "#",
@@ -108,9 +110,9 @@ const LandingPage = () => {
 
       {/* Features Section */}
       <section className="features-section" data-aos="bounce" data-aos-delay="500">
-        <h2 className="features-title" data-aos="fade-down" data-aos-delay="800">Why Choose Jobrite??</h2>
-        <div className="features-grid" data-aos="fade-up" data-aos-duration="1200">
-          <div className="feature" data-aos="fade-up" data-aos-duration="1200">
+        <h2 className="features-title" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">Why Choose Jobrite??</h2>
+        <div className="features-grid" data-aos="zoom-out-up" data-aos-duration="1200">
+          <div className="feature">
             <h3>Effortless Job Application</h3>
             <div className="feature-icon">
               <i className="fas fa-paper-plane"></i> {/* Example icon for Effortless Job Application */}
@@ -118,7 +120,7 @@ const LandingPage = () => {
             <p>Our intuitive platform allows you to search for and apply to jobs with ease. Get started with just a few clicks.</p>
           </div>
 
-          <div className="feature" data-aos="fade-up" data-aos-duration="1200">
+          <div className="feature" >
             <h3>Customized service with clear expectations set.</h3>
             <div className="feature-icon">
               <i className="fas fa-user-cog"></i> {/* Example icon for Customized Service */}
@@ -126,7 +128,7 @@ const LandingPage = () => {
             <p>For employers, Jobrite offers customizable survey templates to help you find the best candidates for your organization.</p>
           </div>
 
-          <div className="feature" data-aos="fade-up" data-aos-duration="1200">
+          <div className="feature">
             <h3>Real-Time Job Analytics</h3>
             <div className="feature-icon">
               <i className="fas fa-chart-line"></i> {/* Example icon for Real-Time Analytics */}
@@ -134,20 +136,14 @@ const LandingPage = () => {
             <p>Track job applications and candidate progress in real time. Make data-driven decisions with ease.</p>
           </div>
 
-          <div className="feature" data-aos="fade-up" data-aos-duration="1200">
+          <div className="feature" >
             <h3>Your round-the-clock strategic business ally.</h3>
             <div className="feature-icon">
               <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
             </div>
             <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
           </div>
-          <div className="feature" data-aos="fade-up" data-aos-duration="1200">
-            <h3>Your round-the-clock strategic business ally.</h3>
-            <div className="feature-icon">
-              <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
-            </div>
-            <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
-          </div>
+          
 
         </div>
 
@@ -155,16 +151,16 @@ const LandingPage = () => {
       </section>
 
       {/* Call-to-Action for Employers */}
-      <section className="employer-cta" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200">
-        <h2>Hire the Best Talent</h2>
-        <p>Looking for the right candidates? Post your job listings today and let us connect you with top talent.</p>
+      <section className="employer-cta">
+        <h2  data-aos="flip-down" data-aos-delay="200" data-aos-duration="1200">Hire the Best Talent</h2>
+        <p data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="1200">Looking for the right candidates? Post your job listings today and let us connect you with top talent.</p>
         <Link to="/employer/post-job" className="cta-button">Post a Job</Link>
       </section>
 
       {/* Popular Jobs Section */}
-      <section className="popular-jobs-section">
-        <h2>Popular Jobs</h2>
-        <Swiper
+      <section className="popular-jobs-section" >
+        <h2 data-aos="flip-up" data-aos-duration="800">Popular Jobs</h2>
+        <Swiper data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200"
           spaceBetween={10} /* Minimal spacing between slides */
           slidesPerView={3}
           loop={true}
@@ -189,9 +185,9 @@ const LandingPage = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="blog-section" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200">
-        <h2>Latest Articles</h2>
-        <div className="blog-grid">
+      <section className="blog-section" >
+        <h2 data-aos="flip-down" data-aos-duration="800">Latest Articles</h2>
+        <div className="blog-grid" data-aos="zoom-out-down" data-aos-delay="200" data-aos-duration="1200">
           <div className="blog-card">
             <div className="blog-image">
               <img src={feature5} alt="Resume Tips" />
@@ -222,13 +218,24 @@ const LandingPage = () => {
               <Link to="/blog/career-growth" className="read-more">Read More</Link>
             </div>
           </div>
+          <div className="blog-card">
+            <div className="blog-image">
+              <img src={wall1} alt="Career Growth" />
+            </div>
+            <div className="blog-content">
+              <h3>Career Growth Strategies</h3>
+              <p>Discover tips to take your career to the next level.</p>
+              <Link to="/blog/career-growth" className="read-more">Read More</Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
 
       {/* Testimonials Section */}
       <section className="testimonials-section">
-        <h2 data-aos="fade-up" data-aos-duration="1000">What Our Users Say</h2>
+        <h2 data-aos="flip-up" data-aos-duration="800">What Our Users Say</h2>
         <div className="testimonial" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1200">
           <p>"They were professional, responsive, and found the perfect job match for me. Thank you ☺️"</p>
           <span>- Sweetness Lyrical, Job Seeker</span>
