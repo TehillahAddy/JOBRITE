@@ -34,7 +34,6 @@ const LandingPage = () => {
     { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg", },
   ];
 
-
   const angleIncrement = 360 / partners.length;
   const popularJobs = [
     {
@@ -103,7 +102,7 @@ const LandingPage = () => {
 
 
       {/* Hero Section */}
-      <header className="landing-header" data-aos="bounce" data-aos-delay="200" data-aos-duration="1200">
+      <header className="landing-header" >
         <div className="header-text animated fade-in">
           <h1>Your Dream Job is Just a Click Away</h1>
           <p>Find your next job with Jobrite and start your career journey today!</p>
@@ -123,37 +122,45 @@ const LandingPage = () => {
       {/* Features Section */}
       <section className="features-section" data-aos="bounce" data-aos-delay="500">
         <h2 className="features-title" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">Why Choose Jobrite??</h2>
-        <div className="features-grid" data-aos="zoom-out-up" data-aos-duration="1200">
-          <div className="feature">
-            <h3>Effortless Job Application</h3>
-            <div className="feature-icon">
-              <i className="fas fa-paper-plane"></i> {/* Example icon for Effortless Job Application */}
+        <div className="features-grid" >
+          <div className="feature-wrapper" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+            <div className="feature">
+              <h3>Effortless Job Application</h3>
+              <div className="feature-icon">
+                <i className="fas fa-paper-plane"></i> {/* Example icon for Effortless Job Application */}
+              </div>
+              <p>Our intuitive platform allows you to search for and apply to jobs with ease. Get started with just a few clicks.</p>
             </div>
-            <p>Our intuitive platform allows you to search for and apply to jobs with ease. Get started with just a few clicks.</p>
           </div>
 
-          <div className="feature" >
-            <h3>Customized service with clear expectations set.</h3>
-            <div className="feature-icon">
-              <i className="fas fa-user-cog"></i> {/* Example icon for Customized Service */}
+          <div className="feature-wrapper" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="300">
+            <div className="feature">
+              <h3>Customized service with clear expectations set.</h3>
+              <div className="feature-icon">
+                <i className="fas fa-user-cog"></i> {/* Example icon for Customized Service */}
+              </div>
+              <p>For employers, Jobrite offers customizable survey templates to help you find the best candidates for your organization.</p>
             </div>
-            <p>For employers, Jobrite offers customizable survey templates to help you find the best candidates for your organization.</p>
           </div>
 
-          <div className="feature">
-            <h3>Real-Time Job Analytics</h3>
-            <div className="feature-icon">
-              <i className="fas fa-chart-line"></i> {/* Example icon for Real-Time Analytics */}
+          <div className="feature-wrapper" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+            <div className="feature">
+              <h3>Real-Time Job Analytics</h3>
+              <div className="feature-icon">
+                <i className="fas fa-chart-line"></i> {/* Example icon for Real-Time Analytics */}
+              </div>
+              <p>Track job applications and candidate progress in real time. Make data-driven decisions with ease.</p>
             </div>
-            <p>Track job applications and candidate progress in real time. Make data-driven decisions with ease.</p>
           </div>
 
+          <div className="feature-wrapper" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="300">
           <div className="feature" >
             <h3>Your round-the-clock strategic business ally.</h3>
             <div className="feature-icon">
               <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
             </div>
             <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
+          </div>
           </div>
 
 
@@ -287,33 +294,33 @@ const LandingPage = () => {
 
       {/* Call-to-Action for Employers */}
       <section class="employer-cta-wrapper">
-      <div className="employer-cta">
-        <div className="employer-cta-container">
-          <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-            <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
-              <img src={feature2} alt="Hire Top Talent" />
+        <div className="employer-cta">
+          <div className="employer-cta-container">
+            <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+              <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
+                <img src={feature2} alt="Hire Top Talent" />
+              </div>
+              <h2>Hire Top Talent Effortlessly</h2>
+              <p>
+                Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
+              </p>
+              <Link to="/employer/post-job" className="cta-button">Get Started</Link>
             </div>
-            <h2>Hire Top Talent Effortlessly</h2>
-            <p>
-              Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
-            </p>
-            <Link to="/employer/post-job" className="cta-button">Get Started</Link>
           </div>
-        </div>
 
-        <div className="employer-cta-container">
-          <div className="employer-cta-content" >
-            <div className="employer-cta-image" >
-              <img src={feature3} alt="Hire Top Talent" />
+          <div className="employer-cta-container">
+            <div className="employer-cta-content" >
+              <div className="employer-cta-image" >
+                <img src={feature3} alt="Hire Top Talent" />
+              </div>
+              <h2>Hire Top Talent Effortlessly</h2>
+              <p>
+                Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
+              </p>
+              <Link to="/employer/post-job" className="cta-button">Get Started</Link>
             </div>
-            <h2>Hire Top Talent Effortlessly</h2>
-            <p>
-              Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
-            </p>
-            <Link to="/employer/post-job" className="cta-button">Get Started</Link>
           </div>
         </div>
-      </div>
       </section>
 
 

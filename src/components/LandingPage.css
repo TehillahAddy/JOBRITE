@@ -271,45 +271,31 @@ body {
 /* Features Grid (Responsive Layout) */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive layout with dynamic number of columns */
-  gap: 60px; /* Space between grid items */
-  margin-top: 20px;
-  justify-items: center; /* Center items horizontally */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+  justify-items: center;
 }
-
-/* Feature Card */
 
 .feature {
   display: flex;
-  position: relative;
   flex-direction: column;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
-  max-width: 300px;
+  max-width:300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow; /* Optimize for hover effects */
+  padding: 20px;
 }
 
-/* Enhanced Hover Effect */
-.feature:hover {
- 
-  color: #0056b3; /* Darker color on hover */
-  transform: scale(1); /* Slight enlargement on hover */
-}
 
-/* Optional: Add a filter effect for brightness and contrast */
-.feature:hover {
-  filter: brightness(1.1) contrast(1.2);
-  color: #0056b3; /* Darker color on hover */
-  transform: scale(1.2); /* Slight enlargement on hover */
-   /* Makes the card a bit brighter and more vivid */
-}
 
 .feature:hover {
-  transform: translateY(-9px);
+  transform: translateY(-9px) !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  
 }
 
 
@@ -347,11 +333,6 @@ body {
   margin: 10px 0;
 }
 
-/* Feature Description */
-.feature-content p {
-  font-size: 1rem;
-  margin-top: 10px;
-}
 
 /* Feature Title and Description Styles */
 .feature h3 {
