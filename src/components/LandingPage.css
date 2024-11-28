@@ -3,6 +3,10 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   color: #333;
+    background-color: #121212; /* Dark background */
+    
+  
+  
 }
 
 .landing-page {
@@ -903,7 +907,7 @@ body {
 .blog-card {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: rgb(246, 242, 242);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -943,7 +947,7 @@ body {
 .blog-content .read-more {
   display: inline-block;
   margin-top: 10px;
-  color: #007bff;
+  color: #0d0d0d;
   text-decoration: none;
   font-weight: bold;
 }
@@ -1087,4 +1091,123 @@ body {
 
 .advance-section {
   background: white;
+}
+
+/* Employer CTA Section */
+.employer-cta {
+  padding: 100px 50px; /* Increased padding for better visibility and space */
+  background: linear-gradient(135deg, #f7f9fc, #e6f0ff); /* Softer gradient for modern look */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 60px auto; /* Center and space it from other sections */
+  max-width: 650px; /* Increase the width for a larger container */
+  min-height: 320px; /* Set a minimum height to fit all elements */
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  display: flex; /* Flexbox for proper alignment */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ensure contents are aligned to the top */
+}
+
+/* Decorative Background Enhancements */
+.employer-cta::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 112, 243, 0.15);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* CTA Container */
+.employer-cta-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center the content */
+  text-align: center;
+  gap: 20px; /* Space between elements */
+  position: relative;
+  z-index: 1;
+}
+
+/* Text Content */
+.employer-cta-content {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.employer-cta-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.employer-cta-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  display: inline-block;
+  background: #0070f3;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 112, 243, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #005bb5;
+  box-shadow: 0 6px 15px rgba(0, 91, 181, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Image Section */
+.employer-cta-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.employer-cta-image img {
+  width: 100%;
+  max-width: 300px; /* Keep image size reasonable */
+  height: auto;
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.1)); /* Add depth with shadow */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .employer-cta {
+    max-width: 90%; /* Adjust width for smaller screens */
+    padding: 40px 20px;
+    min-height: 500px; /* Ensure a good height for smaller screens */
+  }
+
+  .employer-cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 0.85rem;
+    padding: 8px 20px;
+  }
+
+  .employer-cta-image img {
+    max-width: 250px; /* Reduce image size for smaller screens */
+  }
 }

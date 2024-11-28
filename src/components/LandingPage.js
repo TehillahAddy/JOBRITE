@@ -163,13 +163,6 @@ const LandingPage = () => {
 
       </section>
 
-      {/* Call-to-Action for Employers */}
-      <section className="employer-cta">
-        <h2 data-aos="flip-down" data-aos-delay="200" data-aos-duration="1200">Hire the Best Talent</h2>
-        <p data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="1200">Looking for the right candidates? Post your job listings today and let us connect you with top talent.</p>
-        <Link to="/employer/post-job" className="cta-button">Post a Job</Link>
-      </section>
-
       {/* Popular Jobs Section */}
       <section className="popular-jobs-section" >
         <h2 data-aos="flip-up" data-aos-duration="800">Popular Jobs</h2>
@@ -296,6 +289,23 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+  {/* Call-to-Action for Employers */}
+  <section className="employer-cta">
+        <div className="employer-cta-container">
+          <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+          <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
+            <img src={feature2} alt="Hire Top Talent" />
+          </div>
+            <h2>Hire Top Talent Effortlessly</h2>
+            <p>
+              Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
+            </p>
+            <Link to="/employer/post-job" className="cta-button">Get Started</Link>
+          </div>
+        </div>
+      </section>
+
 
 
       <footer className="landing-footer">
