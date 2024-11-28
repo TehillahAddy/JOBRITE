@@ -26,7 +26,6 @@ import 'aos/dist/aos.css';
 
 const LandingPage = () => {
 
-
   const partners = [
     { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", },
     { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg", },
@@ -193,7 +192,7 @@ const LandingPage = () => {
       {/* Blog Section */}
       <section className="blog-section" >
         <h2 data-aos="flip-down" data-aos-duration="800">Latest Articles</h2>
-        <div className="blog-grid" data-aos="zoom-out-down" data-aos-delay="200" data-aos-duration="1200">
+        <div className="blog-grid" data-aos="zoom-out-up" data-aos-delay="200" data-aos-duration="1200">
           <div className="blog-card">
             <div className="blog-image">
               <img src={feature5} alt="Resume Tips" />
@@ -252,10 +251,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="advance-section">
-
-      </section>
-
 
       <section className="partner-wheel-section">
         <h2 data-aos="fade-down" data-aos-duration="1500" data-aos-delay="200" >OUR TRUSTED PARTNERS</h2>
@@ -290,13 +285,14 @@ const LandingPage = () => {
         </div>
       </section>
 
-  {/* Call-to-Action for Employers */}
-  <section className="employer-cta">
+      {/* Call-to-Action for Employers */}
+      <section class="employer-cta-wrapper">
+      <div className="employer-cta">
         <div className="employer-cta-container">
           <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-          <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
-            <img src={feature2} alt="Hire Top Talent" />
-          </div>
+            <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
+              <img src={feature2} alt="Hire Top Talent" />
+            </div>
             <h2>Hire Top Talent Effortlessly</h2>
             <p>
               Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
@@ -304,8 +300,21 @@ const LandingPage = () => {
             <Link to="/employer/post-job" className="cta-button">Get Started</Link>
           </div>
         </div>
-      </section>
 
+        <div className="employer-cta-container">
+          <div className="employer-cta-content" >
+            <div className="employer-cta-image" >
+              <img src={feature3} alt="Hire Top Talent" />
+            </div>
+            <h2>Hire Top Talent Effortlessly</h2>
+            <p>
+              Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
+            </p>
+            <Link to="/employer/post-job" className="cta-button">Get Started</Link>
+          </div>
+        </div>
+      </div>
+      </section>
 
 
       <footer className="landing-footer">

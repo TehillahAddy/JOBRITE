@@ -1094,22 +1094,60 @@ body {
 }
 
 /* Employer CTA Section */
+/* Customize scrollbar for Webkit browsers */
+
+.employer-cta-wrapper {
+  background-color: whitesmoke; /* Background color outside the container */
+  padding: 3px; 
+}
+
 .employer-cta {
-  padding: 100px 50px; /* Increased padding for better visibility and space */
-  background: linear-gradient(135deg, #f7f9fc, #e6f0ff); /* Softer gradient for modern look */
+  padding: 100px 50px;
+  background: linear-gradient(135deg, #f7f9fc, #e6f0ff);
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  margin: 60px auto; /* Center and space it from other sections */
-  max-width: 650px; /* Increase the width for a larger container */
-  min-height: 320px; /* Set a minimum height to fit all elements */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 60px auto;
+  max-width: 650px;
+  min-height: 250px;
+  height: 700px;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   z-index: 10;
-  display: flex; /* Flexbox for proper alignment */
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Ensure contents are aligned to the top */
+  justify-content: flex-start;
+  scroll-behavior: smooth;
 }
+
+/* Add overflow properties to employer-cta */
+.employer-cta {
+  overflow-y: auto;  /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  max-height: 500px;  /* Set a maximum height to control scrolling area */
+}
+
+/* Custom Scrollbar */
+.employer-cta::-webkit-scrollbar {
+  width: 4px; /* Scrollbar width */
+}
+
+.employer-cta::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05); /* Track background color */
+  border-radius: 10px;
+}
+
+.employer-cta::-webkit-scrollbar-thumb {
+  background: #adade8; /* Thumb color */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.employer-cta::-webkit-scrollbar-thumb:hover {
+  background: #131313; /* Thumb color on hover */
+}
+
+
 
 /* Decorative Background Enhancements */
 .employer-cta::before {
@@ -1133,6 +1171,7 @@ body {
   gap: 20px; /* Space between elements */
   position: relative;
   z-index: 1;
+  margin-bottom: 40px;
 }
 
 /* Text Content */
