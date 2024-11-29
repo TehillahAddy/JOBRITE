@@ -13,7 +13,7 @@ body {
   min-height: 100vh; /* Ensures the page covers the full viewport height */
 }
 
-
+/* Navbar Styles */
 /* Navbar Styles */
 .navbar {
   position: fixed;
@@ -30,9 +30,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto', sans-serif;
   flex-wrap: wrap;
-  /* Allows items to wrap on smaller screens */
   box-sizing: border-box;
-  /* Ensures padding doesn't push the content outside the viewport */
 }
 
 .navbar .logo img {
@@ -52,107 +50,134 @@ body {
   position: relative;
 }
 
+/* Link hover effect using ::after */
 .navbar .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 300;
+  position: relative;
   padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
   text-transform: uppercase;
-}
-
-/* Hover effect for nav links */
-.navbar .nav-links a:hover {
-  background-color: #007BFF;
-  transform: translateY(-2px);
-}
-
-/* Dropdown Menu Styles */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1a1a1a;
-  padding: 10px 0;
   border-radius: 5px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  min-width: 180px;
+  transition: transform 0.3s ease;
 }
 
-.dropdown-menu li {
-  padding: 10px 20px;
+.navbar .nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #8cc1fa;
+  transition: width 0.3s ease;
 }
 
-.dropdown-menu li a {
-  color: white;
-  font-weight: normal;
-  display: block;
-  padding: 5px 20px;
-  transition: background-color 0.3s ease;
+.navbar .nav-links a:hover::after {
+  width: 100%;
 }
 
-.dropdown-menu li a:hover {
-  background-color: #007BFF;
+/* Dropdown Wrapper */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-/* Responsive Design */
+/* Dropdown Menu Styles - Using div containers */
+.dropdown-content {
+  visibility: hidden; /* Initially hidden */
+  position: absolute;
+  top: calc(100% + 20px); /* Spaced below the link */
+  left: 50%; /* Center the dropdown under the parent */
+  transform: translateX(-50%) scale(0.95); /* Start slightly smaller */
+  background-color: #0c0c0c; /* White dropdown box */
+  border-radius: 10px; /* Modern rounded corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  padding: 12px 0; /* Vertical padding */
+  min-width: 200px; /* Consistent dropdown width */
+  z-index: 1000; /* Ensures it’s on top */
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth fade and scale */
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+  visibility: visible; /* Make it visible */
+  opacity: 1; /* Fully visible */
+  transform: translateX(-50%) scale(1); /* Grow to full size */
+}
+
+/* Dropdown Links inside div containers */
+.dropdown-content .dropdown-item {
+  padding: 0; /* Reset padding */
+}
+
+.dropdown-content .dropdown-item a {
+  display: block; /* Full-width clickable */
+  padding: 12px 20px; /* Padding for spacing */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Modern font size */
+  font-weight: 500; /* Semi-bold for readability */
+  color: #c7c0c0; /* Neutral text color */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover */
+  border-radius: 5px; /* Rounded hover effect */
+}
+
+.dropdown-content .dropdown-item a:hover {
+  background-color: #111111; /* Light gray hover effect */
+  color: #ecf0f5; /* Accent color on hover */
+}
+
+/* Chevron styles */
+.dropdown-trigger .chevron {
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid currentColor; /* Matches text color */
+  vertical-align: middle;
+}
+
+.dropdown-indicator {
+  font-size: 12px; /* Adjust size relative to text */
+  margin-left: 8px; /* Space between text and arrow */
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Rotate the indicator when dropdown is active */
+.dropdown:hover .dropdown-indicator {
+  transform: rotate(180deg);
+}
+
+/* Active link underline effect */
+.navbar .nav-links a.active-link::after {
+  width: 100%; /* Always show underline for active link */
+}
+
+
+
+/* Mobile-friendly dropdown */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .navbar .logo img {
-    height: 40px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  .nav-links a {
-    padding: 10px 20px;
-    width: 100%;
+  .dropdown-content {
+    left: 0; /* Align left for smaller screens */
+    transform: none; /* No centering transform */
+    min-width: 100%; /* Full width for mobile */
   }
 }
 
-/* Keyframes for Text Fade-In Animation */
+/* Keyframes for Fade-In Animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
     transform: translateY(50px);
-    /* Slide up */
   }
 
   100% {
     opacity: 1;
     transform: translateY(0);
-    /* Original position */
-  }
-}
-
-/* Keyframes for Background Zoom-In Animation */
-@keyframes zoomIn {
-  0% {
-    transform: scale(1.2);
-    /* Slightly zoomed in */
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    /* Original size */
-    opacity: 1;
   }
 }
 
@@ -192,7 +217,7 @@ body {
 
 /* Apply the animation to the landing header */
 .landing-header {
-  background: url('../images/hero-background.jpg') no-repeat center center/cover;
+  background: url('../images/wall4.webp') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -725,6 +750,7 @@ body {
 .testimonials-section h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
+  font-style: oblique;
 }
 
 .testimonial {

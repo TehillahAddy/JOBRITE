@@ -12,6 +12,7 @@ import wall2 from '../images/wall2.webp';
 import wall3 from '../images/wall3.webp';
 import wall4 from '../images/wall4.webp';
 import role from '../images/the-role.jpg';
+import { NavLink } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
@@ -73,31 +74,63 @@ const LandingPage = () => {
           <img src={surveyImage} alt="Jobrite Logo" />
         </div>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-
-          {/* Employer Dropdown */}
-          <li className="dropdown">
-            <Link to="/employer" className="dropdown-link">Employer</Link>
-            <ul className="dropdown-menu">
-              <li><Link to="/employer/solutions">Solutions</Link></li>
-              <li><Link to="/employer/hire">Hire Talent</Link></li>
-              <li><Link to="/employer/manage">Manage Listings</Link></li>
-            </ul>
+          {/* Home Link */}
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => isActive ? "active-link" : ""}
+            >
+              Home
+            </NavLink>
           </li>
 
-          {/* Job Seeker Dropdown */}
-          <li className="dropdown">
-            <Link to="/jobseeker" className="dropdown-link">Job Seeker</Link>
-            <ul className="dropdown-menu">
-              <li><Link to="/jobseeker/search">Search Jobs</Link></li>
-              <li><Link to="/jobseeker/saved">Saved Jobs</Link></li>
-              <li><Link to="/jobseeker/alerts">Job Alerts</Link></li>
-            </ul>
+          {/* About Link */}
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => isActive ? "active-link" : ""}
+            >
+              About
+            </NavLink>
           </li>
 
-          <li><Link to="/contact">Contacts</Link></li>
+          {/* Dropdown Section */}
+          <ul className="nav-links">
+            {/* Employer Dropdown */}
+            <li className="dropdown">
+              <a href="/about" className="dropdown-trigger">
+                Employer <span className="dropdown-indicator">⮟</span>
+              </a>
+              <div className="dropdown-content">
+                <div className="dropdown-item"><a href="/employer/solutions">Solutions</a></div>
+                <div className="dropdown-item"><a href="/employer/hire">Hire Talent</a></div>
+                <div className="dropdown-item"><a href="/employer/manage">Manage Listings</a></div>
+              </div>
+            </li>
+
+            {/* Job Seeker Dropdown */}
+            <li className="dropdown">
+              <a href="/about" className="dropdown-trigger">
+                Job Seeker <span className="dropdown-indicator">⮟</span>
+              </a>
+              <div className="dropdown-content">
+                <div className="dropdown-item"><a href="/seeker/jobs">Browse Jobs</a></div>
+                <div className="dropdown-item"><a href="/seeker/apply">Apply for Jobs</a></div>
+              </div>
+            </li>
+          </ul>
+
+          {/* Contact Link */}
+          <li>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => isActive ? "active-link" : ""}
+            >
+              Contacts
+            </NavLink>
+          </li>
         </ul>
+
       </nav>
 
 
@@ -266,7 +299,7 @@ const LandingPage = () => {
 
       {/* Call-to-Action for Employers */}
       <section class="employer-cta-wrapper">
-      <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">- Info -</h2>
+        <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">- Info -</h2>
         <div className="employer-cta" data-aos="zoom-out-up" data-aos-duration="1200" data-aos-delay="400">
           <div className="employer-cta-container">
             <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
@@ -284,7 +317,7 @@ const LandingPage = () => {
 
 
         {/* Right Section: Why Choose Us */}
-        <div className="employer-cta"data-aos="zoom-out-down" data-aos-duration="1200" data-aos-delay="400">
+        <div className="employer-cta" data-aos="zoom-out-down" data-aos-duration="1200" data-aos-delay="400">
           <div className="employer-cta-container">
             <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
               <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
@@ -301,9 +334,9 @@ const LandingPage = () => {
       </section>
 
       <section className="partner-wheel-section">
-        <h2  data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200" >OUR TRUSTED PARTNERS</h2>
+        <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200" >OUR TRUSTED PARTNERS</h2>
         <p data-aos="zoom-in" data-aos-delay="1000">Discover the companies that trust us to connect them with top talent.</p>
-        <div class="section"  data-aos="flip-right" data-aos-delay="200" data-aos-duration="1200">
+        <div class="section" data-aos="flip-right" data-aos-delay="200" data-aos-duration="1200">
           <h1>Advance your career
             with  Jobrite!</h1>
         </div>
@@ -312,7 +345,6 @@ const LandingPage = () => {
           <p>Find the job of your dreams.</p>
         </div>
         <div class="section" id="cta-section" data-aos="flip-left" data-aos-offset="300" data-aos-easing="ease-out-cubic">
-          <a href="/signup" class="cta-button">Get Started</a>
         </div>
         <div className="partner-wheel-section">
           <div className="partner-wheel">
