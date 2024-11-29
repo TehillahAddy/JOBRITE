@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import surveyImage from '../images/surveyo.jpeg';
@@ -13,19 +13,30 @@ import wall3 from '../images/wall3.webp';
 import wall4 from '../images/wall4.webp';
 import role from '../images/the-role.jpg';
 import { NavLink } from 'react-router-dom';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
 import 'swiper/css'; // Core Swiper CSS
 import 'swiper/css/navigation'; // Navigation module CSS
 import 'swiper/css/autoplay'; // Autoplay module CSS
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
 
 const LandingPage = () => {
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPoint = 100; // Change background after 100px scroll
+      setIsScrolled(window.scrollY > scrollPoint);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   const partners = [
     { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", },
@@ -68,8 +79,8 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      {/* Navigation Bar */}
-      <nav className="navbar">
+      <nav className="navbar" style={{
+        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.85)" : "transparent", transition: "background-color 0.3s ease", }}>
         <div className="logo">
           <img src={surveyImage} alt="Jobrite Logo" />
         </div>
@@ -83,17 +94,13 @@ const LandingPage = () => {
               Home
             </NavLink>
           </li>
-
           {/* About Link */}
           <li>
             <NavLink
               to="/about"
-              className={({ isActive }) => isActive ? "active-link" : ""}
-            >
-              About
+              className={({ isActive }) => isActive ? "active-link" : ""} > About
             </NavLink>
           </li>
-
           {/* Dropdown Section */}
           <ul className="nav-links">
             {/* Employer Dropdown */}
@@ -119,18 +126,13 @@ const LandingPage = () => {
               </div>
             </li>
           </ul>
-
           {/* Contact Link */}
           <li>
             <NavLink
-              to="/contact"
-              className={({ isActive }) => isActive ? "active-link" : ""}
-            >
-              Contacts
+              to="/contact" className={({ isActive }) => isActive ? "active-link" : ""} > Contacts
             </NavLink>
           </li>
         </ul>
-
       </nav>
 
 

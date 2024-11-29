@@ -20,7 +20,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000000;
+  background-color: transparent;
   color: white;
   z-index: 1000;
   padding: 20px 40px;
@@ -31,6 +31,7 @@ body {
   font-family: 'Roboto', sans-serif;
   flex-wrap: wrap;
   box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Smooth background change */
 }
 
 .navbar .logo img {
@@ -53,6 +54,7 @@ body {
 /* Link hover effect using ::after */
 .navbar .nav-links a {
   color: white;
+  font-style: inherit;
   text-decoration: none;
   font-weight: 300;
   position: relative;
@@ -264,16 +266,64 @@ body {
   background-color: #004d99;
 }
 
-/* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* General mobile styles */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
 
-/* General Layout */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+  /* Navbar adjustments */
+  .navbar {
+    padding: 15px 20px; /* Reduce padding for smaller screens */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .navbar .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px; /* Reduce gap between links */
+    text-align: center;
+  }
+
+  .navbar .logo img {
+    height: 40px; /* Reduce logo size */
+  }
+
+  /* Landing Header adjustments */
+  .landing-header .header-text h1 {
+    font-size: 2.5rem; /* Reduce font size */
+  }
+
+  .landing-header .header-text p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .landing-header .header-text {
+    padding: 150px 20px; /* Adjust padding */
+  }
+
+  /* Dropdown adjustments */
+  .dropdown-content {
+    left: 0; /* Align to left edge */
+    right: 0; /* Allow full-width dropdown */
+    transform: none; /* Remove transform for centering */
+    padding: 10px 0; /* Adjust padding */
+  }
+
+  /* Search Bar adjustments */
+  .search-bar {
+    flex-direction: column; /* Stack input and button */
+    gap: 15px; /* Increase spacing */
+  }
+
+  .search-bar input {
+    width: 90%; /* Make input fill screen width */
+  }
+
+  .search-bar button {
+    width: 90%; /* Match input width */
+  }
 }
+ 
 
 /* Features Section */
 .features-section {
@@ -1096,6 +1146,16 @@ body {
   }
 }
 
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* General Layout */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
 
 .advance-section {
   background: white;
