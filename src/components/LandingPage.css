@@ -3,17 +3,16 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   color: #333;
-    background-color: #121212; /* Dark background */
-    
-  
-  
+  background-color: #121212; /* Dark background */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .landing-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh; /* Ensures the page covers the full viewport height */
 }
+
 
 /* Navbar Styles */
 .navbar {
@@ -757,14 +756,14 @@ body {
   padding: 20px 20px;
   background-color: white;
   text-align: center;
-  background: url('../images/wall4.webp');
+  background-color: whitesmoke;
   
   
 }
 
 .popular-jobs-section h2 {
   font-size: 2.5rem;
-  color: #d1ede0;
+  color: #111111;
   margin-bottom: 30px;
   font-weight: 1600;
   font-style: oblique;
@@ -935,11 +934,13 @@ body {
 
 .blog-content .read-more:hover {
   text-decoration: underline;
+
+
 }/* Partner Wheel Section */
 .partner-wheel-section {
   text-align: left;
   padding: 20px 10px; /* Reduced padding to save space */
-  background: white;
+  background: f9f9f9;
 }
 
 
@@ -1078,28 +1079,36 @@ body {
 /* Customize scrollbar for Webkit browsers */
 
 .employer-cta-wrapper {
-  background-color: whitesmoke; /* Background color outside the container */
-  padding: 3px; 
+  display: flex; /* Arrange children in a horizontal row */
+  flex-direction: row; /* Ensure horizontal alignment */
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+  background-color: white; /* Keep existing background */
+  padding: 20px; /* Add padding around the container */
+  gap: 100px; /* Space between the sections */
+}
+
+
+.employer-cta-wrapper h4 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
 .employer-cta {
-  padding: 100px 50px;
-  background: linear-gradient(135deg, #f7f9fc, #e6f0ff);
+  flex: 1; /* Occupies one part of the space */
+  max-width: 30%; /* Constrain right section width */
+  
+  background: linear-gradient(135deg, #e4ecf9, #f1f6ff);
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  margin: 60px auto;
-  max-width: 650px;
-  min-height: 250px;
-  height: 700px;
-  position: relative;
-  overflow-y: auto;
-  z-index: 10;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  scroll-behavior: smooth;
+  justify-content: center;
+  padding: 30px;
 }
+
 
 /* Add overflow properties to employer-cta */
 .employer-cta {
@@ -1107,27 +1116,6 @@ body {
   overflow-x: hidden; /* Disable horizontal scrolling */
   max-height: 500px;  /* Set a maximum height to control scrolling area */
 }
-
-/* Custom Scrollbar */
-.employer-cta::-webkit-scrollbar {
-  width: 4px; /* Scrollbar width */
-}
-
-.employer-cta::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05); /* Track background color */
-  border-radius: 10px;
-}
-
-.employer-cta::-webkit-scrollbar-thumb {
-  background: #adade8; /* Thumb color */
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.employer-cta::-webkit-scrollbar-thumb:hover {
-  background: #131313; /* Thumb color on hover */
-}
-
 
 
 /* Decorative Background Enhancements */
@@ -1204,9 +1192,10 @@ body {
 }
 
 .employer-cta-image img {
-  width: 100%;
-  max-width: 300px; /* Keep image size reasonable */
-  height: auto;
+  width: 300px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 10px; /* Keeps the rounded corners */
   filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.1)); /* Add depth with shadow */
 }
 
@@ -1218,6 +1207,12 @@ body {
     min-height: 500px; /* Ensure a good height for smaller screens */
   }
 
+  @media (max-width: 768px) {
+    .employer-cta-wrapper {
+      flex-direction: column; /* Stack sections vertically on smaller screens */
+      gap: 20px; /* Reduce spacing for stacked layout */
+    }
+  }
   .employer-cta-content h2 {
     font-size: 1.5rem;
   }
@@ -1231,3 +1226,4 @@ body {
     max-width: 250px; /* Reduce image size for smaller screens */
   }
 }
+

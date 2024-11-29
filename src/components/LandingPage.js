@@ -154,16 +154,14 @@ const LandingPage = () => {
           </div>
 
           <div className="feature-wrapper" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="300">
-          <div className="feature" >
-            <h3>Your round-the-clock strategic business ally.</h3>
-            <div className="feature-icon">
-              <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
+            <div className="feature" >
+              <h3>Your round-the-clock strategic business ally.</h3>
+              <div className="feature-icon">
+                <i className="fas fa-briefcase"></i> {/* Example icon for Strategic Business Ally */}
+              </div>
+              <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
             </div>
-            <p>Reach a wide audience with our multi-channel job distribution network. Get your job listings in front of the right people.</p>
           </div>
-          </div>
-
-
         </div>
 
 
@@ -171,7 +169,7 @@ const LandingPage = () => {
 
       {/* Popular Jobs Section */}
       <section className="popular-jobs-section" >
-        <h2 data-aos="flip-up" data-aos-duration="800">Popular Jobs</h2>
+        <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">Popular Jobs</h2>
         <Swiper data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200"
           spaceBetween={10} /* Minimal spacing between slides */
           slidesPerView={3}
@@ -198,56 +196,63 @@ const LandingPage = () => {
 
       {/* Blog Section */}
       <section className="blog-section" >
-        <h2 data-aos="flip-down" data-aos-duration="800">Latest Articles</h2>
-        <div className="blog-grid" data-aos="zoom-out-up" data-aos-delay="200" data-aos-duration="1200">
-          <div className="blog-card">
-            <div className="blog-image">
-              <img src={feature5} alt="Resume Tips" />
-            </div>
-            <div className="blog-content">
-              <h3>Top 10 Resume Tips</h3>
-              <p>Learn how to craft a resume that stands out to employers.</p>
-              <Link to="/blog/resume-tips" className="read-more">Read More</Link>
-            </div>
-          </div>
-          <div className="blog-card">
-            <div className="blog-image">
-              <img src={feature1} alt="Interview Questions" />
-            </div>
-            <div className="blog-content">
-              <h3>Common Interview Questions</h3>
-              <p>Prepare for your next interview with these top questions.</p>
-              <Link to="/blog/interview-questions" className="read-more">Read More</Link>
+        <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">Latest Articles</h2>
+        <div className="blog-grid">
+          <div className="blog-wrapper" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="300">
+            <div className="blog-card">
+              <div className="blog-image">
+                <img src={feature5} alt="Resume Tips" />
+              </div>
+              <div className="blog-content">
+                <h3>Top 10 Resume Tips</h3>
+                <p>Learn how to craft a resume that stands out to employers.</p>
+                <Link to="/blog/resume-tips" className="read-more">Read More</Link>
+              </div>
             </div>
           </div>
-          <div className="blog-card">
-            <div className="blog-image">
-              <img src={feature3} alt="Career Growth" />
-            </div>
-            <div className="blog-content">
-              <h3>Career Growth Strategies</h3>
-              <p>Discover tips to take your career to the next level.</p>
-              <Link to="/blog/career-growth" className="read-more">Read More</Link>
-            </div>
-          </div>
-          <div className="blog-card">
-            <div className="blog-image">
-              <img src={wall1} alt="Career Growth" />
-            </div>
-            <div className="blog-content">
-              <h3>Career Growth Strategies</h3>
-              <p>Discover tips to take your career to the next level.</p>
-              <Link to="/blog/career-growth" className="read-more">Read More</Link>
+          <div className="blog-wrapper" data-aos="fade-down-right" data-aos-duration="1200" data-aos-delay="300">
+            <div className="blog-card">
+              <div className="blog-image">
+                <img src={feature1} alt="Interview Questions" />
+              </div>
+              <div className="blog-content">
+                <h3>Common Interview Questions</h3>
+                <p>Prepare for your next interview with these top questions.</p>
+                <Link to="/blog/interview-questions" className="read-more">Read More</Link>
+              </div>
             </div>
           </div>
-
+          <div className="blog-wrapper" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="300">
+            <div className="blog-card">
+              <div className="blog-image">
+                <img src={feature3} alt="Career Growth" />
+              </div>
+              <div className="blog-content">
+                <h3>Career Growth Strategies</h3>
+                <p>Discover tips to take your career to the next level.</p>
+                <Link to="/blog/career-growth" className="read-more">Read More</Link>
+              </div>
+            </div>
+          </div>
+          <div className="blog-wrapper" data-aos="fade-down-right" data-aos-duration="1200" data-aos-delay="300">
+            <div className="blog-card">
+              <div className="blog-image">
+                <img src={wall1} alt="Career Growth" />
+              </div>
+              <div className="blog-content">
+                <h3>Career Growth Strategies</h3>
+                <p>Discover tips to take your career to the next level.</p>
+                <Link to="/blog/career-growth" className="read-more">Read More</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
 
       {/* Testimonials Section */}
       <section className="testimonials-section">
-        <h2 data-aos="flip-up" data-aos-duration="800">What Our Users Say</h2>
+        <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">- What Our Users Say -</h2>
         <div className="testimonial" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1200">
           <p>"They were professional, responsive, and found the perfect job match for me. Thank you ☺️"</p>
           <span>- Sweetness Lyrical, Job Seeker</span>
@@ -259,10 +264,46 @@ const LandingPage = () => {
       </section>
 
 
+      {/* Call-to-Action for Employers */}
+      <section class="employer-cta-wrapper">
+      <h2 data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">- Info -</h2>
+        <div className="employer-cta" data-aos="zoom-out-up" data-aos-duration="1200" data-aos-delay="400">
+          <div className="employer-cta-container">
+            <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+              <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
+                <img src={feature2} alt="Hire Top Talent" />
+              </div>
+              <h2>Hire Top Talent Effortlessly</h2>
+              <p>
+                Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
+              </p>
+              <Link to="/employer/post-job" className="cta-button">Get Started</Link>
+            </div>
+          </div>
+        </div>
+
+
+        {/* Right Section: Why Choose Us */}
+        <div className="employer-cta"data-aos="zoom-out-down" data-aos-duration="1200" data-aos-delay="400">
+          <div className="employer-cta-container">
+            <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+              <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
+                <img src={feature3} alt="Hire Top Talent" />
+              </div>
+              <h2>Hire Top Talent Effortlessly</h2>
+              <p>
+                Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
+              </p>
+              <Link to="/employer/post-job" className="cta-button">Get Started</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="partner-wheel-section">
-        <h2 data-aos="fade-down" data-aos-duration="1500" data-aos-delay="200" >OUR TRUSTED PARTNERS</h2>
+        <h2  data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200" >OUR TRUSTED PARTNERS</h2>
         <p data-aos="zoom-in" data-aos-delay="1000">Discover the companies that trust us to connect them with top talent.</p>
-        <div class="section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+        <div class="section"  data-aos="flip-right" data-aos-delay="200" data-aos-duration="1200">
           <h1>Advance your career
             with  Jobrite!</h1>
         </div>
@@ -291,38 +332,6 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Call-to-Action for Employers */}
-      <section class="employer-cta-wrapper">
-        <div className="employer-cta">
-          <div className="employer-cta-container">
-            <div className="employer-cta-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-              <div className="employer-cta-image" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1200">
-                <img src={feature2} alt="Hire Top Talent" />
-              </div>
-              <h2>Hire Top Talent Effortlessly</h2>
-              <p>
-                Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
-              </p>
-              <Link to="/employer/post-job" className="cta-button">Get Started</Link>
-            </div>
-          </div>
-
-          <div className="employer-cta-container">
-            <div className="employer-cta-content" >
-              <div className="employer-cta-image" >
-                <img src={feature3} alt="Hire Top Talent" />
-              </div>
-              <h2>Hire Top Talent Effortlessly</h2>
-              <p>
-                Simplify your hiring process. Post your job openings and gain access to a pool of qualified candidates ready to make an impact.
-              </p>
-              <Link to="/employer/post-job" className="cta-button">Get Started</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       <footer className="landing-footer">
         <div className="footer-container">
