@@ -228,8 +228,24 @@ body {
   color: white;
   position: relative;
   animation: zoomIn 1.5s ease-out forwards;
+  animation: backgroundMove 15s infinite ease-in-out; 
+  background-size:cover;
 }
 
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+    background-size: 100%;
+  }
+  50% {
+    background-position: 50% 50%;
+    background-size: 110%; /* Slight zoom effect */
+  }
+  100% {
+    background-position: 100% 50%;
+    background-size: 100%;
+  }
+}
 /* Animated Text */
 .header-text {
   opacity: 0;

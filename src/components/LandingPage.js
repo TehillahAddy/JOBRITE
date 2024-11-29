@@ -145,7 +145,7 @@ const LandingPage = () => {
         </div>
 
         {/* Job Search Section */}
-        <section className="job-search-section">
+        <section className="job-search-section" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
           <div className="search-bar">
             <input type="text" placeholder="Job Title, Keywords, or Company" />
             <input type="text" placeholder="Location (City, State, Zip)" />
