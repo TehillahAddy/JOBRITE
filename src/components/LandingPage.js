@@ -24,13 +24,7 @@ import 'aos/dist/aos.css';
 
 
 const LandingPage = () => {
-
-  // Toggle Menu for Small Screens
-document.querySelector(".menu-icon").addEventListener("click", () => {
-  const navLinks = document.querySelector(".nav-links");
-  navLinks.classList.toggle("active");
-});
-
+  
 
   const [isScrolled, setIsScrolled] = useState(false);
 
