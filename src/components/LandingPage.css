@@ -274,47 +274,23 @@ body {
 .landing-header .cta-button:hover {
   background-color: #004d99;
 }
-
 /* Styles for Smaller Screens */
 @media (max-width: 768px) {
   body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
-  /* Navbar Adjustments */
+  /* Hide entire navbar */
   .navbar {
-    flex-direction: column; /* Stack items vertically */
-    padding: 10px 20px; /* Reduce padding for smaller screens */
+    display: none; /* Hide navbar on smaller screens */
   }
 
-  .navbar .logo img {
-    height: 40px; /* Scale down logo size */
-  }
-
-  .nav-links {
-    display: none; /* Hide navbar links initially */
-    flex-direction: column; /* Stack links vertically */
-    gap: 15px; /* Add spacing between links */
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for links */
-    width: 100%; /* Full width */
-    padding: 20px 0;
-    position: absolute;
-    top: 70px; /* Adjust based on navbar height */
-    left: 0;
-    z-index: 1000;
-  }
-
+  /* Menu Icon Adjustments */
   .menu-icon {
     display: block; /* Show the menu icon for smaller screens */
     font-size: 24px;
     cursor: pointer;
     color: white;
-  }
-
-  /* When menu is active */
-  .nav-links.active {
-    display: flex; /* Show links */
   }
 
   /* Landing Header Adjustments */
