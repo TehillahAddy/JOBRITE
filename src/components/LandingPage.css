@@ -275,6 +275,99 @@ body {
   background-color: #004d99;
 }
 
+/* Styles for Smaller Screens */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  /* Navbar Adjustments */
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .navbar .logo img {
+    height: 40px; /* Scale down logo size */
+  }
+
+  .nav-links {
+    display: none; /* Hide navbar links initially */
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px; /* Add spacing between links */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for links */
+    width: 100%; /* Full width */
+    padding: 20px 0;
+    position: absolute;
+    top: 70px; /* Adjust based on navbar height */
+    left: 0;
+    z-index: 1000;
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon for smaller screens */
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* When menu is active */
+  .nav-links.active {
+    display: flex; /* Show links */
+  }
+
+  /* Landing Header Adjustments */
+  .landing-header {
+    background-size: cover; /* Ensure background image scales properly */
+    background-position: center;
+    text-align: center;
+  }
+
+  .landing-header .header-text {
+    padding: 100px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .landing-header .header-text h1 {
+    font-size: 2.5rem; /* Reduce heading font size */
+  }
+
+  .landing-header .header-text p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  /* Search Bar Adjustments */
+  .search-bar {
+    flex-direction: column; /* Stack input and button */
+    gap: 15px; /* Add space between elements */
+    margin: 20px 10px; /* Adjust margin for smaller screens */
+  }
+
+  .search-bar input {
+    width: 100%; /* Make input fill available space */
+  }
+
+  .search-bar button {
+    width: 100%; /* Match button width to input */
+  }
+
+  /* Dropdown Adjustments */
+  .dropdown-content {
+    position: relative; /* Position relative for mobile */
+    top: auto; /* Remove extra spacing */
+    left: auto;
+    right: auto;
+    transform: none; /* Remove transform for centering */
+    width: 100%; /* Full width for dropdown */
+    padding: 10px 0; /* Adjust padding */
+    text-align: center;
+  }
+
+  /* Dropdown Links */
+  .dropdown-content .dropdown-item a {
+    font-size: 14px; /* Reduce font size for readability */
+  }
+}
 
 
 /* Features Section */
