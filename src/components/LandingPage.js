@@ -46,11 +46,7 @@ const LandingPage = () => {
     { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg", },
   ];
 
-  // Toggle Menu for Small Screens
-  document.querySelector(".menu-icon").addEventListener("click", () => {
-    const navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("active");
-  });
+
 
 
   const angleIncrement = 360 / partners.length;
