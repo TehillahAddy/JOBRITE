@@ -80,7 +80,8 @@ const LandingPage = () => {
   return (
     <div className="landing-page">
       <nav className="navbar" style={{
-        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.85)" : "transparent", transition: "background-color 0.3s ease", }}>
+        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.85)" : "transparent", transition: "background-color 0.3s ease",
+      }}>
         <div className="logo">
           <img src={surveyImage} alt="Jobrite Logo" />
         </div>
@@ -371,7 +372,7 @@ const LandingPage = () => {
         <div className="footer-container">
           {/* Contact Section */}
           <div className="footer-category contact">
-            <h3>Contact</h3>
+            <h3>Contact (Employer) </h3>
             <ul>
               <li>
                 <i className="fas fa-envelope"></i>
@@ -383,10 +384,30 @@ const LandingPage = () => {
               </li>
               <li>
                 <i className="fas fa-map-marker-alt"></i>
-                <span>Oblogo Rd, 82</span>
+                <a href="Oblogo Rd, 82">Oblogo Rd, 82</a>
               </li>
             </ul>
           </div>
+
+          <div className="footer-category contact">
+            <h3>Contact (Job Seeker)</h3>
+            <ul>
+              <li>
+                <i className="fas fa-envelope"></i>
+                <a href="mailto:support@jobrite.com">support@jobrite.com</a>
+              </li>
+              <li>
+                <i className="fas fa-phone"></i>
+                <a href="tel:+1234567890">+233 53 599 7153</a>
+              </li>
+              <li>
+                <i className="fas fa-map-marker-alt"></i>
+                <a href="Oblogo Rd, 82">Oblogo Rd, 82</a>
+              </li>
+            </ul>
+          </div>
+
+
 
           {/* Follow Us Section */}
           <div className="footer-category follow-us">
@@ -423,11 +444,32 @@ const LandingPage = () => {
               <button type="submit">Submit</button>
             </form>
           </div>
-
         </div>
-        <p className="footer-copyright">© 2024 Jobrite. All rights reserved.</p>
-      </footer>
 
+        <div className="down">
+        <hr className="footer-divider" />
+          <div className="footer-category follow-uss">
+            <div className="social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-tiktok"></i>
+              </a>
+            </div>
+            <p className="footer-copyright">© 2024 Jobrite. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
