@@ -24,7 +24,7 @@ import 'aos/dist/aos.css';
 
 
 const LandingPage = () => {
-  
+
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -36,6 +36,27 @@ const LandingPage = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Add the event listener for the menu toggle
+  useEffect(() => {
+    const menuIcon = document.querySelector(".menu-icon");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuIcon) {
+      menuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    }
+
+    // Clean up the event listener when component is unmounted
+    return () => {
+      if (menuIcon) {
+        menuIcon.removeEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      }
+    };
   }, []);
 
 
