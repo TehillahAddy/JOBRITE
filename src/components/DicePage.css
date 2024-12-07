@@ -1,0 +1,287 @@
+
+body {
+    margin: 0;
+    font-family: 'Indeed Sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, sans-serif;
+    color: #333;
+    background-color: white;
+    /* Dark background */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+  }
+
+  .dice-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures the page covers the full viewport height */
+  }
+  
+
+  /* Career Dice Section Styling */
+.career-dice-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .career-dice-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .career-dice-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .career-dice-container p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .career-dice-container h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin: 30px 0 15px;
+  }
+  
+  .career-dice-container ol, 
+  .career-dice-container ul {
+    text-align: left;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: #555555;
+  }
+  
+  .career-dice-container li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .career-dice-container li strong {
+    color: #2c3e50;
+  }
+  
+  .roll-dice-action {
+    margin-top: 30px;
+  }
+  
+  .roll-dice-btn {
+    background-color: #0073b1;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .roll-dice-btn:hover {
+    background-color: #005f92;
+  }
+  
+  .roll-dice-action p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555555;
+  }
+  
+/*
+  Dice Styles
+*/
+.dicee-section {
+    display: flex;
+    height: 250px;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    padding: 10px 20px;      /* Reduced vertical padding */
+    max-height: 300px;        /* Ensure no unnecessary height is applied */
+  }
+  
+  .container {
+    display: grid;
+    place-items: center;
+    gap: 15px;               /* Adjust spacing between elements */
+    width: 250px;
+    padding: 40px 0 30px;    /* Reduced padding for a tighter layout */
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;     /* Adjusted margin to balance spacing */
+  }
+  
+  .dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+  }
+  
+  
+  
+  @keyframes rolling {
+    50% {
+        transform: rotateX(455deg) rotateY(455deg);
+    }
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 5px solid #f6f3f0;
+    transform-style: preserve-3d;
+    background: linear-gradient(
+        145deg, #dddbd8, #fff
+    );
+  }
+  
+  .face::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #f6f3f0;
+    transform: translateZ(-1px);
+  }
+  
+  .face::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #131210;
+  }
+  
+  .front {
+    transform: translateZ(50px);
+  }
+  
+  .back {
+    transform: rotateX(180deg) translateZ(50px);
+  }
+  
+  .top {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  
+  .bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
+  
+  .right {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+  
+  .left {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  
+  .front::after {
+    width: 30px;
+    height: 30px;
+    background: #f63330;
+    margin: -15px 0 0 -15px;
+  }
+  
+  .back::after {
+    margin: -35px 0 0 -30px;
+    box-shadow: 40px 0,
+                0 25px,
+                40px 25px,
+                0 50px,
+                40px 50px;
+  }
+  
+  .top::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px;
+  }
+  
+  .bottom::after {
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px,
+                52px 52px,
+                52px 0,
+                0 52px;
+  }
+  
+  .right::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 0,
+    0 40px,
+    40px 40px;
+  }
+  
+  .left::after {
+    margin: -35px 0 0 -35px;
+    box-shadow: 25px 25px,
+                50px 50px;
+  }
+  
+  /*
+    Roll Button styles
+  */
+  
+  .roll {
+    cursor: pointer;
+    color: #b33951;
+    margin-top: 20px;        /* Reduced spacing below the dice */
+    padding: 6px 12px;
+    border-radius: 3px;
+    font: 700 16px 'Montserrat';
+    border: 2px solid #b33951;
+    transition: 0.4s;
+  }
+  
+  .roll:hover {
+    color: #fff;
+    background: #b33951;
+  }
+
+  /*
+  Dice Styles - Adjusted Spacing
+*/
+.dicee-section {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    padding: 10px 20px;      /* Reduced vertical padding */
+  }
+  
+  .container {
+    display: grid;
+    place-items: center;
+    gap: 15px;               /* Adjust spacing between elements */
+    width: 250px;
+    padding: 40px 0 30px;    /* Reduced padding for a tighter layout */
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+  }
+  
+ 
+  

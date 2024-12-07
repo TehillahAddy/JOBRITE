@@ -26,6 +26,27 @@ import 'aos/dist/aos.css';
 const LandingPage = () => {
 
 
+  useEffect(() => {
+    const searchInput = document.getElementById('searchInput');
+    const searchIcon = document.querySelector('.fa-search');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        if (searchInput.value) {
+          searchIcon.style.display = 'none'; // Hide icon when typing
+        } else {
+          searchIcon.style.display = 'block'; // Show icon when input is empty
+        }
+      });
+    }
+
+    return () => {
+      if (searchInput) {
+        searchInput.removeEventListener('input', () => { }); // Cleanup
+      }
+    };
+  }, []);
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -60,6 +81,66 @@ const LandingPage = () => {
   }, []);
 
 
+  const articlesTags = [
+    'Marketing', 'Public Administration', 'Healthcare', 'Engineering',
+    'IT Services', 'Sustainability', 'Business Administration',
+    'Telecommunications', 'HR Management',
+  ];
+
+  const jobsTags = [
+    'Engineering', 'Business Development', 'Finance',
+    'Administrative Assistant', 'Retail Associate', 'Customer Service',
+    'Operations', 'Information Technology', 'Marketing', 'Human Resources',
+  ];
+
+
+  const [showAllJobs, setShowAllJobs] = useState(false);
+  const [showAllArticles, setShowAllArticles] = useState(false);
+
+  useEffect(() => {
+    const dice = document.querySelector('.dice'); // Select the dice element
+    const rollBtn = document.querySelector('.roll'); // Select the Roll button
+
+    // Function to generate a random number and roll the dice
+    const rollDice = () => {
+      const random = Math.floor(Math.random() * 6) + 1; // Random number between 1 and 6
+
+      // Add rolling animation
+      dice.style.animation = 'rolling 1s ease-in-out';
+
+      // After animation ends, apply the appropriate rotation
+      setTimeout(() => {
+        switch (random) {
+          case 1:
+            dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            break;
+          case 2:
+            dice.style.transform = 'rotateX(-90deg) rotateY(0deg)';
+            break;
+          case 3:
+            dice.style.transform = 'rotateX(0deg) rotateY(90deg)';
+            break;
+          case 4:
+            dice.style.transform = 'rotateX(0deg) rotateY(-90deg)';
+            break;
+          case 5:
+            dice.style.transform = 'rotateX(90deg) rotateY(0deg)';
+            break;
+          case 6:
+            dice.style.transform = 'rotateX(180deg) rotateY(0deg)';
+            break;
+        }
+        // Remove animation after execution
+        dice.style.animation = 'none';
+      }, 1000); // Match the duration of the animation
+    };
+
+    // Add click event listener to the roll button
+    rollBtn.addEventListener('click', rollDice);
+
+  }, []);
+
+
   const partners = [
     { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", },
     { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg", },
@@ -67,9 +148,6 @@ const LandingPage = () => {
     { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", },
     { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg", },
   ];
-
-
-
 
   const angleIncrement = 360 / partners.length;
   const popularJobs = [
@@ -104,9 +182,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <nav className="navbar" style={{
-        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.85)" : "transparent", transition: "background-color 0.3s ease",
-      }}>
+      <nav className="navbar">
         <div className="logo">
           <img src={surveyImage} alt="Jobrite Logo" />
         </div>
@@ -122,17 +198,17 @@ const LandingPage = () => {
           </li>
           {/* About Link */}
           <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => isActive ? "active-link" : ""} > About
-            </NavLink>
+            <Link
+              to="/dice"
+              className={({ isActive }) => isActive ? "active-link" : ""} > Dice
+            </Link>
           </li>
           {/* Dropdown Section */}
           <ul className="nav-links">
             {/* Employer Dropdown */}
             <li className="dropdown">
               <a href="/about" className="dropdown-trigger">
-                Employer <span className="dropdown-indicator">⮟</span>
+                Employment Tracker <span className="dropdown-indicator">⮟</span>
               </a>
               <div className="dropdown-content">
                 <div className="dropdown-item"><a href="/employer/solutions">Solutions</a></div>
@@ -144,7 +220,7 @@ const LandingPage = () => {
             {/* Job Seeker Dropdown */}
             <li className="dropdown">
               <a href="/about" className="dropdown-trigger">
-                Job Seeker <span className="dropdown-indicator">⮟</span>
+                Global Career <span className="dropdown-indicator">⮟</span>
               </a>
               <div className="dropdown-content">
                 <div className="dropdown-item"><a href="/seeker/jobs">Browse Jobs</a></div>
@@ -159,26 +235,191 @@ const LandingPage = () => {
             </NavLink>
           </li>
         </ul>
+
+        {/* Sign In & Sign Up Links */}
+        <div className="auth-links">
+          <NavLink to="/signin" className="auth-link">Sign In</NavLink>
+          <span className="separator">|</span>
+          <NavLink to="/signup" className="auth-link signup">Sign Up</NavLink>
+          <button className="post-job-button">Post a Job</button>
+        </div>
       </nav>
 
+      <section className="job-search"  >
+        <form className="job-search-form" data-aos="flip-right" data-aos-delay="200" data-aos-duration="1200">
+          <div className="search-containers">
+            <div className="input-wrapper">
+              <i className="fa fa-briefcase"></i>
+              <input
+                type="text"
+                id="job-title"
+                placeholder="Job title, keywords, or company"
+              />
+            </div>
 
-      {/* Hero Section */}
-      <header className="landing-header" >
-        <div className="header-text animated fade-in">
-          <h1>Your Dream Job is Just a Click Away</h1>
-          <p>Find your next job with Jobrite and start your career journey today!</p>
-          <Link to="/signup" className="cta-button">Get Started</Link>
-        </div>
-
-        {/* Job Search Section */}
-        <section className="job-search-section" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
-          <div className="search-bar">
-            <input type="text" placeholder="Job Title, Keywords, or Company" />
-            <input type="text" placeholder="Location (City, State, Zip)" />
+            <div className="input-wrapper">
+              <i className="fa fa-map-marker-alt"></i>
+              <input
+                type="text"
+                id="job-location"
+                placeholder="City, state, or zip code"
+              />
+            </div>
             <button type="button">Search</button>
           </div>
-        </section>
-      </header>
+        </form>
+      </section>
+
+      <section className="job-search-section" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
+
+      </section>
+
+      <section className="job-search-section" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
+        <div className="job-ticker">
+          <ul>
+            <li className="minus">
+              <span className="metric">Tech Jobs</span>
+              <span className="value">125,000</span>
+              <span className="change">-2,000 (-1.6%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Healthcare Jobs</span>
+              <span className="value">89,300</span>
+              <span className="change">+1,500 (+1.7%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Remote Positions</span>
+              <span className="value">76,450</span>
+              <span className="change">+800 (+1.1%)</span>
+            </li>
+            <li className="minus">
+              <span className="metric">Manufacturing</span>
+              <span className="value">52,000</span>
+              <span className="change">-500 (-0.9%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Software Development</span>
+              <span className="value">43,800</span>
+              <span className="change">+1,200 (+2.8%)</span>
+            </li>
+            <li className="minus">
+              <span className="metric">Customer Service</span>
+              <span className="value">65,700</span>
+              <span className="change">-1,100 (-1.6%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Education</span>
+              <span className="value">34,200</span>
+              <span className="change">+600 (+1.8%)</span>
+            </li>
+            <li className="minus">
+              <span className="metric">Retail</span>
+              <span className="value">20,500</span>
+              <span className="change">-300 (-1.4%)</span>
+            </li>
+          </ul>
+          <ul aria-hidden="true">
+            <li className="minus">
+              <span className="metric">Tech Jobs</span>
+              <span className="value">125,000</span>
+              <span className="change">-2,000 (-1.6%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Healthcare Jobs</span>
+              <span className="value">89,300</span>
+              <span className="change">+1,500 (+1.7%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Remote Positions</span>
+              <span className="value">76,450</span>
+              <span className="change">+800 (+1.1%)</span>
+            </li>
+            <li className="minus">
+              <span className="metric">Manufacturing</span>
+              <span className="value">52,000</span>
+              <span className="change">-500 (-0.9%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Software Development</span>
+              <span className="value">43,800</span>
+              <span className="change">+1,200 (+2.8%)</span>
+            </li>
+            <li className="minus">
+              <span className="metric">Customer Service</span>
+              <span className="value">65,700</span>
+              <span className="change">-1,100 (-1.6%)</span>
+            </li>
+            <li className="plus">
+              <span className="metric">Education</span>
+              <span className="value">34,200</span>
+              <span className="change">+600 (+1.8%)</span>
+            </li>
+            <li className="minus">
+              <span className="metric">Retail</span>
+              <span className="value">20,500</span>
+              <span className="change">-300 (-1.4%)</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="welcome-section">
+        <div className="image-container">
+          <img src={feature4} alt="Welcome" className="welcome-image" />
+        </div>
+        <div className="welcome-text">
+          <h2>Welcome to Jobrite!</h2>
+          <p>Create an account or sign in to see your personalized job recommendations.</p>
+        </div>
+      </section>
+
+      <section className="experience-filtering">
+        <h3>Find the right job vacancies in Ghana</h3>
+        <h2>Experience-Based Filtering</h2>
+        <p>Find jobs that suit your experience level</p>
+        <div className="filter-carousel">
+          <div className="card">
+            <h3>Entry Level</h3>
+            <p>32,450 jobs</p>
+            <a href="/entry-level-jobs" className="explore-link">
+              Explore Jobs <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div className="card">
+            <h3>Mid-Level</h3>
+            <p>20,867 jobs</p>
+            <a href="/mid-level-jobs" className="explore-link">
+              Explore Jobs <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div className="card">
+            <h3>Senior Level</h3>
+            <p>15,235 jobs</p>
+            <a href="/senior-level-jobs" className="explore-link">
+              Explore Jobs <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div className="card">
+            <h3>Executive Level</h3>
+            <p>5,432 jobs</p>
+            <a href="/executive-level-jobs" className="explore-link">
+              Explore Jobs <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div className="card">
+            <h3>Unspecified Level</h3>
+            <p>42,870 jobs</p>
+            <a href="/unspecified-jobs" className="explore-link">
+              Explore Jobs <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <button className="posts-job-button">Explore All Jobs</button>
+      </section>
+
 
       {/* Features Section */}
       <section className="features-section" data-aos="bounce" data-aos-delay="500">
@@ -224,9 +465,100 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-
-
       </section>
+
+      <div className="tags-section">
+        <div className="text-container">
+          <h2>Explore collaborative articles</h2>
+          <p>
+            We're unlocking community knowledge in a new way. Experts add insights
+            directly into each article, started with the help of AI.
+          </p>
+        </div>
+
+        <div className="tags-container">
+          {articlesTags
+            .slice(0, showAllArticles ? articlesTags.length : 8)
+            .map((tag, index) => (
+              <button key={index} className="tag">
+                {tag}
+              </button>
+            ))}
+          <button
+            onClick={() => setShowAllArticles(!showAllArticles)}
+            className="show-more"
+          >
+            {showAllArticles ? 'Show Less' : 'Show All'}
+          </button>
+        </div>
+      </div>
+
+
+
+      <div className="tags-sections">
+        <div className="text-container">
+          <h2>Find the right job or internship for you</h2>
+        </div>
+        <div className="tags-container">
+          {jobsTags
+            .slice(0, showAllJobs ? jobsTags.length : 8)
+            .map((tag, index) => (
+              <button key={index} className="tag">
+                {tag}
+              </button>
+            ))}
+          <button
+            onClick={() => setShowAllJobs(!showAllJobs)}
+            className="show-more"
+          >
+            {showAllJobs ? 'Show Less' : 'Show All'}
+          </button>
+        </div>
+      </div>
+
+      <section className="dicee-section">
+        <div class="container">
+          <div class="dice">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+          </div>
+          <button class="roll">
+            Roll Dice
+          </button>
+        </div>
+      </section>
+
+
+
+      <section class="collaborative-articles">
+        <h2>Explore Collaborative Articles</h2>
+        <p>Discover insights and share your knowledge with the community.</p>
+        <div class="article-cards">
+          <div class="article-card">
+            <img src={role} alt="Technology" class="card-image"></img>
+            <h3>Technology</h3>
+            <p>Innovations shaping the future of industries.</p>
+            <a href="#" class="explore-btn">Explore</a>
+          </div>
+          <div class="article-card">
+            <img src={feature3} alt="Leadership" class="card-image"></img>
+            <h3>Leadership</h3>
+            <p>Strategies for effective leadership and management.</p>
+            <a href="#" class="explore-btn">Explore</a>
+          </div>
+          <div class="article-card">
+            <img src={feature2} alt="Career Growth" class="card-image"></img>
+            <h3>Career Growth</h3>
+            <p>Insights to advance your professional journey.</p>
+            <a href="#" class="explore-btn">Explore</a>
+          </div>
+        </div>
+      </section>
+
 
       {/* Popular Jobs Section */}
       <section className="popular-jobs-section" >
