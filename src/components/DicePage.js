@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './DicePage.css';
-import './LandingPage';
+import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
@@ -93,10 +93,10 @@ const DicePage = () => {
           </li>
           {/* About Link */}
           <li>
-            <Link
+            <NavLink
               to="/dice"
               className={({ isActive }) => isActive ? "active-link" : ""} > Dice
-            </Link>
+            </NavLink>
           </li>
           {/* Dropdown Section */}
           <ul className="nav-links">
@@ -135,7 +135,27 @@ const DicePage = () => {
         <div className="auth-links">
           <NavLink to="/signin" className="auth-link">Sign In</NavLink>
           <span className="separator">|</span>
-          <NavLink to="/signup" className="auth-link signup">Sign Up</NavLink>
+          <div className="auth-link signup">
+            Sign Up
+            <div className="hover-modal">
+              <h3>Sign Up</h3>
+              <p>Select your account type to proceed:</p>
+              <div className="signup-options">
+                <NavLink
+                  to="/signup-job-seeker"
+                  className="option-button job-seeker-button"
+                >
+                  I'm a Job Seeker
+                </NavLink>
+                <NavLink
+                  to="/signup-employer"
+                  className="option-button employer-button"
+                >
+                  I'm an Employer
+                </NavLink>
+              </div>
+            </div>
+          </div>
           <button className="post-job-button">Post a Job</button>
         </div>
       </nav>

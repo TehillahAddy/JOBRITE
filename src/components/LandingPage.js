@@ -20,6 +20,7 @@ import 'swiper/css/navigation'; // Navigation module CSS
 import 'swiper/css/autoplay'; // Autoplay module CSS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -180,6 +181,22 @@ const LandingPage = () => {
     AOS.init();
   }, []);
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignUpOption = (role) => {
+    setModalOpen(false);
+    if (role === 'job-seeker') {
+      navigate('/signup-job-seeker');
+    } else if (role === 'employer') {
+      navigate('/signup-employer');
+    }
+  };
+
+  const toggleModal = () => {
+    setModalOpen(prev => !prev); // Toggle modal visibility on click for mobile
+  };
+
   return (
     <div className="landing-page">
       <nav className="navbar">
@@ -198,10 +215,10 @@ const LandingPage = () => {
           </li>
           {/* About Link */}
           <li>
-            <Link
+            <NavLink
               to="/dice"
               className={({ isActive }) => isActive ? "active-link" : ""} > Dice
-            </Link>
+            </NavLink>
           </li>
           {/* Dropdown Section */}
           <ul className="nav-links">
@@ -238,43 +255,44 @@ const LandingPage = () => {
 
         {/* Sign In & Sign Up Links */}
         <div className="auth-links">
-          <NavLink to="/signin" className="auth-link">Sign In</NavLink>
-          <span className="separator">|</span>
-          <NavLink to="/signup" className="auth-link signup">Sign Up</NavLink>
+          
+
+          <div className="auth-links">
+            <NavLink to="/signin" className="auth-link">Sign In</NavLink>
+            <span className="separator">|</span>
+            <div
+              className={`auth-link signup ${isModalOpen ? 'active' : ''}`} // Add 'active' class if modal is open
+              onClick={toggleModal} // Toggle modal on click for mobile
+            >
+              Sign Up
+              <div className="hover-modal">
+                <h3>Sign Up</h3>
+                <p>Select your account type to proceed:</p>
+                <div className="signup-options">
+                  <NavLink
+                    to="/signup-job-seeker"
+                    className="option-button job-seeker-button"
+                    onClick={() => handleSignUpOption('job-seeker')}
+                  >
+                    I'm a Job Seeker
+                  </NavLink>
+                  <NavLink
+                    to="/signup-employer"
+                    className="option-button employer-button"
+                    onClick={() => handleSignUpOption('employer')}
+                  >
+                    I'm an Employer
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <button className="post-job-button">Post a Job</button>
         </div>
       </nav>
 
-      <section className="job-search"  >
-        <form className="job-search-form" data-aos="flip-right" data-aos-delay="200" data-aos-duration="1200">
-          <div className="search-containers">
-            <div className="input-wrapper">
-              <i className="fa fa-briefcase"></i>
-              <input
-                type="text"
-                id="job-title"
-                placeholder="Job title, keywords, or company"
-              />
-            </div>
-
-            <div className="input-wrapper">
-              <i className="fa fa-map-marker-alt"></i>
-              <input
-                type="text"
-                id="job-location"
-                placeholder="City, state, or zip code"
-              />
-            </div>
-            <button type="button">Search</button>
-          </div>
-        </form>
-      </section>
-
-      <section className="job-search-section" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
-
-      </section>
-
-      <section className="job-search-section" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
+      <section className="job-search-section" >
         <div className="job-ticker">
           <ul>
             <li className="minus">
@@ -361,6 +379,31 @@ const LandingPage = () => {
             </li>
           </ul>
         </div>
+      </section>
+
+      <section className="job-search"  >
+        <form className="job-search-form" >
+          <div className="search-containers">
+            <div className="input-wrapper">
+              <i className="fa fa-briefcase"></i>
+              <input
+                type="text"
+                id="job-title"
+                placeholder="Job title, keywords, or company"
+              />
+            </div>
+
+            <div className="input-wrapper">
+              <i className="fa fa-map-marker-alt"></i>
+              <input
+                type="text"
+                id="job-location"
+                placeholder="City, state, or zip code"
+              />
+            </div>
+            <button type="button">Search</button>
+          </div>
+        </form>
       </section>
 
       <section className="welcome-section">
