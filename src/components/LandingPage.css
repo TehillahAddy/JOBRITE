@@ -498,21 +498,20 @@ button:hover {
 
 
 /* Responsive Design for Smaller Screens */
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .job-search-form {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: nowrap; /* Keep the inputs in a single row */
+    gap: 5px;
   }
 
   .search-containers {
-    padding: 10px;
-    flex-direction: column;
-    gap: 8px;
+    padding: 5px;
   }
 
   .input-wrapper {
-    padding: 8px;
-    border-right: none; /* Remove separator for stacked layout */
+    padding: 5px; /* Reduce padding */
+    border-right: 1px solid #ddd; /* Ensure separator remains */
   }
 
   .input-wrapper input {
