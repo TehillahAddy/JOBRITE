@@ -408,12 +408,16 @@ body {
   /* Slight zoom on hover */
 }
 
+.job-search-section {
+  margin-top: 71px;
+}
+
 /* Job Search Section */
 .job-search {
   text-align: center;
   padding: 30px 20px;
   background-color: white;
-  margin-top: 11px;
+  margin-top: -11px;
   
 }
 
@@ -492,121 +496,132 @@ button:hover {
   background-color: #1e4b91;
 }
 
-/* Responsive Design for Small Screens */
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .job-search-form {
-    flex-direction: column; /* Stack the search elements vertically */
-    padding: 0 10px;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .search-containers {
-    flex-direction: column; /* Stack inputs vertically on small screens */
-    align-items: stretch; /* Make inputs take up full width */
+    padding: 10px;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .input-wrapper {
-    width: 100%; /* Ensure input wrapper takes up full width */
-    border-right: none; /* Remove right border when stacked */
-    padding: 10px 0; /* Add padding for vertical stacking */
+    padding: 8px;
+    border-right: none; /* Remove separator for stacked layout */
+  }
+
+  .input-wrapper input {
+    font-size: 0.9rem; /* Adjust font size */
+    max-width: 100%; /* Ensure input adjusts to container width */
   }
 
   button {
-    width: 100%; /* Make button full width on small screens */
-    margin-top: 10px; /* Add spacing between button and input */
+    display: none; /* Hide search button on smaller screens */
   }
 }
 
-/* Ticker Styles */
-.job-ticker {
-  font-size: 15px;
-  padding-block: 7px;
-  border-block: 1px solid #ddd;
+/* JobTicker.css */
+.job-tickers {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px 0;
   overflow: hidden;
-  user-select: none;
-  --gap: 20px;
-  display: flex;
-  gap: var(--gap);
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 100px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Ticker Animation */
-.job-ticker ul {
+.job-tickers ul {
+  display: flex;
+  gap: 40px; /* Space between job items */
+  animation: scroll-horizontal 15s linear infinite;
+  padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+.job-tickers:hover ul {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+.job-item {
   flex-shrink: 0;
-  min-width: 100%;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap);
-  animation: scroll 20s linear infinite;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.job-ticker:hover ul {
-  animation-play-state: paused;
+.job-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
 }
 
-@keyframes scroll {
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+.job-salary {
+  font-size: 0.95rem;
+  color: #4caf50; /* Green color for salary */
+  margin: 5px 0;
+}
+
+.job-location {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Scroll animation */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-/* Metric Styles */
-.job-ticker .metric {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #2557a7;
-}
-
-.job-ticker .value {
-  font-weight: bold;
-  margin-inline: 4px;
-  color: #101010;
-}
-
-.job-ticker .plus .change,
-.job-ticker .plus::before {
-  color: #089981; /* Green for positive changes */
-}
-
-.job-ticker .minus .change,
-.job-ticker .minus::before {
-  color: #f23645; /* Red for negative changes */
-}
-
-/* Icons for Metrics */
-.job-ticker .plus::before {
-  content: "↑"; /* Up arrow for positive changes */
-  margin-right: 5px;
-}
-
-.job-ticker .minus::before {
-  content: "↓"; /* Down arrow for negative changes */
-  margin-right: 5px;
-}
-
-/* Change Percentage Styles */
-.job-ticker .change {
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-/* Adjustments for Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .job-ticker {
-    font-size: 13px;
+  .job-tickers ul {
+    gap: 20px; /* Reduce gap for smaller screens */
   }
 
-  .job-ticker h1 {
-    font-size: 1.5rem;
+  .job-item {
+    padding: 8px 15px;
   }
 
-  .job-ticker .value {
+  .job-title {
+    font-size: 1rem;
+  }
+
+  .job-salary {
     font-size: 0.9rem;
   }
+
+  .job-location {
+    font-size: 0.8rem;
+  }
 }
+
 
 /* Animated Text */
 .header-text {

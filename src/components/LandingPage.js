@@ -26,6 +26,25 @@ import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
 
+  const jobData = [
+    { id: 1, title: 'Web Developer Needed', salary: '1,500Ghc', location: 'Kaneshie' },
+    { id: 2, title: 'IT Technician Needed', salary: '1,500Ghc', location: 'Kaneshie' },
+    { id: 3, title: 'Sales Representative Needed', salary: '1,500 - 2,000Ghc', location: 'Kaneshie' },
+    { id: 4, title: 'Secretary Needed', salary: '1,300 - 1,500Ghc', location: 'Kaneshie' },
+    { id: 5, title: 'Factory Workers Needed', salary: '1,300Ghc', location: 'Kaneshie' },
+    { id: 6, title: 'Marketers Needed', salary: '1,000 - 1,200Ghc', location: 'Kaneshie' },
+    { id: 7, title: 'Shop Manager Needed', salary: '1,000 - 2,000Ghc', location: 'Madina' },
+    { id: 8, title: 'Cashier Needed', salary: '1,000Ghc', location: 'Kaneshie' },
+    { id: 9, title: 'Waitress Needed', salary: '1,000Ghc', location: 'Kaneshie' },
+    { id: 10, title: 'Front Desk Reporter Needed', salary: '1,000Ghc', location: 'Kaneshie' },
+    { id: 11, title: 'Househelp Needed', salary: '800 - 1,200Ghc', location: 'Kaneshie' },
+    { id: 12, title: 'Nanny Needed', salary: '750Ghc', location: 'Kaneshie' },
+  ];
+  
+    const handleJobClick = (id) => {
+      navigate(`/jobs/${id}`); // Navigate to the job details page
+    };
+
 
   useEffect(() => {
     const searchInput = document.getElementById('searchInput');
@@ -255,7 +274,7 @@ const LandingPage = () => {
 
         {/* Sign In & Sign Up Links */}
         <div className="auth-links">
-          
+
 
           <div className="auth-links">
             <NavLink to="/signin" className="auth-link">Sign In</NavLink>
@@ -293,90 +312,21 @@ const LandingPage = () => {
       </nav>
 
       <section className="job-search-section" >
-        <div className="job-ticker">
+        <div className="job-tickers">
           <ul>
-            <li className="minus">
-              <span className="metric">Tech Jobs</span>
-              <span className="value">125,000</span>
-              <span className="change">-2,000 (-1.6%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Healthcare Jobs</span>
-              <span className="value">89,300</span>
-              <span className="change">+1,500 (+1.7%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Remote Positions</span>
-              <span className="value">76,450</span>
-              <span className="change">+800 (+1.1%)</span>
-            </li>
-            <li className="minus">
-              <span className="metric">Manufacturing</span>
-              <span className="value">52,000</span>
-              <span className="change">-500 (-0.9%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Software Development</span>
-              <span className="value">43,800</span>
-              <span className="change">+1,200 (+2.8%)</span>
-            </li>
-            <li className="minus">
-              <span className="metric">Customer Service</span>
-              <span className="value">65,700</span>
-              <span className="change">-1,100 (-1.6%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Education</span>
-              <span className="value">34,200</span>
-              <span className="change">+600 (+1.8%)</span>
-            </li>
-            <li className="minus">
-              <span className="metric">Retail</span>
-              <span className="value">20,500</span>
-              <span className="change">-300 (-1.4%)</span>
-            </li>
-          </ul>
-          <ul aria-hidden="true">
-            <li className="minus">
-              <span className="metric">Tech Jobs</span>
-              <span className="value">125,000</span>
-              <span className="change">-2,000 (-1.6%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Healthcare Jobs</span>
-              <span className="value">89,300</span>
-              <span className="change">+1,500 (+1.7%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Remote Positions</span>
-              <span className="value">76,450</span>
-              <span className="change">+800 (+1.1%)</span>
-            </li>
-            <li className="minus">
-              <span className="metric">Manufacturing</span>
-              <span className="value">52,000</span>
-              <span className="change">-500 (-0.9%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Software Development</span>
-              <span className="value">43,800</span>
-              <span className="change">+1,200 (+2.8%)</span>
-            </li>
-            <li className="minus">
-              <span className="metric">Customer Service</span>
-              <span className="value">65,700</span>
-              <span className="change">-1,100 (-1.6%)</span>
-            </li>
-            <li className="plus">
-              <span className="metric">Education</span>
-              <span className="value">34,200</span>
-              <span className="change">+600 (+1.8%)</span>
-            </li>
-            <li className="minus">
-              <span className="metric">Retail</span>
-              <span className="value">20,500</span>
-              <span className="change">-300 (-1.4%)</span>
-            </li>
+            {jobData.map((job) => (
+              <li
+                key={job.id}
+                className="job-item"
+                onClick={() => handleJobClick(job.id)}
+              >
+                <div className="job-info">
+                  <span className="job-title">{job.title}</span>
+                  <span className="job-salary">{job.salary}</span>
+                  <span className="job-location">📍 {job.location}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
