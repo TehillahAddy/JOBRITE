@@ -527,15 +527,16 @@ button:hover {
 /* JobTicker.css */
 .job-tickers {
   font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 15px;
   margin: 20px 0;
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .job-tickers ul {
   display: flex;
@@ -571,22 +572,29 @@ button:hover {
   align-items: flex-start;
 }
 
+.job-salary-location {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between salary and location */
+}
+
 .job-title {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #333;
+  color: black;
+  margin-bottom: 5px; /* Space between title and salary/location */
 }
 
 .job-salary {
   font-size: 0.95rem;
-  color: #4caf50; /* Green color for salary */
-  margin: 5px 0;
+  color: #2557a7; /* Green color for salary */
 }
 
 .job-location {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #555;
 }
+
 
 /* Scroll animation */
 @keyframes scroll-horizontal {
@@ -620,6 +628,7 @@ button:hover {
     font-size: 0.8rem;
   }
 }
+
 
 
 /* Animated Text */

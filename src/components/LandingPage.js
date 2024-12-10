@@ -40,10 +40,10 @@ const LandingPage = () => {
     { id: 11, title: 'Househelp Needed', salary: '800 - 1,200Ghc', location: 'Kaneshie' },
     { id: 12, title: 'Nanny Needed', salary: '750Ghc', location: 'Kaneshie' },
   ];
-  
-    const handleJobClick = (id) => {
-      navigate(`/jobs/${id}`); // Navigate to the job details page
-    };
+
+  const handleJobClick = (id) => {
+    navigate(`/jobs/${id}`); // Navigate to the job details page
+  };
 
 
   useEffect(() => {
@@ -322,8 +322,12 @@ const LandingPage = () => {
               >
                 <div className="job-info">
                   <span className="job-title">{job.title}</span>
-                  <span className="job-salary">{job.salary}</span>
-                  <span className="job-location">📍 {job.location}</span>
+                  <div className="job-salary-location">
+                    <span className="job-salary">{job.salary}</span><span className="job-location">
+                      <i className="fas fa-map-marker-alt"></i> {job.location}
+                    </span>
+
+                  </div>
                 </div>
               </li>
             ))}
