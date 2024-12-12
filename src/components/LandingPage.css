@@ -515,37 +515,44 @@ button:hover {
 
 
 /* Responsive Design for Smaller Screens */
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
-    .job-search-form {
-      flex-wrap: nowrap; /* Keep the inputs in a single row */
-      gap: 5px;
-    }
-  
-    .search-containers {
-      padding: 5px;
-    }
-  
-    .input-wrapper {
-      padding: 5px; /* Reduce padding */
-      border-right: 1px solid #ddd; /* Ensure separator remains */
-    }
-  
-    .input-wrapper input {
-      font-size: 0.9rem; /* Adjust font size */
-      max-width: 100%; /* Ensure input adjusts to container width */
-    }
+  .job-search-form {
+    flex-wrap: nowrap; /* Keep the inputs in a single row */
+    gap: 5px;
+    overflow: hidden; /* Prevent horizontal scrolling */
+  }
 
-    .inputs-wrapper:last-child {
-      border-right: none; /* Remove the separator from the last input */
-    }
-  
-    button {
-      display: none; /* Hide search button on smaller screens */
-    }
-  } 
+  .search-containers {
+    padding: 5px;
+    display: flex;
+    width: 100%; /* Ensure the container fits within the screen */
+    box-sizing: border-box; /* Include padding in width calculations */
+  }
+
+  .inputs-wrapper {
+    padding: 5px; /* Reduce padding */
+    border-right: 1px solid #ddd; /* Ensure separator remains */
+    flex: 1; /* Make inputs flexible */
+  }
+
+  .inputs-wrapper input {
+    font-size: 0.9rem; /* Adjust font size */
+    width: 100%; /* Ensure input adjusts to container width */
+    box-sizing: border-box; /* Prevent overflow from padding */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide any overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  }
+
+  .inputs-wrapper:last-child {
+    border-right: none; /* Remove the separator from the last input */
+  }
+
+  button {
+    display: none; /* Hide search button on smaller screens */
+  }
 }
+
 
 /* JobTicker.css */
 .job-tickers {
