@@ -338,7 +338,7 @@ const LandingPage = () => {
       <section className="job-search"  >
         <form className="job-search-form" >
           <div className="search-containers">
-            <div className="input-wrapper">
+            <div className="inputs-wrapper">
               <i className="fa fa-briefcase"></i>
               <input
                 type="text"
@@ -347,7 +347,7 @@ const LandingPage = () => {
               />
             </div>
 
-            <div className="input-wrapper">
+            <div className="inputs-wrapper">
               <i className="fa fa-map-marker-alt"></i>
               <input
                 type="text"

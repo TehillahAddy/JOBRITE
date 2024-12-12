@@ -3,18 +3,37 @@ body {
   margin: 0;
   font-family: 'Indeed Sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, sans-serif;
   color: #333;
-  background-color: #121212;
-  /* Dark background */
-  overflow-x: hidden;
-  /* Prevent horizontal scrolling */
+  background-color: #121212; /* Dark background */
+  overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 .landing-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  /* Ensures the page covers the full viewport height */
+  min-height: 100vh; /* Ensures the page covers the full viewport height */
 }
+
+.container {
+  max-width: 100vw; /* Prevent container from exceeding viewport */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  padding: 0 15px; /* Add padding for smaller screens */
+}
+
+img {
+  max-width: 100%; /* Ensure images do not cause overflow */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .landing-page {
+    padding: 10px; /* Adjust padding on smaller screens */
+  }
+
+  .container {
+    padding: 0 10px; /* Ensure content fits the screen */
+  }
+}
+
 
 /* Navbar Styles */
 /* Navbar Styles */
@@ -442,7 +461,7 @@ body {
             -10px 0 15px rgba(185, 187, 202, 0.5);
 }
 
-.input-wrapper {
+.inputs-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -452,16 +471,16 @@ body {
   /* Separator line between inputs */
 }
 
-.input-wrapper:last-child {
+.inputs-wrapper:last-child {
   border-right: none;
 }
 
-.input-wrapper i {
+.inputs-wrapper i {
   font-size: 1.2rem;
   color: #aaa;
 }
 
-.input-wrapper input {
+.inputs-wrapper input {
   border: none;
   flex: 1;
   font-size: 1rem;
@@ -469,9 +488,11 @@ body {
   outline: none;
 }
 
-.input-wrapper input::placeholder {
+.inputs-wrapper input::placeholder {
   color: #aaa;
 }
+
+
 
 /* Search Button */
 button {
@@ -514,6 +535,10 @@ button:hover {
     border-right: 1px solid #ddd; /* Ensure separator remains */
   }
 
+    .inputs-wrapper:last-child {
+      border-right: none; /* Remove the separator from the last input */
+    }
+  
   .input-wrapper input {
     font-size: 0.9rem; /* Adjust font size */
     max-width: 100%; /* Ensure input adjusts to container width */

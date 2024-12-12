@@ -7,6 +7,9 @@ import {
   FaEnvelope,
   FaLock,
   FaPhoneAlt,
+  FaApple,
+  FaLinkedinIn,
+  FaLinkedin,
 } from 'react-icons/fa';
 import './JobSeekerPage.css';
 import { NavLink } from 'react-router-dom';
@@ -109,10 +112,6 @@ const JobSeekerPage = () => {
   };
 
 
-
-
-
-
   return (
     <div className="job-seeker-page">
       <nav className="navbar">
@@ -198,6 +197,11 @@ const JobSeekerPage = () => {
         </div>
       </nav>
 
+      <div className="under-nav">
+        <h2>Welcome Job Seeker, Create an account!!</h2>
+        <p>Connect with top employers and discover the perfect opportunity.</p>
+        <hr className="footer-divide" />
+      </div>
 
       {/* Left Section */}
       <div className="info-section">
@@ -207,17 +211,17 @@ const JobSeekerPage = () => {
 
       {/* Right Form Section */}
       <div className="form-container">
-        <div className="form-section">
-          <h2>Register with:</h2>
+        <div className="form-sectio">
+          <h2>Continue with:</h2>
           <div className="social-buttons">
             <button className="social-button">
               <FaGoogle className="social-icon" /> Google
             </button>
             <button className="social-button">
-              <FaGithub className="social-icon" /> GitHub
+              <FaApple className="social-icon" /> Apple
             </button>
             <button className="social-button">
-              <FaGitlab className="social-icon" /> GitLab
+              <FaLinkedin className="social-icon" /> LinkedIn
             </button>
           </div>
           <p>Or</p>

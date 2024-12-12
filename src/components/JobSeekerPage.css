@@ -8,11 +8,12 @@
 }
 
 .work {
-  background-color: white;
+  background-color: white(81, 34, 34);
   text-align: center;
   margin-top: -120px;
-  padding: 20px 0; /* Reduced padding to make the section shorter */
+  padding: -20px 0; /* Reduced padding to make the section shorter */
   height: 820px; /* Ensures it adapts to content height */
+  border-radius: 10px;
 }
 
 
@@ -65,10 +66,11 @@
   align-items: center;
   min-height: 100vh; /* Ensures full height of the viewport */
   padding: 0 40px; /* Optional: adds padding on sides */
+  margin-top: -40px;
 }
 
 /* Right Form Section */
-.form-section {
+.form-sectio {
   flex: 1;
   width: 600px;
   max-width: 800px; /* Limit width for professional look */
@@ -79,16 +81,16 @@
   flex-direction: column;
   justify-content: flex-start;
   max-height: 90vh;
-  margin-top: -260px;
+  margin-top: -200px;
 }
 
-.form-section h2 {
+.form-sectio h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: white;
 }
 
-.form-section p {
+.form-sectio p {
 
   color: white;
 }
@@ -99,6 +101,7 @@
   align-items: center;
   min-height: 100vh; /* Ensures full height of the viewport */
   padding: 0 40px; /* Optional: adds padding on sides */
+  margin-top: -30px;
 }
 
 /* Right Form Section */
@@ -215,7 +218,7 @@
 .signup-button {
   padding: 10px;
   background-color: #2839a4;
-  color: #000;
+  color: white;
   border: none;
   border-radius: 5px;
   font-weight: bold;
