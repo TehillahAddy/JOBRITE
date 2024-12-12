@@ -515,6 +515,7 @@ button:hover {
 
 
 /* Responsive Design for Smaller Screens */
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .job-search-form {
     flex-wrap: nowrap; /* Keep the inputs in a single row */
@@ -527,18 +528,13 @@ button:hover {
     display: flex;
     width: 100%; /* Ensure the container fits within the screen */
     box-sizing: border-box; /* Include padding in width calculations */
-    border: none; /* Remove the border */
     box-shadow: none; /* Remove the shadow */
   }
 
   .inputs-wrapper {
     padding: 5px; /* Reduce padding */
+    border-right: 1px solid #ddd; /* Ensure separator remains */
     flex: 1; /* Make inputs flexible */
-    border-right: 1px solid #ddd; /* Keep separator for inputs */
-  }
-
-  .inputs-wrapper:last-child {
-    border-right: none; /* Remove separator for the last input */
   }
 
   .inputs-wrapper input {
@@ -548,6 +544,10 @@ button:hover {
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide any overflowed text */
     text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  }
+
+  .inputs-wrapper:last-child {
+    border-right: none; /* Remove the separator from the last input */
   }
 
   button {
