@@ -471,10 +471,6 @@ img {
   /* Separator line between inputs */
 }
 
-.inputs-wrapper:last-child {
-  border-right: none;
-}
-
 .inputs-wrapper i {
   font-size: 1.2rem;
   color: #aaa;
@@ -521,32 +517,34 @@ button:hover {
 /* Responsive Design for Smaller Screens */
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-  .job-search-form {
-    flex-wrap: nowrap; /* Keep the inputs in a single row */
-    gap: 5px;
-  }
-
-  .search-containers {
-    padding: 5px;
-  }
-
-  .input-wrapper {
-    padding: 5px; /* Reduce padding */
-    border-right: 1px solid #ddd; /* Ensure separator remains */
-  }
+  @media (max-width: 768px) {
+    .job-search-form {
+      flex-wrap: nowrap; /* Keep the inputs in a single row */
+      gap: 5px;
+    }
+  
+    .search-containers {
+      padding: 5px;
+    }
+  
+    .input-wrapper {
+      padding: 5px; /* Reduce padding */
+      border-right: 1px solid #ddd; /* Ensure separator remains */
+    }
+  
+    .input-wrapper input {
+      font-size: 0.9rem; /* Adjust font size */
+      max-width: 100%; /* Ensure input adjusts to container width */
+    }
 
     .inputs-wrapper:last-child {
       border-right: none; /* Remove the separator from the last input */
     }
   
-  .input-wrapper input {
-    font-size: 0.9rem; /* Adjust font size */
-    max-width: 100%; /* Ensure input adjusts to container width */
-  }
-
-  button {
-    display: none; /* Hide search button on smaller screens */
-  }
+    button {
+      display: none; /* Hide search button on smaller screens */
+    }
+  } 
 }
 
 /* JobTicker.css */

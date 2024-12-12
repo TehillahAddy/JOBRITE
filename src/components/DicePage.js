@@ -72,9 +72,6 @@ const DicePage = () => {
 
   }, []);
 
-
-
-
   return (
     <div className='dice-page'>
       <nav className="navbar">

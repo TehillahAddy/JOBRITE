@@ -8,6 +8,9 @@ import LandingPage from './components/LandingPage';
 import DicePage from './components/DicePage';
 import JobSeekerPage from './components/JobSeekerPage';
 import EmployerPage from './components/EmployerPage';
+import LoginPagePage from './components/LoginPage';
+import LoginPage from './components/LoginPage';
+import SkillsBarPage from './components/SkillsBar';
 
 
 
@@ -21,6 +24,8 @@ function App() {
           <Route path="/dice" element={<DicePage />} />
           <Route path="/signup-job-seeker" element={<JobSeekerPage />} />
           <Route path="/signup-employer" element={<EmployerPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/skills" element={<SkillsBarPage />} />
         </Routes>
       </Router>
       <ToastContainer />

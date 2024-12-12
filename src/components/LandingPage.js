@@ -8,9 +8,7 @@ import feature3 from '../images/feature3.jpg';
 import feature4 from '../images/feature4.jpeg';
 import feature5 from '../images/feature5.jpeg';
 import wall1 from '../images/wall1.jpg';
-import wall2 from '../images/wall2.webp';
-import wall3 from '../images/wall3.webp';
-import wall4 from '../images/wall4.webp';
+
 import role from '../images/the-role.jpg';
 import { NavLink } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -42,7 +40,7 @@ const LandingPage = () => {
   ];
 
   const handleJobClick = (id) => {
-    navigate(`/jobs/${id}`); // Navigate to the job details page
+    navigate(`/login`); // Navigate to the job details page
   };
 
 
@@ -243,7 +241,7 @@ const LandingPage = () => {
           <ul className="nav-links">
             {/* Employer Dropdown */}
             <li className="dropdown">
-              <a href="/about" className="dropdown-trigger">
+              <a href="/skills" className="dropdown-trigger">
                 Employment Tracker <span className="dropdown-indicator">⮟</span>
               </a>
               <div className="dropdown-content">
@@ -539,19 +537,19 @@ const LandingPage = () => {
             <img src={role} alt="Technology" class="card-image"></img>
             <h3>Technology</h3>
             <p>Innovations shaping the future of industries.</p>
-            <a href="#" class="explore-btn">Explore</a>
+            <a href="/" class="explore-btn">Explore</a>
           </div>
           <div class="article-card">
             <img src={feature3} alt="Leadership" class="card-image"></img>
             <h3>Leadership</h3>
             <p>Strategies for effective leadership and management.</p>
-            <a href="#" class="explore-btn">Explore</a>
+            <a href="/" class="explore-btn">Explore</a>
           </div>
           <div class="article-card">
             <img src={feature2} alt="Career Growth" class="card-image"></img>
             <h3>Career Growth</h3>
             <p>Insights to advance your professional journey.</p>
-            <a href="#" class="explore-btn">Explore</a>
+            <a href="/" class="explore-btn">Explore</a>
           </div>
         </div>
       </section>
