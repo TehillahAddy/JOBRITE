@@ -11,7 +11,7 @@
     display: flex; /* Use flexbox for layout */
 }
 
-.text-container {
+.employment-page .text-container {
     flex-basis: 50%; /* Take up half of the space */
     padding-right: 20px; /* Space between text and tracker */
     background-color: bisque; /* Background color for the text container */
@@ -33,7 +33,7 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-left: 30px;
+    margin-left: 200px;
 }
 
 .title-text {
@@ -44,60 +44,82 @@
     border-radius: 50px;
     font-size: 28px;
 }
-
 .progress-summary {
-    font-size: 18px;
-    font-weight: bold;
-}
+   font-size: 18px;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 20px;
+ }
+ 
+ .skill-box {
+   position: relative; /* Positioning for lines */
+   width: 100%;
+   margin-bottom: 25px;
+ }
+ 
+ .stage-indicator {
+   display: flex; /* Flexbox for alignment */
+   align-items: center; /* Center vertically */
+ }
+ 
+ .check-icon {
+   color: #28a745; /* Green color for completed */
+   margin-right: 10px; /* Space between icon and line */
+ }
+ 
+ .line {
+   flex-grow: 1; /* Take up remaining space */
+   height: 2px; /* Line height */
+   background-color: rgba(0,0,0,0.1); /* Default line color */
+ }
+ 
+ .completed-line {
+   background-color: #28a745; /* Green line for completed stages */
+ }
+ 
+ .skill-bar {
+   height: 8px;
+   width: 100%;
+   border-radius: 6px;
+   background-color: rgba(0, 0, 0, 0.1);
+ }
+ 
+ .skill-per {
+   display: block;
+   height: 100%;
+   border-radius: 6px;
+ }
+ 
+ .skill-per.completed {
+   background-color: #28a745; /* Green for completed */
+ }
+ 
+ .skill-per.in-progress {
+   background-color: #ffc107; /* Yellow for in-progress */
+ }
+ 
+ .skill-per.not-started {
+   background-color: crimson; /* Red for not started */
+ }
+ 
 
-.notification {
-    background-color: #28a745; /* Green background */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.skill-box {
-   position :relative ; /* Positioning for lines */
-}
-
-.stage-indicator {
-   display :flex ; /* Flexbox for alignment */
-}
-
-.check-icon {
-   color :#28a745 ; /* Green color for completed */
-}
-
-.line {
-   flex-grow :1 ; /* Take up remaining space */
-   height :2px ; /* Line height */
-   background-color :rgba(0,0,0,0.1); /* Default line color */
-}
-
-.completed-line {
-   background-color :#28a745 ; /* Green line for completed stages */
-}
-
-.skill-bar {
-   height :8px ;
-}
-
-.skill-per {
-   display :block ;
-}
-
-.skill-per.completed {
-   background-color :#28a745 ; /* Green for completed */
-}
-
-.skill-per.in-progress {
-   background-color :#ffc107 ; /* Yellow for in-progress */
-}
-
-.skill-per.not-started {
-   background-color :crimson ; /* Red for not started */
-}
+.tooltip {
+   position:absolute ; 
+   right:-20px ; 
+   top:-25px ; 
+   font-size :12px ; 
+   font-weight :bold ; 
+   color :#fff ; 
+   padding :2px 6px ;
+   border-radius :3px ;
+   background-color :crimson ; /* Tooltip background color */
+  }
+  
+  .other-content {
+   flex-grow:1; /* Allow this section to take up remaining space */
+   padding-left :20px ; /* Space between content and tracker */
+  }
+  
 
 /* Serial Code Form Styles */
 .serial-code-form {

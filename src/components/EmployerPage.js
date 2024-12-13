@@ -151,7 +151,7 @@ const EmployerPage = () => {
           <ul className="nav-links">
             {/* Employer Dropdown */}
             <li className="dropdown">
-              <a href="/about" className="dropdown-trigger">
+              <a href="/employ" className="dropdown-trigger">
                 Employment Tracker <span className="dropdown-indicator">⮟</span>
               </a>
               <div className="dropdown-content">
@@ -183,7 +183,7 @@ const EmployerPage = () => {
         {/* Sign In & Sign Up Links */}
         <div className="auth-links">
           <div className="auth-links">
-            <NavLink to="/signin" className="auth-link">Sign In</NavLink>
+            <NavLink to="/login" className="auth-link">Sign In</NavLink>
             <span className="separator">|</span>
             <div
               className={`auth-link signup ${isModalOpen ? 'active' : ''}`} // Add 'active' class if modal is open

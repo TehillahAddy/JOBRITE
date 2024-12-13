@@ -512,7 +512,7 @@ const LandingPage = () => {
       </div>
 
       <section className="dicee-section">
-        <div class="container">
+        <div class="containers">
           <div class="dice">
             <div class="face front"></div>
             <div class="face back"></div>

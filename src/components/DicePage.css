@@ -264,7 +264,7 @@ body {
     padding: 10px 20px;      /* Reduced vertical padding */
   }
   
-  .container {
+  .containers {
     display: grid;
     place-items: center;
     gap: 15px;               /* Adjust spacing between elements */

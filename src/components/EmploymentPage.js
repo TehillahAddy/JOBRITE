@@ -3,7 +3,7 @@ import './EmploymentPage.css'; // Import CSS for styling
 import { FaCheckCircle } from 'react-icons/fa'; // Importing a checkmark icon
 import './JobSeekerPage.css';
 import { NavLink } from 'react-router-dom';
-import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
+
 import surveyImage from '../images/surveyo.jpeg';
 import { useNavigate } from 'react-router-dom';
 
@@ -141,7 +141,7 @@ const EmploymentPage = () => {
 
                         {/* Job Seeker Dropdown */}
                         <li className="dropdown">
-                            <a href="/about" className="dropdown-trigger">
+                            <a href="/employ" className="dropdown-trigger">
                                 Global Career <span className="dropdown-indicator">⮟</span>
                             </a>
                             <div className="dropdown-content">
@@ -163,7 +163,7 @@ const EmploymentPage = () => {
 
 
                     <div className="auth-links">
-                        <NavLink to="/employ" className="auth-link">Sign In</NavLink>
+                        <NavLink to="/login" className="auth-link">Sign In</NavLink>
                         <span className="separator">|</span>
                         <div
                             className={`auth-link signup ${isModalOpen ? 'active' : ''}`} // Add 'active' class if modal is open
@@ -253,7 +253,6 @@ const EmploymentPage = () => {
                                             <span
                                                 className={`skill-per ${stage.status}`}
                                                 style={{ width: `${stage.level}%` }}
-                                                title={`Progress: ${stage.level}%`} // Tooltip on hover
                                             >
                                                 <span className="tooltip">{stage.level}%</span>
                                             </span>

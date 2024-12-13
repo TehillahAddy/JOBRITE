@@ -437,7 +437,7 @@ img {
   text-align: center;
   padding: 10px 20px;
   background-color: white;
-  margin-top: -11px;
+  margin-top: 28px;
   
 }
 
@@ -1233,7 +1233,7 @@ button:hover {
   height: 100vh;  
 }
 
-.container {
+.containers {
   display: grid;
   place-items: center;
   width: 250px;

@@ -99,7 +99,7 @@ const DicePage = () => {
           <ul className="nav-links">
             {/* Employer Dropdown */}
             <li className="dropdown">
-              <a href="/about" className="dropdown-trigger">
+              <a href="/employ" className="dropdown-trigger">
                 Employment Tracker <span className="dropdown-indicator">⮟</span>
               </a>
               <div className="dropdown-content">
@@ -130,7 +130,7 @@ const DicePage = () => {
 
         {/* Sign In & Sign Up Links */}
         <div className="auth-links">
-          <NavLink to="/signin" className="auth-link">Sign In</NavLink>
+          <NavLink to="/login" className="auth-link">Sign In</NavLink>
           <span className="separator">|</span>
           <div className="auth-link signup">
             Sign Up
@@ -188,7 +188,7 @@ const DicePage = () => {
       </section>
 
       <section className="dicee-section">
-        <div class="container">
+        <div class="containers">
           <div class="dice">
             <div class="face front"></div>
             <div class="face back"></div>
