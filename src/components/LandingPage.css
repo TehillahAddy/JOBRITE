@@ -428,13 +428,14 @@ img {
 }
 
 .job-search-section {
-  margin-top: 71px;
+  margin-top: 51px;
+  background-color: white;
 }
 
 /* Job Search Section */
 .job-search {
   text-align: center;
-  padding: 30px 20px;
+  padding: 10px 20px;
   background-color: white;
   margin-top: -11px;
   
@@ -459,6 +460,7 @@ img {
   width: 100%;
   box-shadow: 0 5px 10px rgba(115, 119, 153, 0.5),
             -10px 0 15px rgba(185, 187, 202, 0.5);
+            
 }
 
 .inputs-wrapper {
@@ -661,8 +663,6 @@ button:hover {
   }
 }
 
-
-
 /* Animated Text */
 .header-text {
   opacity: 0;
@@ -736,7 +736,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 30px 20px;
+  padding: 5px 20px;
   background-color: #f9f9f9;
   /* Light background color */
 

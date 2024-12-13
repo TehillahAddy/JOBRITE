@@ -1,0 +1,158 @@
+.general-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    background-color: white;
+    min-height: 900px;
+    height: 600px;
+    margin-top: 90px;
+}
+
+.employment-page {
+    display: flex; /* Use flexbox for layout */
+}
+
+.text-container {
+    flex-basis: 50%; /* Take up half of the space */
+    padding-right: 20px; /* Space between text and tracker */
+    background-color: bisque; /* Background color for the text container */
+    border-radius: 10px;
+    border-color: #4444;
+    height: fit-content;
+    margin-left: 60px; /* Move it right */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within container */
+}
+
+.container {
+    flex-basis: 40%; /* Take up slightly less than half of the space */
+    padding: 35px; /* Reduced padding */
+    max-width: 400px; /* Decrease max width */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 30px;
+}
+
+.title-text {
+    text-align: center;
+    color: #fff;
+    background-color: crimson;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 28px;
+}
+
+.progress-summary {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.notification {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.skill-box {
+   position :relative ; /* Positioning for lines */
+}
+
+.stage-indicator {
+   display :flex ; /* Flexbox for alignment */
+}
+
+.check-icon {
+   color :#28a745 ; /* Green color for completed */
+}
+
+.line {
+   flex-grow :1 ; /* Take up remaining space */
+   height :2px ; /* Line height */
+   background-color :rgba(0,0,0,0.1); /* Default line color */
+}
+
+.completed-line {
+   background-color :#28a745 ; /* Green line for completed stages */
+}
+
+.skill-bar {
+   height :8px ;
+}
+
+.skill-per {
+   display :block ;
+}
+
+.skill-per.completed {
+   background-color :#28a745 ; /* Green for completed */
+}
+
+.skill-per.in-progress {
+   background-color :#ffc107 ; /* Yellow for in-progress */
+}
+
+.skill-per.not-started {
+   background-color :crimson ; /* Red for not started */
+}
+
+/* Serial Code Form Styles */
+.serial-code-form {
+   display :flex ;
+   flex-direction :column ;
+   margin-top :20px ;
+   width: 50%;
+}
+
+.serial-code-form label {
+   margin-bottom :5px ;
+   font-weight :bold ;
+}
+
+.serial-code-form input {
+   padding :10px ;
+   border-radius :5px ;
+   border :1px solid #ccc ;
+   margin-bottom :10px ;
+}
+
+.serial-code-form button {
+   padding :10px ;
+   border-radius :5px ;
+   border:none ;
+   background-color :crimson ;
+   color:white ;
+   cursor:pointer ;
+}
+
+.serial-code-form button:hover {
+   background-color :#d9534f ; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width:600px) {
+   .general-container {
+       flex-direction :column ; /* Stack items vertically on small screens */
+       align-items:center ; /* Center items horizontally */
+   }
+
+   /* Responsive Design */
+@media (max-width:600px) {
+    .employment-page {
+        flex-direction :column ; /* Stack items vertically on small screens */
+        align-items:center ; /* Center items horizontally */
+    }
+ 
+    .text-container,
+    .container {
+        flex-basis :100% ; /* Full width on small screens */
+        padding-right :0 ; /* Remove right padding on small screens */
+        margin-bottom :20px ; /* Space between stacked items */
+        max-width:none; /* Remove max-width restriction on small screens */ 
+    }
+ }
+}
+
