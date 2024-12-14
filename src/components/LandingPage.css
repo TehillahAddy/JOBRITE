@@ -1700,7 +1700,10 @@ button:hover {
 
 @media (max-width: 768px) {
   .landing-footer .footer-category.subscribe,
-  .landing-footer .footer-category.contact:last-child {
+  .landing-footer .footer-category.contact
+  .landing-footer .footer-category.follow-us
+  
+  {
     display: none; /* Hide the subscription form and one contact section */
   }
 
