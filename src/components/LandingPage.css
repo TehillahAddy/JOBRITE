@@ -17,7 +17,7 @@ body {
 .container {
   max-width: 100vw; /* Prevent container from exceeding viewport */
   overflow-x: hidden; /* Prevent horizontal overflow */
-  padding: 0 15px; /* Add padding for smaller screens */
+ 
 }
 
 img {
@@ -1697,6 +1697,31 @@ button:hover {
   background-color: #a6b9cd;
   /* Darker shade on hover */
 }
+
+@media (max-width: 768px) {
+  .landing-footer .footer-category.subscribe,
+  .landing-footer .footer-category.contact:last-child {
+    display: none; /* Hide the subscription form and one contact section */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Add space between sections */
+  }
+
+  .footer-category {
+    text-align: center; /* Center content for better appearance */
+  }
+
+  .footer-category.follow-us .social-icons {
+    justify-content: center; /* Center the social media icons */
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem; /* Reduce font size for copyright text */
+  }
+}
+
 
 .testimonials-section {
   padding: 50px 20px;
