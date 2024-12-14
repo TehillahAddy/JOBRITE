@@ -1033,7 +1033,7 @@ button:hover {
   body {
     background-color: #121212;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .features-section {
