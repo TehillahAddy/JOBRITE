@@ -1699,31 +1699,22 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  .footer-container .footer-category:not(.follow-us) {
-    display: none; /* Hide all sections except the "Follow Us" section */
+  /* Hide the "Follow Us" section from footer-container */
+  .footer-container .follow-us {
+    display: none; /* Remove "Follow Us" from the main footer on small screens */
   }
 
-  .footer-container {
-    flex-direction: column; /* Stack the visible sections vertically */
-    align-items: center; /* Center-align content */
-  }
-
+  /* Ensure only the "down" section's icons and copyright remain visible */
   .down .social-icons {
-    justify-content: center; /* Center the icons */
+    justify-content: center; /* Center align the icons */
   }
 
-  .footer-copyright {
+  .down .footer-copyright {
     text-align: center;
-    font-size: 0.9rem; /* Adjust text size */
     margin-top: 10px;
   }
-}
 
-@media (max-width: 1024px) {
-  .footer-container .footer-category:not(.follow-us) {
-    display: none; /* Keep only the "Follow Us" section */
-  }
-
+  /* Adjust layout for smaller screens */
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -1731,10 +1722,36 @@ button:hover {
 
   .down {
     text-align: center;
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Hide the "Follow Us" section from footer-container */
+  .footer-container .follow-us {
+    display: none; /* Remove "Follow Us" from the main footer on small screens */
   }
 
-  .footer-copyright {
+  /* Ensure only the "down" section's icons and copyright remain visible */
+  .down .social-icons {
+    justify-content: center; /* Center align the icons */
+  }
+
+  .down .footer-copyright {
+    text-align: center;
     margin-top: 10px;
+  }
+
+  /* Adjust layout for smaller screens */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .down {
+    text-align: center;
+    padding: 10px;
   }
 }
 
