@@ -1698,7 +1698,8 @@ button:hover {
   /* Darker shade on hover */
 }
 
-/* Media query for smaller screens (portrait and landscape) */
+
+
 @media (max-width: 768px) {
   .landing-footer {
     padding: 10px 15px; /* Reduce padding for smaller screens */
@@ -1725,20 +1726,32 @@ button:hover {
   }
 }
 
-/* Additional styles for phones in landscape mode */
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 1024px) {
   .landing-footer {
-    padding: 5px 10px; /* Reduce footer height further in landscape */
+    padding: 10px 15px; /* Reduce padding for smaller screens */
+  }
+
+  .landing-footer .footer-container {
+    display: none; /* Hide main footer content */
+  }
+
+  .landing-footer .down {
+    display: block; /* Show the .down section */
+    text-align: center;
+    padding: 15px 0; /* Smaller padding for the reduced section */
   }
 
   .landing-footer .down .social-icons a {
-    font-size: 1rem; /* Slightly smaller icons for horizontal space */
+    margin: 0 5px; /* Space out icons slightly */
+    font-size: 1.2rem; /* Adjust icon size */
   }
 
   .footer-copyright {
-    font-size: 0.8rem; /* Adjust text size for landscape view */
+    font-size: 0.9rem; /* Smaller text size */
+    margin-top: 5px;
   }
 }
+
 
 .testimonials-section {
   padding: 50px 20px;
