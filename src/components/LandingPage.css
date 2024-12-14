@@ -1698,30 +1698,45 @@ button:hover {
   /* Darker shade on hover */
 }
 
-.landing-footer .down {
-  display: block; /* Always display the .down section */
-}
-
-/* Media query for smaller screens */
+/* Media query for smaller screens (portrait and landscape) */
 @media (max-width: 768px) {
+  .landing-footer {
+    padding: 10px 15px; /* Reduce padding for smaller screens */
+  }
+
   .landing-footer .footer-container {
-    display: none; /* Hide only the .footer-container content */
+    display: none; /* Hide main footer content */
   }
 
   .landing-footer .down {
-    display: block; /* Keep the .down section visible */
-    text-align: center; /* Center align the content */
-    padding: 20px 10px; /* Add spacing for aesthetics */
+    display: block; /* Show the .down section */
+    text-align: center;
+    padding: 15px 0; /* Smaller padding for the reduced section */
   }
 
   .landing-footer .down .social-icons a {
-    margin: 0 5px; /* Space out social icons */
-    font-size: 1.3rem; /* Adjust icon size for visibility */
+    margin: 0 5px; /* Space out icons slightly */
+    font-size: 1.2rem; /* Adjust icon size */
   }
 
   .footer-copyright {
-    margin-top: 10px;
-    font-size: 0.9rem; /* Adjust font size */
+    font-size: 0.9rem; /* Smaller text size */
+    margin-top: 5px;
+  }
+}
+
+/* Additional styles for phones in landscape mode */
+@media (max-width: 768px) and (orientation: landscape) {
+  .landing-footer {
+    padding: 5px 10px; /* Reduce footer height further in landscape */
+  }
+
+  .landing-footer .down .social-icons a {
+    font-size: 1rem; /* Slightly smaller icons for horizontal space */
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem; /* Adjust text size for landscape view */
   }
 }
 
