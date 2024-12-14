@@ -1698,60 +1698,41 @@ button:hover {
   /* Darker shade on hover */
 }
 
-@media (max-width: 768px) {
-  /* Hide the "Follow Us" section from footer-container */
-  .footer-container .follow-us {
-    display: none; /* Remove "Follow Us" from the main footer on small screens */
-  }
 
-  /* Ensure only the "down" section's icons and copyright remain visible */
-  .down .social-icons {
-    justify-content: center; /* Center align the icons */
-  }
-
-  .down .footer-copyright {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  /* Adjust layout for smaller screens */
+/* Styles for smaller screens (768px and 1024px) */
+@media (max-width: 1024px) {
+  /* Hide all other sections in the footer-container */
   .footer-container {
+    display: none;
+  }
+
+  /* Only display the "down" section */
+  .down {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    background-color: #121212; /* Optional: match footer background */
   }
 
-  .down {
-    text-align: center;
-    padding: 10px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  /* Hide the "Follow Us" section from footer-container */
-  .footer-container .follow-us {
-    display: none; /* Remove "Follow Us" from the main footer on small screens */
-  }
-
-  /* Ensure only the "down" section's icons and copyright remain visible */
+  /* Center-align the social icons */
   .down .social-icons {
-    justify-content: center; /* Center align the icons */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
   }
 
+  /* Style the copyright text */
   .down .footer-copyright {
     text-align: center;
-    margin-top: 10px;
+    color: #fff;
+    font-size: 0.9rem;
   }
 
-  /* Adjust layout for smaller screens */
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .down {
-    text-align: center;
-    padding: 10px;
+  /* Ensure no horizontal scrolling is introduced */
+  body {
+    overflow-x: hidden;
   }
 }
 
