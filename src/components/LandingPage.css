@@ -1,11 +1,5 @@
 /* General Layout */
-body {
-  margin: 0;
-  font-family: 'Indeed Sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, sans-serif;
-  color: #333;
-  background-color: #121212; /* Dark background */
-  overflow-x: hidden; /* Disable horizontal scrolling */
-}
+
 
 .landing-page {
   display: flex;
@@ -31,6 +25,14 @@ img {
 
   .container {
     padding: 0 10px; /* Ensure content fits the screen */
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Indeed Sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, sans-serif;
+    color: #333;
+    background-color: #121212; /* Dark background */
+    overflow-x: hidden; /* Disable horizontal scrolling */
   }
 }
 
@@ -1024,6 +1026,7 @@ button:hover {
   body {
     background-color: #121212;
     color: #fff;
+    overflow: hidden;
   }
 
   .features-section {
@@ -2088,6 +2091,7 @@ body {
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .advance-section {
