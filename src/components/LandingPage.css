@@ -1699,29 +1699,42 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  .landing-footer .footer-category.subscribe,
-  .landing-footer .footer-category.contact
-  .landing-footer .footer-category.follow-us
-  
-  {
-    display: none; /* Hide the subscription form and one contact section */
+  .footer-container .footer-category:not(.follow-us) {
+    display: none; /* Hide all sections except the "Follow Us" section */
   }
 
   .footer-container {
-    flex-direction: column; /* Stack elements vertically */
-    gap: 20px; /* Add space between sections */
+    flex-direction: column; /* Stack the visible sections vertically */
+    align-items: center; /* Center-align content */
   }
 
-  .footer-category {
-    text-align: center; /* Center content for better appearance */
-  }
-
-  .footer-category.follow-us .social-icons {
-    justify-content: center; /* Center the social media icons */
+  .down .social-icons {
+    justify-content: center; /* Center the icons */
   }
 
   .footer-copyright {
-    font-size: 0.8rem; /* Reduce font size for copyright text */
+    text-align: center;
+    font-size: 0.9rem; /* Adjust text size */
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-container .footer-category:not(.follow-us) {
+    display: none; /* Keep only the "Follow Us" section */
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .down {
+    text-align: center;
+  }
+
+  .footer-copyright {
+    margin-top: 10px;
   }
 }
 
