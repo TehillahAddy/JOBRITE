@@ -1,17 +1,1 @@
-{
-
-"$schema": "./package.schema.json",
-  "name": "jobrite",
-  "version": "0.1.0",
-  "private": true,
-
-  "devDependencies": {
-    "concurrently": "^9.1.0",
-    "nodemon": "^3.1.9"
-  },
-  "scripts": {
-    "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "cd frontend && npm start",
-    "server": "cd backend && nodemon server.js"
-  }
-}
+{"$schema":"./package.schema.json","name":"jobrite","version":"0.1.0","private":true,"devDependencies":{"concurrently":"^9.1.0","nodemon":"^3.1.9"},"scripts":{"start":"concurrently \"npm run client\" \"npm run server\"","client":"cd frontend && npm start","server":"cd backend && nodemon server.js"},"dependencies":{"bcrypt":"^5.1.1","body-parser":"^1.20.3","cors":"^2.8.5","mongoose":"^8.9.1"}}

@@ -111,6 +111,55 @@ const JobSeekerPage = () => {
     }
   };
 
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: "",
+    mobileNumber: "",
+    contactNumber: "",
+  });
+
+  const [message, setMessage] = useState({ success: "", error: "" });
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Log form data to verify all fields are populated
+    console.log("Form data being sent:", formData);
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        setMessage({ success: data.message, error: "" });
+      } else {
+        const errorData = await response.json();
+        setMessage({ error: errorData.message, success: "" });
+        console.error("Error data:", errorData); // Log error response
+      }
+    } catch (err) {
+      setMessage({ error: "An error occurred. Please try again.", success: "" });
+      console.error("Fetch error:", err); // Log fetch error
+    }
+  };
+  
+
 
   return (
     <div className="job-seeker-page">
@@ -225,16 +274,28 @@ const JobSeekerPage = () => {
             </button>
           </div>
           <p>Or</p>
-          <form className="signup-form">
+          <form className="signup-form" onSubmit={handleSubmit}>
             {/* Name Fields */}
             <div className="form-row">
               <div className="form-rowss">
                 <div className="input-group">
-                  <input type="text" placeholder="First Name" />
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                  />
                   <FaUser className="input-icon" />
                 </div>
                 <div className="input-group">
-                  <input type="text" placeholder="Last Name" />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                  />
                   <FaUser className="input-icon" />
                 </div>
               </div>
@@ -242,13 +303,25 @@ const JobSeekerPage = () => {
 
             {/* Username */}
             <div className="input-group">
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleInputChange}
+              />
               <FaUser className="input-icon" />
             </div>
 
             {/* Email */}
             <div className="input-group">
-              <input type="email" placeholder="Email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
               <FaEnvelope className="input-icon" />
             </div>
 
@@ -377,19 +450,35 @@ const JobSeekerPage = () => {
               </select>
             </div>
 
-            {/* Contact */}<div className="form-row">
+            <div className="form-row">
               <div className="form-rowss">
                 <div className="input-group">
                   <FaPhoneAlt className="input-icon" />
-                  <input type="text" placeholder="Mobile Number" />
+                  <input
+                    type="text"
+                    name="mobileNumber"
+                    placeholder="Mobile Number"
+                    value={formData.mobileNumber}
+                    onChange={handleInputChange}
+                  />
                 </div>
                 <div className="input-group">
                   <FaPhoneAlt className="input-icon" />
-                  <input type="text" placeholder="Contact Number" />
+                  <input
+                    type="text"
+                    name="contactNumber"
+                    placeholder="Contact Number"
+                    value={formData.contactNumber}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
             </div>
-            <button className="signup-button">Sign Up</button>
+            {message.error && <p className="error">{message.error}</p>}
+            {message.success && <p className="success">{message.success}</p>}
+            <button className="signup-button" type="submit">
+              Sign Up
+            </button>
           </form>
           <p className="terms">
             By creating an account, you agree to the <a href="#">Terms of Service</a>.
