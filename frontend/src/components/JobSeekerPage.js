@@ -192,7 +192,7 @@ const JobSeekerPage = () => {
                 Employment Tracker <span className="dropdown-indicator">⮟</span>
               </a>
               <div className="dropdown-content">
-                <div className="dropdown-item"><a href="/employer/solutions">Solutions</a></div>
+                <div className="dropdown-item"><a href="/employer/solutions">Solutionss</a></div>
                 <div className="dropdown-item"><a href="/employer/hire">Hire Talent</a></div>
                 <div className="dropdown-item"><a href="/employer/manage">Manage Listings</a></div>
               </div>
