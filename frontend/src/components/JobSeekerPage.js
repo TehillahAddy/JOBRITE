@@ -47,26 +47,8 @@ const JobSeekerPage = () => {
   };
 
 
-  const [password, setPassword] = useState("");
-  const [passwordCriteria, setPasswordCriteria] = useState({
-    hasUppercase: false,
-    hasLowercase: false,
-    hasNumber: false,
-    hasSpecialChar: false,
-  });
-  const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
-
-
-  const validatePassword = (value) => {
-    setPassword(value);
-    setPasswordCriteria({
-      hasUppercase: /[A-Z]/.test(value),
-      hasLowercase: /[a-z]/.test(value),
-      hasNumber: /\d/.test(value),
-      hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(value),
-    });
-  };
-
+ 
+  
 
   // State for the selected values of Day, Month, and Year
   const [selectedDay, setSelectedDay] = useState('');
@@ -118,24 +100,56 @@ const JobSeekerPage = () => {
     email: "",
     password: "",
     mobileNumber: "",
-    contactNumber: "",
+    contactNumber: ""
+  });
+  
+  const [passwordCriteria, setPasswordCriteria] = useState({
+    hasUppercase: false,
+    hasLowercase: false,
+    hasNumber: false,
+    hasSpecialChar: false,
   });
 
+  const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
   const [message, setMessage] = useState({ success: "", error: "" });
 
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+
+    if (name === 'password') {
+      validatePassword(value);
+    }
   };
 
-  // Handle form submission
+  const validatePassword = (value) => {
+    setPasswordCriteria({
+      hasUppercase: /[A-Z]/.test(value),
+      hasLowercase: /[a-z]/.test(value),
+      hasNumber: /\d/.test(value),
+      hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(value),
+    });
+    return /[A-Z]/.test(value) && /[a-z]/.test(value) && /\d/.test(value) && /[!@#$%^&*(),.?":{}|<>]/.test(value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Log form data to verify all fields are populated
-    console.log("Form data being sent:", formData);
-  
+
+    const { firstName, lastName, username, email, password } = formData;
+
+    if (!firstName || !lastName || !username || !email || !password) {
+      setMessage({ error: "All fields are required", success: "" });
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      setMessage({ error: "Password does not meet the criteria", success: "" });
+      return;
+    }
+
     try {
       const response = await fetch("http://localhost:5000/api/signup", {
         method: "POST",
@@ -144,22 +158,18 @@ const JobSeekerPage = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
         setMessage({ success: data.message, error: "" });
       } else {
         const errorData = await response.json();
         setMessage({ error: errorData.message, success: "" });
-        console.error("Error data:", errorData); // Log error response
       }
     } catch (err) {
       setMessage({ error: "An error occurred. Please try again.", success: "" });
-      console.error("Fetch error:", err); // Log fetch error
     }
   };
-  
-
 
   return (
     <div className="job-seeker-page">
@@ -275,7 +285,6 @@ const JobSeekerPage = () => {
           </div>
           <p>Or</p>
           <form className="signup-form" onSubmit={handleSubmit}>
-            {/* Name Fields */}
             <div className="form-row">
               <div className="form-rowss">
                 <div className="input-group">
@@ -301,7 +310,6 @@ const JobSeekerPage = () => {
               </div>
             </div>
 
-            {/* Username */}
             <div className="input-group">
               <input
                 type="text"
@@ -313,7 +321,6 @@ const JobSeekerPage = () => {
               <FaUser className="input-icon" />
             </div>
 
-            {/* Email */}
             <div className="input-group">
               <input
                 type="email"
@@ -325,19 +332,18 @@ const JobSeekerPage = () => {
               <FaEnvelope className="input-icon" />
             </div>
 
-            {/* Password */}
             <div className="input-group">
               <input
                 type="password"
-                id="password"
+                name="password"
                 placeholder="Create a password"
-                value={password}
-                onChange={(e) => validatePassword(e.target.value)}
+                value={formData.password}
+                onChange={handleInputChange}
               />
               <span
                 className="info-icon"
-                onMouseEnter={() => setShowPasswordTooltip(true)}  // Show tooltip on hover
-                onMouseLeave={() => setShowPasswordTooltip(false)} // Hide tooltip when hover leaves
+                onMouseEnter={() => setShowPasswordTooltip(true)}
+                onMouseLeave={() => setShowPasswordTooltip(false)}
               >
                 ⓘ
               </span>
@@ -368,6 +374,7 @@ const JobSeekerPage = () => {
               </div>
               <FaLock className="input-icon" />
             </div>
+
 
             <div className="form-rows">
               {/* Day */}
@@ -474,11 +481,11 @@ const JobSeekerPage = () => {
                 </div>
               </div>
             </div>
-            {message.error && <p className="error">{message.error}</p>}
-            {message.success && <p className="success">{message.success}</p>}
             <button className="signup-button" type="submit">
               Sign Up
             </button>
+             {message.error && <p className="error">{message.error}</p>}
+            {message.success && <p className="success">{message.success}</p>}
           </form>
           <p className="terms">
             By creating an account, you agree to the <a href="#">Terms of Service</a>.
