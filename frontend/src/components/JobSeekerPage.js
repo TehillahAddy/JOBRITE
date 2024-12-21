@@ -47,8 +47,8 @@ const JobSeekerPage = () => {
   };
 
 
- 
-  
+
+
 
   // State for the selected values of Day, Month, and Year
   const [selectedDay, setSelectedDay] = useState('');
@@ -102,7 +102,7 @@ const JobSeekerPage = () => {
     mobileNumber: "",
     contactNumber: ""
   });
-  
+
   const [passwordCriteria, setPasswordCriteria] = useState({
     hasUppercase: false,
     hasLowercase: false,
@@ -481,15 +481,7 @@ const JobSeekerPage = () => {
                 </div>
               </div>
             </div>
-            <button className="signup-button" type="submit">
-              Sign Up
-            </button>
-             {message.error && <p className="error">{message.error}</p>}
-            {message.success && <p className="success">{message.success}</p>}
           </form>
-          <p className="terms">
-            By creating an account, you agree to the <a href="#">Terms of Service</a>.
-          </p>
         </div>
       </div>
 
@@ -506,7 +498,7 @@ const JobSeekerPage = () => {
           <div className="form-sections">
             <h2> Provide Your Details</h2>
 
-            <form class="signup-form">
+            <form className="signup-form" onSubmit={handleSubmit}>
 
               <div class="form-rows">
                 <input list="highest-qualification-options" id="highest-qualification" class="dropdowns" placeholder="Highest Qualification *" />
@@ -584,9 +576,11 @@ const JobSeekerPage = () => {
                 </label>
               </div>
 
-              <div class="form-rows">
-                <button type="submit" class="signup-button">Create Account</button>
-              </div>
+              <button className="signup-button" type="submit">
+                Create Account
+              </button>
+              {message.error && <p className="error">{message.error}</p>}
+              {message.success && <p className="success">{message.success}</p>}
             </form>
 
             <p className="terms">

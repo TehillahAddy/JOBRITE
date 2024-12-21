@@ -58,28 +58,6 @@ const EmployerPage = () => {
     setModalOpen(prev => !prev); // Toggle modal visibility on click for mobile
   };
 
-
-  const [password, setPassword] = useState("");
-  const [passwordCriteria, setPasswordCriteria] = useState({
-    hasUppercase: false,
-    hasLowercase: false,
-    hasNumber: false,
-    hasSpecialChar: false,
-  });
-  const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
-
-
-  const validatePassword = (value) => {
-    setPassword(value);
-    setPasswordCriteria({
-      hasUppercase: /[A-Z]/.test(value),
-      hasLowercase: /[a-z]/.test(value),
-      hasNumber: /\d/.test(value),
-      hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(value),
-    });
-  };
-
-
   // State for the selected values of Day, Month, and Year
   const [selectedDay, setSelectedDay] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');
@@ -122,6 +100,85 @@ const EmployerPage = () => {
       setSelectedYear(value);
     }
   };
+
+  
+    const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      username: "",
+      email: "",
+      password: "",
+      mobileNumber: "",
+      contactNumber: ""
+    });
+  
+    const [passwordCriteria, setPasswordCriteria] = useState({
+      hasUppercase: false,
+      hasLowercase: false,
+      hasNumber: false,
+      hasSpecialChar: false,
+    });
+  
+    const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
+    const [message, setMessage] = useState({ success: "", error: "" });
+  
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value
+      }));
+  
+      if (name === 'password') {
+        validatePassword(value);
+      }
+    };
+  
+    const validatePassword = (value) => {
+      setPasswordCriteria({
+        hasUppercase: /[A-Z]/.test(value),
+        hasLowercase: /[a-z]/.test(value),
+        hasNumber: /\d/.test(value),
+        hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(value),
+      });
+      return /[A-Z]/.test(value) && /[a-z]/.test(value) && /\d/.test(value) && /[!@#$%^&*(),.?":{}|<>]/.test(value);
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      const { firstName, lastName, username, email, password } = formData;
+  
+      if (!firstName || !lastName || !username || !email || !password) {
+        setMessage({ error: "All fields are required", success: "" });
+        return;
+      }
+  
+      if (!validatePassword(password)) {
+        setMessage({ error: "Password does not meet the criteria", success: "" });
+        return;
+      }
+  
+      try {
+        const response = await fetch("http://localhost:5000/api/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+          setMessage({ success: data.message, error: "" });
+        } else {
+          const errorData = await response.json();
+          setMessage({ error: errorData.message, success: "" });
+        }
+      } catch (err) {
+        setMessage({ error: "An error occurred. Please try again.", success: "" });
+      }
+    };
 
 
   return (
@@ -222,7 +279,7 @@ const EmployerPage = () => {
         <p>Reach top talent and find the right candidate today.</p>
         <hr className="footer-divide" />
       </div>
-     
+
       {/* Left Section */}
       <div className="info-section">
         <h1>Company Representative</h1>
@@ -233,46 +290,70 @@ const EmployerPage = () => {
       <div className="form-containers">
         <div className="form-sectio">
           <h2>Continue with:</h2>
-          <form className="signup-form">
+
+          <form className="signup-form" onSubmit={handleSubmit}>
             {/* Name Fields */}
             <div className="form-row">
               <div className="form-rowss">
                 <div className="input-group">
-                  <input type="text" placeholder="First Name" />
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                  />
                   <FaUser className="input-icon" />
                 </div>
                 <div className="input-group">
-                  <input type="text" placeholder="Last Name" />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                  />
                   <FaUser className="input-icon" />
                 </div>
               </div>
             </div>
 
             {/* Username */}
+
             <div className="input-group">
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleInputChange}
+              />
               <FaUser className="input-icon" />
-              <input type="text" placeholder="Username" />
             </div>
 
-            {/* Email */}
             <div className="input-group">
-              <input type="email" placeholder="Work Email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
               <FaEnvelope className="input-icon" />
             </div>
 
-            {/* Password */}
             <div className="input-group">
               <input
                 type="password"
-                id="password"
+                name="password"
                 placeholder="Create a password"
-                value={password}
-                onChange={(e) => validatePassword(e.target.value)}
+                value={formData.password}
+                onChange={handleInputChange}
               />
               <span
                 className="info-icon"
-                onMouseEnter={() => setShowPasswordTooltip(true)}  // Show tooltip on hover
-                onMouseLeave={() => setShowPasswordTooltip(false)} // Hide tooltip when hover leaves
+                onMouseEnter={() => setShowPasswordTooltip(true)}
+                onMouseLeave={() => setShowPasswordTooltip(false)}
               >
                 ⓘ
               </span>
@@ -386,29 +467,35 @@ const EmployerPage = () => {
               </select>
             </div>
 
-            {/* Contact */}<div className="form-row">
+            <div className="form-row">
               <div className="form-rowss">
                 <div className="input-group">
                   <FaPhoneAlt className="input-icon" />
-                  <input type="text" placeholder="Mobile Number" />
+                  <input
+                    type="text"
+                    name="mobileNumber"
+                    placeholder="Mobile Number"
+                    value={formData.mobileNumber}
+                    onChange={handleInputChange}
+                  />
                 </div>
                 <div className="input-group">
                   <FaPhoneAlt className="input-icon" />
-                  <input type="text" placeholder="Contact Number" />
+                  <input
+                    type="text"
+                    name="contactNumber"
+                    placeholder="Contact Number"
+                    value={formData.contactNumber}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
             </div>
-            <div>
-              <button className="But">Sign Up</button>
-            </div>
           </form>
-          <p className="terms">
-            By creating an account, you agree to the <a href="#">Terms of Service</a>.
-          </p>
         </div>
       </div>
 
-      
+
 
       <div className="employer-page-container">
         <div className="text-section">
@@ -417,7 +504,7 @@ const EmployerPage = () => {
         </div>
 
         <div className="form-section">
-          <form className="employer-form">
+          <form className="employer-form" onSubmit={handleSubmit}>
             <h3>Company Information</h3>
             <p className="form-description">This information pertains to your company</p>
             <div className="form-row">
@@ -492,7 +579,12 @@ const EmployerPage = () => {
                 <input type="checkbox" required />
                 I agree to the <a href="#">TERMS & CONDITIONS</a> and <a href="#">PRIVACY POLICY</a>
               </label>
-              <button type="submit">Create Your Account</button>
+              <button className="signup-button" type="submit">
+                Create Account
+              </button>
+              {message.error && <p className="error">{message.error}</p>}
+              {message.success && <p className="success">{message.success}</p>}
+
 
               <p className="terms">
                 By creating an account, you agree to the <a href="#">Terms of Service</a>.
@@ -504,7 +596,7 @@ const EmployerPage = () => {
             </div>
           </form>
         </div>
-      </div>
+      </div >
 
       <footer className="landing-footer">
         <div className="footer-container">
@@ -606,7 +698,7 @@ const EmployerPage = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 };
 
