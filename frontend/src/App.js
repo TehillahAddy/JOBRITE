@@ -11,6 +11,7 @@ import EmployerPage from './components/EmployerPage';
 import LoginPage from './components/LoginPage';
 import JobSelectionDice from './components/JobSelectionDice';
 import EmploymentPage from './components/EmploymentPage';
+import Dashboard from './components/Dashboard';
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/jsd" element={<JobSelectionDice />} />
           <Route path="/employ" element={<EmploymentPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
       <ToastContainer />

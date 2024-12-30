@@ -1,47 +1,43 @@
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./LoginPage.css";
 import React, { useState, useEffect } from 'react';
 import './JobSeekerPage.css';
 import { NavLink } from 'react-router-dom';
 import surveyImage from '../images/surveyo.jpeg';
-
 import { SocialIcon } from 'react-social-icons';
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(""); // State for error messages
+    const navigate = useNavigate(); // useNavigate hook from react-router-dom
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        // Add your login logic here
-        console.log("Email:", email, "Password:", password);
-    };
-
-    useEffect(() => {
-        const menuIcon = document.querySelector(".menu-icon");
-        const navLinks = document.querySelector(".nav-links");
-
-        if (menuIcon) {
-            menuIcon.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-            });
-        }
-
-        // Clean up the event listener when component is unmounted
-        return () => {
-            if (menuIcon) {
-                menuIcon.removeEventListener("click", () => {
-                    navLinks.classList.toggle("active");
-                });
+        try {
+            const res = await axios.post('http://localhost:5000/api/login', { email, password });
+            console.log('Login successful:', res.data);
+            // Check if token is received
+            if (res.data.token) {
+                console.log('Token received:', res.data.token);
+            } else {
+                console.log('No token received');
             }
-        };
-    }, []);
-
+            // Store token, redirect, etc.
+            localStorage.setItem('token', res.data.token); // Example of storing the token
+            navigate('/dashboard'); // Redirect to dashboard or another page
+        } catch (err) {
+            console.error('Error logging in:', err.response.data);
+            setErrorMessage(err.response.data.message || 'Login failed'); // Set error message state
+        }
+    };
     return (
         <div className="login-page">
             <nav className="navbar">
@@ -175,6 +171,8 @@ const LoginPage = () => {
                             </label>
                         </div>
                         <button className="login-button" type="submit">Log in</button>
+                          {/* Display error message if any */}
+                          {errorMessage && <p className="error-message">{errorMessage}</p>}
                     </form>
                     <div className="login-footer">
                         <p>
