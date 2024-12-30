@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './DicePage.css';
 import './LandingPage.css';
-import { Link } from 'react-router-dom';
+
 import { NavLink } from 'react-router-dom';
 
 
@@ -62,6 +62,7 @@ const DicePage = () => {
           case 6:
             dice.style.transform = 'rotateX(180deg) rotateY(0deg)';
             break;
+            default: console.log('Default case'); // Add default case
         }
         // Remove animation after execution
         dice.style.animation = 'none';

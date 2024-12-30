@@ -3,20 +3,15 @@ import './EmployerPage.css';
 import React, { useState, useEffect } from 'react';
 
 import {
-  FaGoogle,
-  FaGithub,
-  FaGitlab,
   FaUser,
   FaEnvelope,
   FaLock,
   FaPhoneAlt,
-  FaApple,
-  FaLinkedinIn,
-  FaLinkedin,
+ 
 } from 'react-icons/fa';
 import './JobSeekerPage.css';
 import { NavLink } from 'react-router-dom';
-import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
+
 
 import surveyImage from '../images/surveyo.jpeg';
 
@@ -577,7 +572,7 @@ const EmployerPage = () => {
             <div className="form-footer">
               <label className="terms">
                 <input type="checkbox" required />
-                I agree to the <a href="#">TERMS & CONDITIONS</a> and <a href="#">PRIVACY POLICY</a>
+                I agree to the <a href="/valid">TERMS & CONDITIONS</a> and <a href="/valid">PRIVACY POLICY</a>
               </label>
               <button className="signup-button" type="submit">
                 Create Account

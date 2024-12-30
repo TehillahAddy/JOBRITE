@@ -74,7 +74,7 @@ const EmploymentPage = () => {
             fetchApplicationStages();
             setUserProgressVisible(true); // Show user progress after valid code
         }
-    }, [isCodeValid]);
+    }, [fetchApplicationStages]);
 
     // Calculate overall progress
     const overallProgress = Math.round(

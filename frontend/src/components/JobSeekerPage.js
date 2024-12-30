@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  FaGoogle,
-  FaGithub,
-  FaGitlab,
+FaGoogle,
   FaUser,
   FaEnvelope,
   FaLock,
@@ -13,7 +11,7 @@ import {
 } from 'react-icons/fa';
 import './JobSeekerPage.css';
 import { NavLink } from 'react-router-dom';
-import { Navigation, Autoplay, Pagination } from 'swiper/modules'; // Correct module imports
+
 import surveyImage from '../images/surveyo.jpeg';
 
 const JobSeekerPage = () => {
