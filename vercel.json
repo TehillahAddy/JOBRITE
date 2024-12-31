@@ -1,3 +1,4 @@
+
 {
   "version": 2,
   "builds": [
@@ -5,17 +6,12 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "next build",
         "distDir": "frontend/build"
       }
     },
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "runtime": "nodejs18.x"
-      }
+      "src": "backend/package.json",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
