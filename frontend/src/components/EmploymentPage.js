@@ -70,11 +70,16 @@ const EmploymentPage = () => {
     };
 
     useEffect(() => {
+        const fetchApplicationStages = async () => {
+            // Your fetch logic here
+        };
+
         if (isCodeValid) {
             fetchApplicationStages();
             setUserProgressVisible(true); // Show user progress after valid code
         }
-    }, [fetchApplicationStages]);
+    }, [isCodeValid]);
+
 
     // Calculate overall progress
     const overallProgress = Math.round(

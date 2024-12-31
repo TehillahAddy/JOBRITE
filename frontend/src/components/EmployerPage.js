@@ -582,7 +582,7 @@ const EmployerPage = () => {
 
 
               <p className="terms">
-                By creating an account, you agree to the <a href="#">Terms of Service</a>.
+                By creating an account, you agree to the <a href="/terms">Terms of Service</a>.
               </p>
 
               <p>

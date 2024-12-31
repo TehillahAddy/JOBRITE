@@ -6,7 +6,6 @@ FaGoogle,
   FaLock,
   FaPhoneAlt,
   FaApple,
-  FaLinkedinIn,
   FaLinkedin,
 } from 'react-icons/fa';
 import './JobSeekerPage.css';
@@ -570,7 +569,7 @@ const JobSeekerPage = () => {
               <div class="form-rows">
                 <input type="checkbox" id="email-alerts" />
                 <label for="email-alerts">
-                  I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                  I agree to the <a href="/login">Terms & Conditions</a> and <a href="/login">Privacy Policy</a>
                 </label>
               </div>
 
@@ -582,7 +581,7 @@ const JobSeekerPage = () => {
             </form>
 
             <p className="terms">
-              By creating an account, you agree to the <a href="#">Terms of Service</a>.
+              By creating an account, you agree to the <a href="/terms">Terms of Service</a>.
             </p>
 
             <p>

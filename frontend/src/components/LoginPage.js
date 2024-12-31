@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./LoginPage.css";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './JobSeekerPage.css';
 import { NavLink } from 'react-router-dom';
 import surveyImage from '../images/surveyo.jpeg';
