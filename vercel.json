@@ -1,10 +1,22 @@
 {
   "version": 2,
-  "functions": {
-    "api/(.*)": {
-      "runtime": "nodejs18.x" 
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/build"
+      }
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "runtime": "nodejs18.x"
+      }
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
@@ -12,9 +24,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/build/$1"
+      "dest": "frontend/build/$1"
     }
-  ],
-  "buildCommand": "npm run build", 
-  "outputDirectory": "frontend/build" 
+  ]
 }
