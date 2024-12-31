@@ -49,26 +49,15 @@ const EmploymentPage = () => {
     }, []);
 
 
-    const initialStages = [
-        { name: 'Registration', level: 90, status: 'completed' },
-        { name: 'Interview', level: 85, status: 'completed' },
-        { name: 'Guarantor', level: 75, status: 'in-progress' },
-        { name: 'Assesment', level: 60, status: 'not-started' },
-        { name: 'Hired', level: 80, status: 'not-started' },
-    ];
+  
 
-    const [applicationStages, setApplicationStages] = useState([]);
+    const [applicationStages] = useState([]);
     const [notification, setNotification] = useState('');
     const [serialCode, setSerialCode] = useState('');
     const [isCodeValid, setIsCodeValid] = useState(false); // Track if the serial code is valid
     const [userProgressVisible, setUserProgressVisible] = useState(false); // Track visibility of user progress
 
-    // Mock function to simulate API call
-    const fetchApplicationStages = async () => {
-        // Replace this with your actual API call
-        setApplicationStages(initialStages);
-    };
-
+   
     useEffect(() => {
         const fetchApplicationStages = async () => {
             // Your fetch logic here
