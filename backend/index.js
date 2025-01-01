@@ -5,6 +5,10 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 require('dotenv').config();
 
+// Middleware
+app.use(cors());
+app.use(express.json());
+
 // Connect to MongoDB
 const mongoURI = process.env.MONGODB_URI;
 
@@ -13,11 +17,10 @@ if (!mongoURI) {
   process.exit(1);
 }
 
-mongoose.connect(mongoURI).then(() => console.log('MongoDB connected'))
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-app.use(cors());
-app.use(express.json());
 
 // Import routes
 const signupRoute = require('./routes/signup');
