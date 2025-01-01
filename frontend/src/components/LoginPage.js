@@ -22,7 +22,7 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5000/api/login', { email, password });
+            const res = await axios.post("https://jobrite-backend.onrender.com/api/signup", { email, password });
             console.log('Login successful:', res.data);
             // Check if token is received
             if (res.data.token) {

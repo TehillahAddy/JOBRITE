@@ -145,7 +145,7 @@ const JobSeekerPage = () => {
     }
 
     try {
-      const response = await fetch("http://backend:5000/api/signup", {
+      const response = await fetch("https://jobrite-backend.onrender.com/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
