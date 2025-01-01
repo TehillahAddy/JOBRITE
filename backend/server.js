@@ -3,8 +3,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-// Load environment variables from .env file
 require('dotenv').config();
 
 // Connect to MongoDB
