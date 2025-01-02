@@ -1,6 +1,4 @@
 /* General Page Styling */
-
-
 .job-seeker-page {
   display: flex;
   flex-direction: column;
@@ -68,6 +66,37 @@
   padding: 0 40px; /* Optional: adds padding on sides */
   margin-top: -90px;
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .info-section, .form-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .form-section {
+    width: 100%;
+  }
+
+  .input-group, .form-rows, .custom-dropdown, .dropdown-container {
+    width: 100%;
+  }
+
+  .form-rowss {
+    flex-direction: column;
+  }
+
+  .input-group {
+    margin-bottom: 20px; /* Add spacing between input groups */
+  }
+}
+
 
 /* Right Form Section */
 .form-sectio {
