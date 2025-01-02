@@ -1,6 +1,5 @@
 const express = require('express');
 const bcrypt = require('bcryptjs'); // Updated to use bcryptjs
-
 const User = require('../models/User');
 const router = express.Router();
 
@@ -15,6 +14,10 @@ const validatePassword = (password) => {
 router.post('/', async (req, res) => {
   const { firstName, lastName, username, email, password, mobileNumber, contactNumber, dateOfBirth, nationality, gender, location, highestQualification, yearsOfExperience, currentJobFunction, desiredJobFunction, availability } = req.body;
 
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(400).json({ message: 'Email already in use' });
+  }
   if (!firstName || !lastName || !username || !email || !password) {
     return res.status(400).json({ message: 'All fields are required' });
   }
