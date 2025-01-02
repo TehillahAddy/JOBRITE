@@ -1,23 +1,44 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  username: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  mobileNumber: { type: String },
-  contactNumber: { type: String },
-  dateOfBirth: { type: Date },
-  nationality: { type: String },
-  gender: { type: String },
-  location: { type: String },
-  highestQualification: { type: String },
-  yearsOfExperience: { type: Number },
-  currentJobFunction: { type: String },
-  desiredJobFunction: { type: String },
-  availability: { type: String }
+// Define the schema for your User model
+const UserSchema = new Schema({
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  mobileNumber: String,
+  contactNumber: String,
+  dateOfBirth: Date,
+  nationality: String,
+  gender: String,
+  location: String,
+  highestQualification: String,
+  yearsOfExperience: Number,
+  currentJobFunction: String,
+  desiredJobFunction: String,
+  availability: String
 });
 
-const User = mongoose.model('User', userSchema);
+// Create the User model
+const User = mongoose.model('User', UserSchema, 'users'); // Ensure this is correctly set
+
 module.exports = User;

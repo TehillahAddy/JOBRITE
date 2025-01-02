@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs'); // Updated to use bcryptjs
-const User = require('../models/User'); // Ensure this path matches your project structure
+
+const User = require('../models/User');
 const router = express.Router();
 
 const validatePassword = (password) => {
