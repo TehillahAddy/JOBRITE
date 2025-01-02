@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 10000;
 require('dotenv').config();
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: 'https://jobrite-tehillah-addys-projects.vercel.app/' }));
 app.use(express.json());
 
 // Connect to MongoDB
