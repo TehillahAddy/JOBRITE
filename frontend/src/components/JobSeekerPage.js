@@ -279,8 +279,6 @@ const JobSeekerPage = () => {
           </div>
           <p>Or</p>
           <form className="signup-form" onSubmit={handleSubmit}>
-           
-              <div className="form-rowss">
                 <div className="input-group">
                   <input
                     type="text"
@@ -301,7 +299,7 @@ const JobSeekerPage = () => {
                   />
                   <FaUser className="input-icon" />
                 </div>
-              </div>
+           
          
 
             <div className="input-group">
