@@ -84,14 +84,19 @@
     width: 100%;
   }
 
-  .input-group, .form-rows,.form-rowss .custom-dropdown, .dropdown-container {
+  .input-group, .form-rows, .form-rowss .custom-dropdown, .dropdown-container {
     width: 100%;
   }
+
+  
 
   .input-group {
     margin-bottom: 20px; /* Add spacing between input groups */
   }
-}
+
+
+  }
+
 
 
 /* Right Form Section */
@@ -196,7 +201,7 @@
 
  .form-rowss {
   display: flex; /* Align children horizontally */
-  gap: 150px; /* Add space between input fields */
+  gap: 200px; /* Add space between input fields */
   flex-wrap: nowrap; /* Ensure fields stay horizontal */
   width: 100%; /* Utilize the full width of the parent container */
 }
@@ -233,6 +238,10 @@
 .input-group input:focus {
   outline: none;
   border-color: #555;
+}
+
+.form-rowss .input-group {
+  width: 30%;
 }
 
 .password-hint {

@@ -97,7 +97,7 @@ margin-top: -160px;
   gap: 20px;
 }
 
-.form-row .form-rowss {
+.em-page .form-row .form-rowss {
   display: flex; /* Align children horizontally */
   gap: 100px; /* Add space between input fields */
   flex-wrap: nowrap; /* Ensure fields stay horizontal */

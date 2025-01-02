@@ -447,7 +447,7 @@ const JobSeekerPage = () => {
               </select>
             </div>
 
-            <div className="form-row">
+           
               <div className="form-rowss">
                 <div className="input-group">
                   <FaPhoneAlt className="input-icon" />
@@ -470,7 +470,7 @@ const JobSeekerPage = () => {
                   />
                 </div>
               </div>
-            </div>
+           
           </form>
         </div>
       </div>
