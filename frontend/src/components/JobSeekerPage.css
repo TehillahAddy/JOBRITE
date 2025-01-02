@@ -90,6 +90,8 @@
 
   .form-rowss {
     flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap; /* Ensure fields stay horizontal */
   }
 
   .input-group {
@@ -198,9 +200,9 @@
   /* Allow inputs to wrap */
 }
 
-.form-row .form-rowss {
+ .form-rowss {
   display: flex; /* Align children horizontally */
-  gap: 100px; /* Add space between input fields */
+  gap: 150px; /* Add space between input fields */
   flex-wrap: nowrap; /* Ensure fields stay horizontal */
   width: 100%; /* Utilize the full width of the parent container */
 }
