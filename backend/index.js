@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // Middleware
 const allowedOrigins = [
+  'http://localhost:3000',
   'https://jobrite.vercel.app',
   'https://jobrite-tehillah-addys-projects.vercel.app'
 ];
