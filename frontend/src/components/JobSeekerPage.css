@@ -5,6 +5,18 @@
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .job-seeker-page {
+    padding: 10px; /* Adjust padding on smaller screens */
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Indeed Sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, sans-serif;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+  }
+}
+
 .work {
   background-color: white(81, 34, 34);
   text-align: center;
@@ -72,7 +84,7 @@
   .form-container {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
   }
 
   .info-section, .form-container {
@@ -201,7 +213,7 @@
 
  .form-rowss {
   display: flex; /* Align children horizontally */
-  gap: 200px; /* Add space between input fields */
+  gap: 50px; /* Add space between input fields */
   flex-wrap: nowrap; /* Ensure fields stay horizontal */
   width: 100%; /* Utilize the full width of the parent container */
 }
