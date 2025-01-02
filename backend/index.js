@@ -29,4 +29,10 @@ const loginRoute = require('./routes/login');
 app.use('/api/signup', signupRoute);
 app.use('/api/login', loginRoute);
 
+// Handle root route
+app.get('/', (req, res) => {
+  res.send('Hello from the backend!');
+});
+
+// Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
