@@ -6,7 +6,21 @@ const PORT = process.env.PORT || 10000;
 require('dotenv').config();
 
 // Middleware
-app.use(cors({ origin: 'https://jobrite-tehillah-addys-projects.vercel.app/' }));
+const allowedOrigins = [
+  'https://jobrite.vercel.app',
+  'https://jobrite-tehillah-addys-projects.vercel.app'
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
