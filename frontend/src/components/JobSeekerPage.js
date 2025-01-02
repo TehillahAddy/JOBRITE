@@ -299,9 +299,7 @@ const JobSeekerPage = () => {
                   />
                   <FaUser className="input-icon" />
                 </div>
-           
-         
-
+            
             <div className="input-group">
               <input
                 type="text"

@@ -63,7 +63,7 @@
   justify-content: flex-end;
   align-items: center;
   min-height: 100vh; /* Ensures full height of the viewport */
-  padding: 0 40px; /* Optional: adds padding on sides */
+  padding: 0 10px; /* Optional: adds padding on sides */
   margin-top: -90px;
 }
 
@@ -84,7 +84,7 @@
     width: 100%;
   }
 
-  .input-group, .form-rows, .custom-dropdown, .dropdown-container {
+  .input-group, .form-rows,.form-rowss .custom-dropdown, .dropdown-container {
     width: 100%;
   }
 
@@ -201,9 +201,9 @@
   width: 100%; /* Utilize the full width of the parent container */
 }
 
-.form-row .form-ss {
+.job-seeker-page .form-row {
   display: flex; /* Align children horizontally */
-  gap: 30px; /* Add space between input fields */
+  gap: 250px; /* Add space between input fields */
   flex-wrap: nowrap; /* Ensure fields stay horizontal */
   width: 100%; /* Utilize the full width of the parent container */
 }
