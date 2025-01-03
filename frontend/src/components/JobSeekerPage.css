@@ -133,13 +133,13 @@
   .form-sections {
     width: 90%;
     align-items: flex-end;
-    margin-top: 160px;
+    margin-top: 200px;
     max-height: none; /* Remove max height for better scrolling */
   }
 
   .form-containers .form-rows {
     flex-direction: column; /* Stack inputs vertically */
-    gap: 20px; /* Adjust gap between rows */
+    gap: 30px; /* Adjust gap between rows */
   }
 
   .custom-file-upload, .dropdowns {
