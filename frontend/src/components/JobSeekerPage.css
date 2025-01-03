@@ -97,12 +97,14 @@
 
   }
 
-  /* Responsive design for smaller screens */
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .form-containers {
     flex-direction: column;
-    align-items:flex-end;
+    align-items: flex-end;
     padding: 10px; /* Adjust padding for smaller screens */
+    margin-left: auto; /* Add this to align to the right */
+    margin-right: 0; /* Ensure right margin is zero */
   }
 
   .form-sections {
