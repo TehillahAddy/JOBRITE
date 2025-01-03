@@ -101,7 +101,7 @@
 @media (max-width: 768px) {
   .form-containers {
     flex-direction: column;
-    align-items:center;
+    align-items:flex-end;
     padding: 10px; /* Adjust padding for smaller screens */
   }
 
