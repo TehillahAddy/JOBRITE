@@ -40,20 +40,8 @@
 @media (max-width: 768px) {
   .info-section {
     display: none;
-    max-width: 100%; /* Take full width */
-    padding: 20px; /* Adjust padding */
-    margin: 0 auto; /* Center the section */
-    top: 0; /* Reset top positioning */
-    text-align: center; /* Center align text */
   }
 
-  .info-section h1 {
-    font-size: 1.5rem; /* Adjust font size */
-  }
-
-  .info-section p {
-    font-size: 1rem; /* Adjust font size if needed */
-  }
 }
 
 /* Left Section */
@@ -80,20 +68,9 @@
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .info-sections {
-    max-width: 100%; /* Take full width */
-    padding: 20px; /* Adjust padding */
-    margin: 0 auto; /* Center the section */
-    top: 0; /* Reset top positioning */
-    text-align: center; /* Center align text */
+  display: none;
   }
 
-  .info-sections h1 {
-    font-size: 1.5rem; /* Adjust font size */
-  }
-
-  .info-sections p {
-    font-size: 1rem; /* Adjust font size if needed */
-  }
 }
 
 /* Container to center the form on the page */
