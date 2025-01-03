@@ -125,7 +125,7 @@
 @media (max-width: 768px) {
   .form-containers {
     flex-direction: column;
-    align-items: right; /* Center the container */
+    align-items: flex-end; /* Center the container */
     padding: 10px; /* Adjust padding for smaller screens */
     margin-top: 160px;
   }
@@ -133,7 +133,7 @@
   .form-sections {
     width: 90%;
     align-items: flex-end;
-    margin-top: 70px;
+    margin-top: 160px;
     max-height: none; /* Remove max height for better scrolling */
   }
 
