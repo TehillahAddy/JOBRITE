@@ -40,6 +40,11 @@
   .info-section p {
     display: none;
   }
+
+  .info-section h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 /* Left Section */
@@ -70,7 +75,6 @@
 
   .info-sections h1 {
     font-size: 2rem;
-    display: none;
   }
 }
 
@@ -109,6 +113,18 @@
   .input-group {
     margin-bottom: 20px; /* Add spacing between input groups */
   }
+
+  @media (max-width: 768px) {
+    .signup-button {
+      width: 100%; /* Ensure button takes full width */
+      padding: 15px; /* Add padding for better appearance */
+      font-size: 1rem; /* Adjust font size */
+      margin-top: 20px; /* Add margin for spacing */
+      display: block; /* Ensure the button is displayed as a block */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+  }
+  
 }
 
 /* Responsive design for smaller screens */
@@ -148,16 +164,18 @@
     font-size: 1.25rem; /* Adjust font size for smaller screens */
   }
 
-  .signup-button {
-    width: 100%; /* Ensure button takes full width */
-    padding: 15px; /* Add padding for better appearance */
-    font-size: 1rem; /* Adjust font size */
-    margin-top: 20px; /* Add margin for spacing */
+  @media (max-width: 768px) {
+    .signup-button {
+      width: 100%; /* Ensure button takes full width */
+      padding: 15px; /* Add padding for better appearance */
+      font-size: 1rem; /* Adjust font size */
+      margin-top: 20px; /* Add margin for spacing */
+      display: block; /* Ensure the button is displayed as a block */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
   }
+  
 
-  .signup-form {
-    width: 100%;
-  }
 }
 
 
