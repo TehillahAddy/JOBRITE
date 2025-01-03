@@ -141,8 +141,7 @@
     width: 100px;
     align-items: flex-start;
     margin-top: 0; max-height: none; /* Remove max height for better scrolling */
-    margin-left: auto; /* Add this to align to the right */
-    margin-right: 0; /* Ensure right margin is zero */
+   
     }
 
   .form-containers .form-rows {
