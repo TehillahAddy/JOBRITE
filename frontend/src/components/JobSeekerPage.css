@@ -142,7 +142,7 @@
     align-items: flex-start;
     margin-top: 10px; 
     max-height: none; /* Remove max height for better scrolling */
-    margin-left: 100px; /* Add this to align to the right */ 
+    margin-left: 110px; /* Add this to align to the right */ 
     margin-right: 0; /* Ensure right margin is zero */
     }
 
