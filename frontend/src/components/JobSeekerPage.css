@@ -3,17 +3,15 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
- 
 }
+
 
 .work {
   background-color: white(81, 34, 34);
   text-align: center;
   margin-top: -120px;
-  padding: -20px 0;
-  /* Reduced padding to make the section shorter */
-  height: 820px;
-  /* Ensures it adapts to content height */
+  padding: -20px 0; /* Reduced padding to make the section shorter */
+  height: 820px; /* Ensures it adapts to content height */
   border-radius: 10px;
 }
 
@@ -21,8 +19,7 @@
 /* Left Section */
 .info-section {
   flex: 1;
-  max-width: 30%;
-  /* Adjust as needed */
+  max-width: 30%; /* Adjust as needed */
   padding: 40px;
   border-radius: 12px;
   color: #542f2f;
@@ -42,15 +39,12 @@
 /* Left Section */
 .info-sections {
   flex: 1;
-  max-width: 30%;
-  /* Adjust as needed */
+  max-width: 30%; /* Adjust as needed */
   padding: 40px;
   border-radius: 12px;
   color: #542f2f;
-  position: relative;
-  /* Allows positioning without affecting siblings */
-  top: 50px;
-  /* Move the section down by 50px */
+  position: relative; /* Allows positioning without affecting siblings */
+  top: 50px; /* Move the section down by 50px */
 }
 
 .info-sections h1 {
@@ -69,10 +63,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 100vh;
-  /* Ensures full height of the viewport */
-  padding: 0 10px;
-  /* Optional: adds padding on sides */
+  min-height: 100vh; /* Ensures full height of the viewport */
+  padding: 0 10px; /* Optional: adds padding on sides */
   margin-top: -90px;
 }
 
@@ -81,12 +73,10 @@
   .form-container {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
-    /* Adjust padding for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
   }
 
-  .info-section,
-  .form-container {
+  .info-section, .form-container {
     width: 100%;
     margin: 0;
   }
@@ -95,63 +85,23 @@
     width: 100%;
   }
 
-  .input-group,
-  .form-rows,
-  .form-rowss .custom-dropdown,
-  .dropdown-container {
+  .input-group, .form-rows, .form-rowss .custom-dropdown, .dropdown-container {
     width: 100%;
   }
 
-
+  
 
   .input-group {
-    margin-bottom: 20px;
-    /* Add spacing between input groups */
-  }
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .form-containers {
-    justify-content: center; /* Center form on smaller screens */
-    padding: 20px; /* Adjust padding for smaller screens */
+    margin-bottom: 20px; /* Add spacing between input groups */
   }
 
-  .form-sections {
-    width: 100%;
-    margin-top: 0;
-    max-height: none; /* Remove max height for better scrolling */
   }
-
-  .form-rows {
-    flex-direction: column; /* Stack inputs vertically */
-    gap: 20px; /* Adjust gap between rows */
-  }
-
-  .custom-file-upload, .dropdowns {
-    width: 100%; /* Ensure elements take full width */
-  }
-  
-  .form-rowz {
-    flex-direction: column; /* Stack elements vertically */
-  }
-
-  .form-rows input, .form-rows select {
-    width: 100%; /* Make input fields and selects full width */
-  }
-
-  .form-sections h2 {
-    font-size: 1.25rem; /* Adjust font size for smaller screens */
-  }
-}
-
 
 /* Right Form Section */
 .form-sectio {
   flex: 1;
   width: 600px;
-  max-width: 800px;
-  /* Limit width for professional look */
+  max-width: 800px; /* Limit width for professional look */
   background: #1e1e1e;
   padding: 40px;
   border-radius: 12px;
@@ -177,10 +127,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 100vh;
-  /* Ensures full height of the viewport */
-  padding: 0 40px;
-  /* Optional: adds padding on sides */
+  min-height: 100vh; /* Ensures full height of the viewport */
+  padding: 0 40px; /* Optional: adds padding on sides */
   margin-top: -30px;
 }
 
@@ -188,8 +136,7 @@
 .form-sections {
   flex: 1;
   width: 600px;
-  max-width: 800px;
-  /* Limit width for professional look */
+  max-width: 800px; /* Limit width for professional look */
   background: #1e1e1e;
   padding: 40px;
   border-radius: 12px;
@@ -246,30 +193,22 @@
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
-
+  
   /* Allow inputs to wrap */
 }
 
-.form-rowss {
-  display: flex;
-  /* Align children horizontally */
-  gap: 80px;
-  /* Add space between input fields */
-  flex-wrap: nowrap;
-  /* Ensure fields stay horizontal */
-  width: 100%;
-  /* Utilize the full width of the parent container */
+ .form-rowss {
+  display: flex; /* Align children horizontally */
+  gap: 80px; /* Add space between input fields */
+  flex-wrap: nowrap; /* Ensure fields stay horizontal */
+  width: 100%; /* Utilize the full width of the parent container */
 }
 
 .job-seeker-page .form-row {
-  display: flex;
-  /* Align children horizontally */
-  gap: 250px;
-  /* Add space between input fields */
-  flex-wrap: nowrap;
-  /* Ensure fields stay horizontal */
-  width: 100%;
-  /* Utilize the full width of the parent container */
+  display: flex; /* Align children horizontally */
+  gap: 250px; /* Add space between input fields */
+  flex-wrap: nowrap; /* Ensure fields stay horizontal */
+  width: 100%; /* Utilize the full width of the parent container */
 }
 
 
@@ -341,8 +280,7 @@
 /* Wrapper for dropdown */
 .custom-dropdown {
   position: relative;
-  width: 30%;
-  /* Same as dob-select */
+  width: 30%; /* Same as dob-select */
   gap: 40px;
 }
 
@@ -351,8 +289,7 @@
 .custom-search {
   width: 100%;
   padding: 10px;
-  border: 1px solid #444444;
-  /* Match dob-select */
+  border: 1px solid #444444; /* Match dob-select */
   border-radius: 5px;
   background-color: #2b2b2b;
   color: #aaa;
@@ -369,15 +306,13 @@
   top: 100%;
   left: 0;
   width: 100%;
-  max-height: 150px;
-  /* Enable scrolling */
+  max-height: 150px; /* Enable scrolling */
   overflow-y: auto;
   border: 1px solid #444;
-  background-color: #2b2b2b;
-  /* Match original */
+  background-color: #2b2b2b; /* Match original */
   border-radius: 5px;
   z-index: 10;
-
+  
 }
 
 /* Individual option styling */
@@ -393,35 +328,25 @@
 
 /* Default state: dropdown hidden */
 .custom-options {
-  display: none;
-  /* Hidden by default */
+  display: none; /* Hidden by default */
 }
 
 /* Active dropdown */
 .custom-options.active {
-  display: block;
-  /* Show when active */
+  display: block; /* Show when active */
 }
 
 /* Style for Dropdowns */
 .dropdowns {
-  width: 50%;
-  /* Reduced width for side-by-side layout */
+  width: 50%; /* Reduced width for side-by-side layout */
   padding: 10px 15px;
-  background-color: #2b2b2b;
-  /* Matches the form's background color */
-  border: 1px solid #444;
-  /* Subtle border */
-  border-radius: 5px;
-  /* Smooth rounded corners */
-  color: #fff;
-  /* White text for better readability */
-  font-size: 0.8rem;
-  /* Consistent font size */
-  outline: none;
-  /* Remove default focus outline */
-  appearance: none;
-  /* Custom styling for dropdowns */
+  background-color: #2b2b2b; /* Matches the form's background color */
+  border: 1px solid #444; /* Subtle border */
+  border-radius: 5px; /* Smooth rounded corners */
+  color: #fff; /* White text for better readability */
+  font-size: 0.8rem; /* Consistent font size */
+  outline: none; /* Remove default focus outline */
+  appearance: none; /* Custom styling for dropdowns */
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -434,27 +359,21 @@
 /* Hover and Focus Effect */
 .dropdowns:hover,
 .dropdowns:focus {
-  border-color: #555;
-  /* Slightly brighter border */
-  background-color: #3c3c3c;
-  /* Lighter shade for hover */
+  border-color: #555; /* Slightly brighter border */
+  background-color: #3c3c3c; /* Lighter shade for hover */
 }
 
 /* Dropdown Option Styling */
 .dropdowns option {
-  background-color: #2b2b2b;
-  /* Matches dropdown's background */
-  color: #fff;
-  /* White text for options */
-  padding: 10px;
-  /* Consistent padding for options */
+  background-color: #2b2b2b; /* Matches dropdown's background */
+  color: #fff; /* White text for options */
+  padding: 10px; /* Consistent padding for options */
 }
 
 /* Flex Container for Side-by-Side Layout */
 .dropdown-container {
   display: flex;
-  gap: 20px;
-  /* Space between the dropdowns */
+  gap: 20px; /* Space between the dropdowns */
 }
 
 
@@ -536,17 +455,12 @@
 }
 
 input[list] {
-  width: 100%;
-  /* Match dropdown width */
+  width: 100%; /* Match dropdown width */
   padding: 10px 10px;
-  background-color: #2b2b2b;
-  /* Match dropdown background */
-  border: 1px solid #444;
-  /* Match dropdown border */
-  border-radius: 5px;
-  /* Smooth rounded corners */
-  color: #fff;
-  /* Match text color */
+  background-color: #2b2b2b; /* Match dropdown background */
+  border: 1px solid #444; /* Match dropdown border */
+  border-radius: 5px; /* Smooth rounded corners */
+  color: #fff; /* Match text color */
   font-size: 0.9rem;
 }
 
@@ -559,8 +473,7 @@ input[list]:focus {
   flex-direction: column;
   gap: 10px;
   align-items: flex-start;
-  color: #fff;
-  /* Adjust to match your form theme */
+  color: #fff; /* Adjust to match your form theme */
 }
 
 .upload-label {
@@ -576,46 +489,34 @@ input[list]:focus {
 }
 
 input[type="file"] {
-  display: none;
-  /* Hide the default file input */
+  display: none; /* Hide the default file input */
 }
 
 .upload-button {
-  background-color: #2b2b2b;
-  /* Matches the form background */
-  color: #fff;
-  /* White text for readability */
-  border: 1px solid #444;
-  /* Subtle border */
-  border-radius: 5px;
-  /* Rounded corners */
-  padding: 10px 15px;
-  /* Spacing for the button */
-  font-size: 0.9rem;
-  /* Consistent font size */
-  cursor: pointer;
-  /* Pointer cursor for buttons */
+  background-color: #2b2b2b; /* Matches the form background */
+  color: #fff; /* White text for readability */
+  border: 1px solid #444; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Spacing for the button */
+  font-size: 0.9rem; /* Consistent font size */
+  cursor: pointer; /* Pointer cursor for buttons */
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .upload-button:hover {
-  background-color: #3c3c3c;
-  /* Slightly lighter on hover */
-  border-color: #555;
-  /* Brighter border on hover */
+  background-color: #3c3c3c; /* Slightly lighter on hover */
+  border-color: #555; /* Brighter border on hover */
 }
 
 .file-name {
   font-size: 0.9rem;
-  color: #aaa;
-  /* Subtle text color */
+  color: #aaa; /* Subtle text color */
 }
 
 .upload-info {
   font-size: 0.8rem;
   line-height: 1.5;
-  color: #ccc;
-  /* Subtle text for additional info */
+  color: #ccc; /* Subtle text for additional info */
 }
 
 
@@ -917,3 +818,4 @@ input[type="file"] {
   background-color: #a6b9cd;
   /* Darker shade on hover */
 }
+
