@@ -59,25 +59,6 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .info-sections {
-    max-width: 100%; /* Take full width */
-    padding: 20px; /* Adjust padding */
-    margin: 0 auto; /* Center the section */
-    top: 0; /* Reset top positioning */
-    text-align: center; /* Center align text */
-  }
-
-  .info-sections h1 {
-    font-size: 1.5rem; /* Adjust font size */
-  }
-
-  .info-sections p {
-    display: none;
-    font-size: 1rem; /* Adjust font size if needed */
-  }
-}
-
 /* Container to center the form on the page */
 .form-container {
   display: flex;
