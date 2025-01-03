@@ -70,6 +70,7 @@
 
   .info-sections h1 {
     font-size: 2rem;
+    display: none;
   }
 }
 
@@ -152,6 +153,10 @@
     padding: 15px; /* Add padding for better appearance */
     font-size: 1rem; /* Adjust font size */
     margin-top: 20px; /* Add margin for spacing */
+  }
+
+  .signup-form {
+    width: 100%;
   }
 }
 
