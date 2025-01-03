@@ -39,6 +39,7 @@
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .info-section {
+    display: none;
     max-width: 100%; /* Take full width */
     padding: 20px; /* Adjust padding */
     margin: 0 auto; /* Center the section */
