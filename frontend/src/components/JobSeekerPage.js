@@ -489,7 +489,6 @@ const JobSeekerPage = () => {
             <h2> Provide Your Details</h2>
 
             <form className="signup-form" onSubmit={handleSubmit}>
-
               <div class="form-rows">
                 <input list="highest-qualification-options" id="highest-qualification" class="dropdowns" placeholder="Highest Qualification *" />
                 <datalist id="highest-qualification-options">

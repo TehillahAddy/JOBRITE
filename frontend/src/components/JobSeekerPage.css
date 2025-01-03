@@ -878,3 +878,29 @@ input[type="file"] {
   /* Darker shade on hover */
 }
 
+@media (max-width: 768px) {
+  .job-seeker-page .landing-footer {
+    padding: 10px 15px; /* Reduce padding for smaller screens */
+    display: none;
+  }
+
+  .landing-footer .footer-container {
+    display: none; /* Hide main footer content */
+  }
+
+  .landing-footer .down {
+    display: none; /* Show the .down section */
+    text-align: center;
+    padding: 15px 0; /* Smaller padding for the reduced section */
+  }
+
+  .job-seeker-page .landing-footer .down .social-icons a {
+    margin: 0 5px; /* Space out icons slightly */
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+
+  .job-seeker-page .footer-copyright {
+    font-size: 0.9rem; /* Smaller text size */
+    margin-top: 5px;
+  }
+}
