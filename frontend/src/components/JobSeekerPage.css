@@ -134,6 +134,7 @@
     align-items: flex-start; padding: 5px; /* Adjust padding for smaller screens */
     margin-right: 10px;
     width: 100px;
+    margin-top: 70px;
    }
     
     .form-sections {
