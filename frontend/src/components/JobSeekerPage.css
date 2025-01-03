@@ -67,6 +67,10 @@
   .info-sections p {
     display: none;
   }
+
+  .info-sections h1 {
+    font-size: 1rem;
+  }
 }
 
 /* Container to center the form on the page */
@@ -884,11 +888,11 @@ input[type="file"] {
     display: none;
   }
 
-  .landing-footer .footer-container {
+  .job-seeker-page.landing-footer .footer-container {
     display: none; /* Hide main footer content */
   }
 
-  .landing-footer .down {
+  .job-seeker-page.landing-footer .down {
     display: none; /* Show the .down section */
     text-align: center;
     padding: 15px 0; /* Smaller padding for the reduced section */
