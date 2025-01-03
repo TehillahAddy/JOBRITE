@@ -146,7 +146,7 @@
 
   .form-containers .form-rows {
     flex-direction: column; /* Stack inputs vertically */
-    gap: 20px; /* Adjust gap between rows */
+    gap: 20px; /* Adjust gap between rowss*/
   }
 
   .custom-file-upload, .dropdowns {
