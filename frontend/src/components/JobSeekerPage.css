@@ -140,13 +140,15 @@
     .form-sections {
     width: 100px;
     align-items: flex-start;
-    margin-top: 0; max-height: none; /* Remove max height for better scrolling */
-   
+    margin-top: 10px; 
+    max-height: none; /* Remove max height for better scrolling */
+    margin-left: 50px; /* Add this to align to the right */ 
+    margin-right: 0; /* Ensure right margin is zero */
     }
 
   .form-containers .form-rows {
     flex-direction: column; /* Stack inputs vertically */
-    gap: 20px; /* Adjust gap between rowss*/
+    gap: 20px; /* Adjust gap between rows */
   }
 
   .custom-file-upload, .dropdowns {
@@ -591,6 +593,11 @@ input[type="file"] {
   color: #ccc; /* Subtle text for additional info */
 }
 
+@media (max-width: 768px) {
+  .job-seeker-page .footer-container {
+    display: none;
+  }
+}
 
 .footer-container {
   display: flex;
