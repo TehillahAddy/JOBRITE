@@ -3,20 +3,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-@media (max-width: 768px) {
-  .job-seeker-page {
-    padding: 10px;
-    /* Adjust padding on smaller screens */
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Indeed Sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', Roboto, sans-serif;
-    overflow-x: hidden;
-    /* Disable horizontal scrolling */
-  }
+  overflow-x: hidden;
 }
 
 .work {
