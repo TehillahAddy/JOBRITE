@@ -125,7 +125,7 @@
 @media (max-width: 768px) {
   .form-containers {
     flex-direction: column;
-    align-items: flex-end; /* Center the container */
+    align-items: right; /* Center the container */
     padding: 10px; /* Adjust padding for smaller screens */
     margin-top: 160px;
   }
@@ -133,13 +133,13 @@
   .form-sections {
     width: 90%;
     align-items: flex-end;
-    margin-top: 200px;
+    margin-top: 0;
     max-height: none; /* Remove max height for better scrolling */
   }
 
   .form-containers .form-rows {
     flex-direction: column; /* Stack inputs vertically */
-    gap: 30px; /* Adjust gap between rows */
+    gap: 20px; /* Adjust gap between rows */
   }
 
   .custom-file-upload, .dropdowns {
