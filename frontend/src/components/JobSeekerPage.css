@@ -89,7 +89,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 10px; /* Adjust padding for smaller screens */
-    margin-bottom: 20px; /* Add space below this container */
+    margin-bottom: 90px; /* Add space below this container */
   }
 
   .info-section, .form-container {
@@ -114,7 +114,7 @@
 @media (max-width: 768px) {
   .form-containers {
     flex-direction: column;
-    align-items: center; /* Center the container */
+    align-items: right; /* Center the container */
     padding: 10px; /* Adjust padding for smaller screens */
     margin-top: 160px;
   }
