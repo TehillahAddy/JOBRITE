@@ -104,7 +104,6 @@ margin-top: -160px;
   width: 100%; /* Utilize the full width of the parent container */
 }
 
-
 .form-group {
   flex: 1;
   display: flex;
@@ -113,7 +112,7 @@ margin-top: -160px;
 }
 .em-page .But {
   padding: 10px;
-  background-color: #3950d3;
+  background-color: #3a4ec0;
   color: white;
   border: none;
   border-radius: 5px;
