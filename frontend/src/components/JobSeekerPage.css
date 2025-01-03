@@ -104,14 +104,13 @@
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  
-
-  .form-sections {
-    width: 90%;
-    align-items: center;
-    margin-top: 0;
-    max-height: none; /* Remove max height for better scrolling */
+  .form-containers {
+    flex-direction: column;
+    align-items: center; /* Center the container */
+    padding: 10px; /* Adjust padding for smaller screens */
+    margin-top: 160px;
   }
+
 
   .form-containers .form-rows {
     flex-direction: column; /* Stack inputs vertically */
