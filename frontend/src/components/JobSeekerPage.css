@@ -97,6 +97,43 @@
 
   }
 
+  /* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .form-containers {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .form-sections {
+    width: 100%;
+    margin-top: 0;
+    max-height: none; /* Remove max height for better scrolling */
+  }
+
+  .form-containers .form-rows {
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 20px; /* Adjust gap between rows */
+  }
+
+  .custom-file-upload, .dropdowns {
+    width: 100%; /* Ensure elements take full width */
+  }
+  
+  .form-rowz {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .form-rows input, .form-rows select {
+    width: 100%; /* Make input fields and selects full width */
+  }
+
+  .form-sections h2 {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+}
+
+
 /* Right Form Section */
 .form-sectio {
   flex: 1;
