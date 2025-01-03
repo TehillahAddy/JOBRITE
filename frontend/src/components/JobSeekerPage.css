@@ -69,7 +69,7 @@
   }
 
   .info-sections h1 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 
@@ -101,7 +101,7 @@
     width: 100%;
   }
 
-  .input-group, .form-rows, .form-rowss .custom-dropdown, .dropdown-container {
+  .input-group, .form-rows, .form-rowss .custom-dropdown, .dropdown-container .signup-button{
     width: 100%;
   }
 
@@ -116,7 +116,8 @@
     flex-direction: column;
     align-items: flex-start; padding: 10px; /* Adjust padding for smaller screens */
     margin-left: auto; /* Add this to align to the right */
-    margin-right: 0; /* Ensure right margin is zero */ margin-top: 160px; }
+    
+   }
     
     .form-sections {
     width: 90%;
