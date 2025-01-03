@@ -591,11 +591,6 @@ input[type="file"] {
   color: #ccc; /* Subtle text for additional info */
 }
 
-@media (max-width: 768px) {
-  .job-seeker-page .footer-container {
-    display: none;
-  }
-}
 
 .footer-container {
   display: flex;
@@ -898,7 +893,7 @@ input[type="file"] {
 @media (max-width: 768px) {
   .job-seeker-page .landing-footer {
     padding: 10px 15px; /* Reduce padding for smaller screens */
-    display: none;
+    
   }
 
   .job-seeker-page.landing-footer .footer-container {
