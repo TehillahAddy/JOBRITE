@@ -120,6 +120,7 @@
     padding: 10px; /* Adjust padding for smaller screens */
     margin-left: auto; /* Add this to align to the right */
     margin-right: 0; /* Ensure right margin is zero */
+    margin-top: 60px;
   }
 
   .form-sections {
