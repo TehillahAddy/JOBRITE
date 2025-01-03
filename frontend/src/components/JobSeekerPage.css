@@ -109,8 +109,8 @@
     align-items: flex-start;
     padding: 10px; /* Adjust padding for smaller screens */
     margin-top: 160px;
+    margin-left: 40px; /* Move the container slightly to the right */
   }
-
 
   .form-containers .form-rows {
     flex-direction: column; /* Stack inputs vertically */
@@ -133,6 +133,7 @@
     font-size: 1.25rem; /* Adjust font size for smaller screens */
   }
 }
+
 
 
 /* Right Form Section */
