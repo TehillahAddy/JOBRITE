@@ -20,7 +20,8 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   }
-}));
+})); 
+
 
 
 app.use(express.json());
