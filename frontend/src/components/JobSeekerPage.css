@@ -36,7 +36,11 @@
   line-height: 1.6;
 }
 
-
+@media (max-width: 768px) {
+  .info-section p {
+    display: none;
+  }
+}
 
 /* Left Section */
 .info-sections {
@@ -138,6 +142,17 @@
   .form-sections h2 {
     font-size: 1.25rem; /* Adjust font size for smaller screens */
   }
+
+  /* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .signup-button {
+    width: 100%; /* Ensure button takes full width */
+    padding: 15px; /* Add padding for better appearance */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 20px; /* Add margin for spacing */
+  }
+}
+
 }
 
 
